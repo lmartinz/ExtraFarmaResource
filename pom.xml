@@ -11,8 +11,6 @@
 
     <modules>
         <module>System</module>
-        <module>TemplateID</module>
-        <module>LOGISTICARETAILID</module>
     </modules>
 
 </project>
