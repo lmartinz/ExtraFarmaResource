@@ -1,0 +1,18 @@
+{
+  "codigoLocalOrigem" : 1,
+  "codigoCliente" : 2,
+  "tipoLoja" : "tipoLoja3",
+  "numeroPedido" : "numeroPedido4",
+  "statusOrdemEstoque" : "statusOrdemEstoque5",
+  "ModificarOrdemEstoqueDetalhe" : [ {
+    "ModificarOrdemEstoqueRequestItem" : {
+      "codigoLocalRecebimento" : 6,
+      "tipoLocal" : "tipoLocal7",
+      "tipoLoja" : "tipoLoja8",
+      "itemId" : "itemId9",
+      "numeroLinha" : 10,
+      "quantidadeItem" : 11,
+      "statusEstoque" : "statusEstoque12"
+    }
+  } ]
+}

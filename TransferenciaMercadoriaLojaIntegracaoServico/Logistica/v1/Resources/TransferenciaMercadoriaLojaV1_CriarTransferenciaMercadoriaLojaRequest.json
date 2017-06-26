@@ -1,0 +1,16 @@
+{
+  "codigoTransferencia" : 1,
+  "tipoLocalOrigem" : "tipoLocalOrigem2",
+  "codigoLocalOrigem" : 3,
+  "tipoLocalDestino" : "tipoLocalDestino4",
+  "codigoLocalDestino" : 5,
+  "dataEntregaDestino" : "2017-06-16T11:42:09.798",
+  "tipoTransferencia" : "tipoTransferencia6",
+  "status" : "status7",
+  "codigoUsuario" : 8,
+  "comentario" : "comentario9",
+  "TransferenciaDetalheList" : {
+    "codigoProduto" : 10,
+    "quantidadeProduto" : 11
+  }
+}

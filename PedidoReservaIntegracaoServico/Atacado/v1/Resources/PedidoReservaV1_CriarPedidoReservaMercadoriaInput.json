@@ -1,0 +1,17 @@
+{
+  "OrdemCliente" : {
+    "codigoPedidoCliente" : "codigoPedidoCliente1",
+    "codigoPedidoAtendimento" : "codigoPedidoAtendimento2",
+    "tipoLocalDestino" : "tipoLocalDestino3",
+    "localDestino" : "localDestino4",
+    "flagPodeSerAtendimentaParcialmente" : "flagPodeSerAtendimentaParcialmente5",
+    "dataPrevisaoChegada" : "2017-05-25T15:42:10.487",
+    "OrdemDetalheList" : [ {
+      "codigoItem" : "codigoItem6",
+      "quantidadeSolicitadaItem" : 70.73,
+      "unidadeMedidaPadrao" : "unidadeMedidaPadrao8",
+      "quantidadeMedidaUtilizada" : 90.73,
+      "flagItemPodeSerSubstituido" : "flagItemPodeSerSubstituido10"
+    } ]
+  }
+}

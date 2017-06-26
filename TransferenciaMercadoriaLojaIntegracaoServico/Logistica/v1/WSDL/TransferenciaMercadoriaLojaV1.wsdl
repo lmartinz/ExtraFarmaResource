@@ -1,0 +1,95 @@
+<wsdl:definitions name="TransferenciaMercadoriaLoja" targetNamespace="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1"
+xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+xmlns:tns="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+xmlns:Q2="http://service.ultra.com.br/infcorp/LogIntegration/v1"
+xmlns:Q3="http://canonico.ultra.com.br/infcorp/v1">
+
+  <wsp:Policy wsu:Id="wss_username_token_over_ssl_service_policy"
+              xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+              xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+              xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+    <sp:UsernameToken>
+      <wsp:Policy>
+        <sp:WssUsernameToken11/>
+      </wsp:Policy>
+    </sp:UsernameToken>
+  </wsp:Policy>
+    <wsdl:types>
+      <xsd:schema targetNamespace="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1" elementFormDefault="qualified">
+          <xsd:include schemaLocation="../../../Logistica/v1/Schemas/TransferenciaMercadoriaLojaEBMV1.xsd"/>
+      <xsd:import schemaLocation="../../../Logistica/v1/Schemas/Fault.xsd" namespace="http://canonico.ultra.com.br/infcorp/v1"/>
+      <xsd:import schemaLocation="../../../Logistica/v1/Schemas/MetaInformacao.xsd"
+                  namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"/>
+      </xsd:schema> 
+    </wsdl:types>
+    <wsdl:message name="requestHeader">
+        <wsdl:part element="Q2:MetaInformacao" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="CriarTransferenciaMercadoriaLojaRequest">
+        <wsdl:part element="tns:CriarTransferenciaMercadoriaLojaRequest" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="CriarTransferenciaMercadoriaLojaResponse">
+        <wsdl:part element="tns:TransferenciaMercadoriaLojaResponse" name="parameters"/>
+    </wsdl:message>
+  <wsdl:message name="CriarTransferenciaMercadoriaLojaFaultMsg">
+    <wsdl:part name="CriarTransferenciaMercadoriaLojaFault" element="Q3:Fault"/>
+  </wsdl:message>
+    <wsdl:message name="CancelarTransferenciaMercadoriaLojaRequest">
+        <wsdl:part element="tns:CancelarTransferenciaMercadoriaLojaRequest" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="CancelarTransferenciaMercadoriaLojaResponse">
+        <wsdl:part element="tns:TransferenciaMercadoriaLojaResponse" name="parameters"/>
+    </wsdl:message>
+  <wsdl:message name="CancelarTransferenciaMercadoriaLojaFaultMsg">
+    <wsdl:part name="CancelarTransferenciaMercadoriaLojaFault" element="Q3:Fault"/>
+  </wsdl:message>
+
+    <!--HEADER-->
+    <wsdl:portType name="TransferenciaMercadoriaLojaPortType">
+        <wsdl:operation name="criarTransferenciaMercadoriaLoja">
+            <wsdl:input message="tns:CriarTransferenciaMercadoriaLojaRequest"/>
+            <wsdl:output message="tns:CriarTransferenciaMercadoriaLojaResponse"/>
+            <wsdl:fault name="CriarTransferenciaMercadoriaLojaFault" message="tns:CriarTransferenciaMercadoriaLojaFaultMsg"/>
+        </wsdl:operation>
+        <wsdl:operation name="cancelarTransferenciaMercadoriaLoja">
+            <wsdl:input message="tns:CancelarTransferenciaMercadoriaLojaRequest"/>
+            <wsdl:output message="tns:CancelarTransferenciaMercadoriaLojaResponse"/>
+            <wsdl:fault name="CancelarTransferenciaMercadoriaLojaFault" message="tns:CancelarTransferenciaMercadoriaLojaFaultMsg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="TransferenciaMercadoriaLojaPortBinding" type="tns:TransferenciaMercadoriaLojaPortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="criarTransferenciaMercadoriaLoja">
+            <soap:operation soapAction="http://service.ultra.com.br/TransferenciaMercadoriaLoja/v1/criarTransferenciaMercadoriaLoja"/>
+            <wsdl:input>
+                <soap:header message="tns:requestHeader" part="parameters" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CriarTransferenciaMercadoriaLojaFault">
+                <soap:fault use="literal" name="CriarTransferenciaMercadoriaLojaFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="cancelarTransferenciaMercadoriaLoja">
+            <soap:operation soapAction="http://service.ultra.com.br/TransferenciaMercadoriaLoja/v1/cancelarTransferenciaMercadoriaLoja"/>
+            <wsdl:input>
+                <soap:header message="tns:requestHeader" part="parameters" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CancelarTransferenciaMercadoriaLojaFault">
+                <soap:fault use="literal" name="CancelarTransferenciaMercadoriaLojaFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="TransferenciaMercadoriaLojaService">
+        <wsdl:port binding="tns:TransferenciaMercadoriaLojaPortBinding" name="TransferenciaMercadoriaLojaPort">
+            <soap:address location="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

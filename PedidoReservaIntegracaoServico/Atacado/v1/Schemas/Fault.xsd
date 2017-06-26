@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://canonico.ultra.com.br/infcorp/v1" 
+    elementFormDefault="qualified" xmlns:tns="http://canonico.ultra.com.br/infcorp/v1" 
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:complexType name="Fault">
+		<xsd:annotation>
+			<xsd:documentation>
+				Representa e descreve uma falha ou problema
+				ocorrido na	execução de um serviço. Todas as falhas devem extender
+				de Fault
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="codigo" type="xsd:string">
+				<xsd:annotation>
+					<xsd:documentation>
+						Código de identificação do erro. Há um catálogo
+						dos códigos de erro, que são identificados por prefixos, ex: 
+						BE (Business Error), 
+						TE (Technical Error), 
+						SE (Security Error), etc.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="mensagem" type="xsd:string">
+				<xsd:annotation>
+					<xsd:documentation>
+						Mensagem descritiva do erro, deve ser clara	e
+						permitir a identificação do tipo e causa do erro.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="instrucao" type="xsd:string">
+				<xsd:annotation>
+					<xsd:documentation>
+						Mensagem descritiva que orienta a ação a ser
+						tomada pelo operador na ocorrência do erro.
+    					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="detalhe" type="xsd:string">
+				<xsd:annotation>
+					<xsd:documentation>
+						Texto complementar destinado a detalhar o
+						erro ocorrido. Em geral deve conter
+						informações que auxiliem na identificação
+						das causas ou da correção do problema. Um
+						conteúdo típico é: o nome do servidor, a
+						data e hora de execução do serviço,	código
+						do erro, mensagem descritiva do erro,
+						mensagem de instrução para o operador e um
+						detalhamento do erro ou sua causa, um
+						conteúdo típico é a pilha de execução da
+						thread do Java (StackTrace).
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="tipo" type="tns:TipoFault">
+				<xsd:annotation>
+					<xsd:documentation>
+						Define o tipo de erro ERRO_DE_SISTEMA ou ERRO_DE_NEGOCIO
+
+						ERRO_DE_SISTEMA - Erro técnico
+						Representa uma falha ou problema de causa técnica, por exemplo:
+						indisponibilidade de banco de dados, disco cheio,
+						diretório não encontrado, etc.
+
+
+						ERRO_DE_NEGOCIO
+						Representa uma falha ou problema causado por
+						quebra de alguma regra de negócio ou inconsistência de dados, por exemplo: 
+						cliente não encontrado,	situação de assinante invalida,
+						promoção já habilitada para o assinante, etc.			    	 	
+			    	</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="TipoFault">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="ERRO_DE_SISTEMA"/>
+			<xsd:enumeration value="ERRO_DE_NEGOCIO"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:element name="Fault" type="tns:Fault"/>
+	
+</xsd:schema>

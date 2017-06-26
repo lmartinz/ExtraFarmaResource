@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO8859-1" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://service.ultra.com.br/infcorp/LogIntegration/v1"
+            xmlns:tns="http://service.ultra.com.br/infcorp/LogIntegration/v1"
+            targetNamespace="http://service.ultra.com.br/infcorp/LogIntegration/v1" elementFormDefault="qualified">
+  <xsd:complexType name="MetaInformacaoType">
+    <xsd:sequence>
+      <xsd:element name="nomeServico" type="xsd:string"/>
+      <xsd:element name="datahoraRequisicao" type="xsd:dateTime"/>
+      <xsd:element name="passoFluxo" type="xsd:string"/>
+      <xsd:element name="mensagem" type="xsd:string"/>
+      <xsd:element name="usuario" type="xsd:string"/>
+      <xsd:element name="idControle" type="xsd:integer"/>
+      <xsd:element name="sistemaOrigem" type="xsd:string"/>
+      <xsd:element name="sistemaDestino" type="xsd:string"/>
+      <xsd:element name="status" type="xsd:integer"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="MetaInformacao" type="tns:MetaInformacaoType"/>
+</xsd:schema>

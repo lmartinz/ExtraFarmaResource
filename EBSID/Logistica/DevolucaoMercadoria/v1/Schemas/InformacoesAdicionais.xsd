@@ -1,0 +1,12 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	    xmlns:tns="http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1">
+
+	<xsd:complexType name="InformacoesAdicionaisType">
+		<xsd:sequence>
+			<xsd:element name="codigoTransportadora" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:element name="InformacoesAdicionais" type="tns:InformacoesAdicionaisType"></xsd:element>
+</xsd:schema>

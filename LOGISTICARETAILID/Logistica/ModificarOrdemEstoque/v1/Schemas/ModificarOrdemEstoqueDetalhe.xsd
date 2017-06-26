@@ -1,0 +1,21 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/logistica/ModificarOrdemEstoqueDet/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://service.ultra.com.br/logistica/ModificarOrdemEstoqueDet/v1">
+  <xsd:complexType name="ModificarOrdemEstoqueRequest">
+    <xsd:sequence>
+      <xsd:element name="ModificarOrdemEstoqueRequestItem" type="tns:ModificarOrdemEstoqueRequestItemType"
+                   minOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ModificarOrdemEstoqueRequestItemType">
+    <xsd:sequence>
+      <xsd:element name="codigoLocalRecebimento" type="xsd:integer" minOccurs="1"/>
+      <xsd:element name="tipoLocal" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="tipoLoja" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="itemId" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="numeroLinha" type="xsd:integer" minOccurs="1"/>
+      <xsd:element name="quantidadeItem" type="xsd:decimal" minOccurs="1"/>
+      <xsd:element name="statusEstoque" type="xsd:string" minOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

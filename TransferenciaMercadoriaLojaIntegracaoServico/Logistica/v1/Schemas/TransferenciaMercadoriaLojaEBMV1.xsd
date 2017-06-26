@@ -1,0 +1,38 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns:tns="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1">
+    <xsd:include schemaLocation="TransferenciaDetalhe.xsd"/>
+    <xsd:complexType name="CriarTransferenciaMercadoriaLojaRequestType">
+      <xsd:sequence>
+        <xsd:element name="codigoTransferencia" type="xsd:integer" minOccurs="1"/>
+        <xsd:element name="tipoLocalOrigem" type="xsd:string" minOccurs="1"/>
+        <xsd:element name="codigoLocalOrigem" type="xsd:integer" minOccurs="1"/>
+        <xsd:element name="tipoLocalDestino" type="xsd:string" minOccurs="1"/>
+        <xsd:element name="codigoLocalDestino" type="xsd:integer" minOccurs="1"/>
+        <xsd:element name="dataEntregaDestino" type="xsd:dateTime"/>
+        <xsd:element name="tipoTransferencia" type="xsd:string" minOccurs="1"/>
+        <xsd:element name="status" type="xsd:string" minOccurs="1"/>
+        <xsd:element name="codigoUsuario" type="xsd:integer"/>
+        <xsd:element name="comentario" type="xsd:string"/>
+        <xsd:element name="CriarTransferenciaDetalhe" type="tns:CriarTransferenciaDetalheType" minOccurs="1"/>
+      </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="CancelarTransferenciaMercadoriaLojaRequestType">
+      <xsd:sequence>
+        <xsd:element name="codigoTransferencia" type="xsd:integer" minOccurs="1"/>
+        <xsd:element name="TransferenciaDetalheList" type="tns:CancelarTransferenciaDetalheType" minOccurs="1"/>
+      </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="CriarTransferenciaMercadoriaLojaRequest" type="tns:CriarTransferenciaMercadoriaLojaRequestType"/>
+    <xsd:element name="CancelarTransferenciaMercadoriaLojaRequest" type="tns:CancelarTransferenciaMercadoriaLojaRequestType"/>
+    
+    <xsd:element name="TransferenciaMercadoriaLojaResponse">
+      <xsd:complexType>
+        <xsd:sequence>
+          <xsd:element name="out" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

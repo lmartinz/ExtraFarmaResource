@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="TransferenciaMercadoriaLojaIntegracaoServico/Logistica/v1/WSDL/TransferenciaMercadoriaLojaV1"/>
+            <con:binding>
+                <con:name>TransferenciaMercadoriaLojaPortBinding</con:name>
+                <con:namespace>http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:pipeline type="request" name="request-N3f57e124.N1bc37b9c.0.15cb10dc4a1.N7fbc">
+            <con:stage id="_StageId-N3f57e124.N1bc37b9c.0.15cb10dc4a1.N7fba" name="StageValidateRequest">
+                <con:context>
+                    <con2:userNsDecl prefix="tns" namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"/>
+                    <con2:userNsDecl prefix="v1" namespace="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1"/>
+                </con:context>
+                <con:actions>
+                    <con3:validate>
+                        <con2:id>_ActionId-N3f57e124.N1bc37b9c.0.15cb10dc4a1.N7f1f</con2:id>
+                        <con3:schema ref="TransferenciaMercadoriaLojaIntegracaoServico/Logistica/v1/Schemas/MetaInformacao"/>
+                        <con3:schemaElement xmlns:v1="http://service.ultra.com.br/infcorp/LogIntegration/v1">v1:MetaInformacao</con3:schemaElement>
+                        <con3:varName>header</con3:varName>
+                        <con3:location>
+                            <con2:xpathText>./tns:MetaInformacao</con2:xpathText>
+                        </con3:location>
+                    </con3:validate>
+                    <con3:validate>
+                        <con2:id>_ActionId-N3f57e124.N1bc37b9c.0.15cb10dc4a1.N7f1c</con2:id>
+                        <con3:wsdl ref="TransferenciaMercadoriaLojaIntegracaoServico/Logistica/v1/WSDL/TransferenciaMercadoriaLojaV1"/>
+                        <con3:schemaElement xmlns:v1="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1">v1:CriarTransferenciaMercadoriaLojaRequest</con3:schemaElement>
+                        <con3:varName>body</con3:varName>
+                        <con3:location>
+                            <con2:xpathText>./v1:CriarTransferenciaMercadoriaLojaRequest</con2:xpathText>
+                        </con3:location>
+                    </con3:validate>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57e124.N1bc37b9c.0.15cb10dc4a1.N7fbb"/>
+        <con:pipeline type="request" name="request-N3f57e124.N1bc37b9c.0.15cb10dc4a1.N7f87">
+            <con:stage id="_StageId-N3f57e124.N1bc37b9c.0.15cb10dc4a1.N7f85" name="StageValidateRequest">
+                <con:context>
+                    <con2:userNsDecl prefix="tns" namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"/>
+                    <con2:userNsDecl prefix="v1" namespace="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1"/>
+                </con:context>
+                <con:actions>
+                    <con3:validate>
+                        <con2:id>_ActionId-N3f57e124.N1bc37b9c.0.15cb10dc4a1.N7ee0</con2:id>
+                        <con3:schema ref="TransferenciaMercadoriaLojaIntegracaoServico/Logistica/v1/Schemas/MetaInformacao"/>
+                        <con3:schemaElement xmlns:v1="http://service.ultra.com.br/infcorp/LogIntegration/v1">v1:MetaInformacao</con3:schemaElement>
+                        <con3:varName>header</con3:varName>
+                        <con3:location>
+                            <con2:xpathText>./tns:MetaInformacao</con2:xpathText>
+                        </con3:location>
+                    </con3:validate>
+                    <con3:validate>
+                        <con2:id>_ActionId-N3f57e124.N1bc37b9c.0.15cb10dc4a1.N7edd</con2:id>
+                        <con3:wsdl ref="TransferenciaMercadoriaLojaIntegracaoServico/Logistica/v1/WSDL/TransferenciaMercadoriaLojaV1"/>
+                        <con3:schemaElement xmlns:v1="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1">v1:CancelarTransferenciaMercadoriaLojaRequest</con3:schemaElement>
+                        <con3:varName>body</con3:varName>
+                        <con3:location>
+                            <con2:xpathText>./v1:CancelarTransferenciaMercadoriaLojaRequest</con2:xpathText>
+                        </con3:location>
+                    </con3:validate>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57e124.N1bc37b9c.0.15cb10dc4a1.N7f86"/>
+        <con:pipeline type="request" name="request-N3f57e124.N1bc37b9c.0.15cb10dc4a1.N7ea3">
+            <con:stage id="_StageId-N3f57e124.N1bc37b9c.0.15cb10dc4a1.N7ea1" name="StageInvalidOperation">
+                <con:context/>
+                <con:actions>
+                    <con3:Error>
+                        <con2:id>_ActionId-N3f57e124.N1bc37b9c.0.15cb10dc4a1.N7e6c</con2:id>
+                        <con3:errCode>-1</con3:errCode>
+                        <con3:message>Operação Inválida</con3:message>
+                    </con3:Error>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57e124.N1bc37b9c.0.15cb10dc4a1.N7ea2"/>
+        <con:flow>
+            <con:branch-node type="operation" id="_FlowId-N3f57e124.N16121324.0.15ca7e06522.N8000" name="RouteToProxyLocal_TransferenciaMercadoriaLojaOpBranch">
+                <con:context/>
+                <con:branch-table>
+                    <con:branch name="criarTransferenciaMercadoriaLoja">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="PipelinePairNodeCriarTransferenciaMercadoriaLoja">
+                                <con:request>request-N3f57e124.N1bc37b9c.0.15cb10dc4a1.N7fbc</con:request>
+                                <con:response>response-N3f57e124.N1bc37b9c.0.15cb10dc4a1.N7fbb</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="RouteTocriarTransferenciaMercadoriaLoja">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57e124.N16121324.0.15ca7e06522.N7ffd</con2:id>
+                                        <con1:service ref="TransferenciaMercadoriaLojaIntegracaoServico/Logistica/v1/ProxyService/TransferenciaMercadoriaLojaV1" xsi:type="ref:ProxyRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con1:operation passThrough="true"/>
+                                        <con1:outboundTransform>
+                                            <con3:ifThenElse>
+                                                <con2:id>_ActionId-N3f57e124.N1bc37b9c.0.15cb10dc4a1.N7ee7</con2:id>
+                                                <con3:case id="_BranchId-N3f57e124.N1bc37b9c.0.15cb10dc4a1.N7ee6">
+                                                    <con3:condition>
+                                                        <con2:xqueryText>$inbound/ctx:transport/ctx:request/http:http-method = 'POST'</con2:xqueryText>
+                                                    </con3:condition>
+                                                    <con3:actions>
+                                                        <con3:replace varName="header">
+                                                            <con2:id>_ActionId-N3f57e124.N1bc37b9c.0.15cb10dc4a1.N7ee3</con2:id>
+                                                            <con3:location>
+                                                                <con2:xpathText>.</con2:xpathText>
+                                                            </con3:location>
+                                                            <con3:expr>
+                                                                <con2:xqueryTransform>
+                                                                    <con2:resource ref="TemplateID/v1/Transforms/transformInboutToHeader"/>
+                                                                    <con2:param name="inbound">
+                                                                        <con2:path>$inbound</con2:path>
+                                                                    </con2:param>
+                                                                </con2:xqueryTransform>
+                                                            </con3:expr>
+                                                        </con3:replace>
+                                                    </con3:actions>
+                                                </con3:case>
+                                                <con3:default/>
+                                            </con3:ifThenElse>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="cancelarTransferenciaMercadoriaLoja">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="PipelinePairNodeCancelarTransferenciaMercadoriaLoja">
+                                <con:request>request-N3f57e124.N1bc37b9c.0.15cb10dc4a1.N7f87</con:request>
+                                <con:response>response-N3f57e124.N1bc37b9c.0.15cb10dc4a1.N7f86</con:response>
+                            </con:pipeline-node>
+                            <con:route-node name="RouteTocancelarTransferenciaMercadoriaLoja">
+                                <con:context/>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57e124.4cee98f4.0.15ca865a1f0.N7f9c</con2:id>
+                                        <con1:service ref="TransferenciaMercadoriaLojaIntegracaoServico/Logistica/v1/ProxyService/TransferenciaMercadoriaLojaV1" xsi:type="ref:ProxyRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con1:operation passThrough="true"/>
+                                        <con1:outboundTransform>
+                                            <con3:ifThenElse>
+                                                <con2:id>_ActionId-N3f57e124.N1bc37b9c.0.15cb10dc4a1.N7ea8</con2:id>
+                                                <con3:case id="_BranchId-N3f57e124.N1bc37b9c.0.15cb10dc4a1.N7ea7">
+                                                    <con3:condition>
+                                                        <con2:xqueryText>$inbound/ctx:transport/ctx:request/http:http-method = 'PUT'</con2:xqueryText>
+                                                    </con3:condition>
+                                                    <con3:actions>
+                                                        <con3:replace varName="header">
+                                                            <con2:id>_ActionId-N3f57e124.N1bc37b9c.0.15cb10dc4a1.N7ea4</con2:id>
+                                                            <con3:location>
+                                                                <con2:xpathText>.</con2:xpathText>
+                                                            </con3:location>
+                                                            <con3:expr>
+                                                                <con2:xqueryTransform>
+                                                                    <con2:resource ref="TransferenciaMercadoriaLojaIntegracaoServico/Logistica/v1/Transforms/transformInboutToHeader"/>
+                                                                    <con2:param name="inbound">
+                                                                        <con2:path>$inbound</con2:path>
+                                                                    </con2:param>
+                                                                </con2:xqueryTransform>
+                                                            </con3:expr>
+                                                        </con3:replace>
+                                                    </con3:actions>
+                                                </con3:case>
+                                                <con3:default/>
+                                            </con3:ifThenElse>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:default-branch>
+                        <con:flow>
+                            <con:pipeline-node name="PipelinePairNodeInvalidOperation">
+                                <con:request>request-N3f57e124.N1bc37b9c.0.15cb10dc4a1.N7ea3</con:request>
+                                <con:response>response-N3f57e124.N1bc37b9c.0.15cb10dc4a1.N7ea2</con:response>
+                            </con:pipeline-node>
+                        </con:flow>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:branch-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

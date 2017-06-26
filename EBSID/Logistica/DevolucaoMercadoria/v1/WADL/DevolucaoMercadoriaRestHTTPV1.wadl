@@ -1,0 +1,25 @@
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="DevolucaoMercadoriaRestHTTPV1">DevolucaoMercadoriaRestHTTPV1</doc>
+   <grammars>
+      <xsd:schema targetNamespace="http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1" elementFormDefault="qualified">
+            <xsd:include schemaLocation="../Schemas/DevolucaoMercadoriaEBMV1.xsd"/>
+            <xsd:import schemaLocation="../Schemas/Fault.xsd" namespace="http://canonico.ultra.com.br/infcorp/v1"/>
+            <xsd:import schemaLocation="../Schemas/MetaInformacao.xsd" namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"/>
+        </xsd:schema>
+   </grammars>
+   <resources>
+      <resource path="/logistica/v1/devolucaoMercadoria/notificarDevolucaoMercadoria">
+         <method name="POST" soa:wsdlOperation="notificarDevolucaoMercadoria">
+            <request>
+               <representation mediaType="application/json" element="cns:NotificarDevolucaoMercadoriaRequest" xmlns:cns="http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1"/>
+            </request>
+            <response status="200">
+               <representation mediaType="application/xml" element="cns:NotificarDevolucaoMercadoriaResponse" xmlns:cns="http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1"/>
+            </response>
+            <response status="400" soa:wsdlFaultName="NotificarDevolucaoMercadoriaFault">
+               <representation mediaType="application/xml" element="cns:Fault" xmlns:cns="http://canonico.ultra.com.br/infcorp/v1"/>
+            </response>
+         </method>
+      </resource>
+   </resources>
+</application>

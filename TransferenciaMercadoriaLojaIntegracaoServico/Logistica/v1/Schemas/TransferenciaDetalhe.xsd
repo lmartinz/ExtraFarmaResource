@@ -1,0 +1,19 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1" 
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns:tns="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1">
+    <xsd:complexType name="CriarTransferenciaDetalheType">
+		<xsd:sequence>
+                    <xsd:element name="codigoProduto" type="xsd:integer" minOccurs="1"/>
+                    <xsd:element name="quantidadeProduto" type="xsd:integer" minOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+    <xsd:complexType name="CancelarTransferenciaDetalheType">
+		<xsd:sequence>
+                    <xsd:element name="codigoProduto" type="xsd:integer" minOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+        
+	<xsd:element name="CriarTransferenciaDetalhe" type="tns:CriarTransferenciaDetalheType"/>
+        <xsd:element name="CancelarTransferenciaDetalhe" type="tns:CancelarTransferenciaDetalheType"/>
+</xsd:schema>

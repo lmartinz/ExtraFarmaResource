@@ -1,0 +1,17 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/atacado/PedidoReserva/v1" elementFormDefault="qualified"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://service.ultra.com.br/atacado/PedidoReserva/v1">
+  <xsd:include schemaLocation="OrdemDetalhe.xsd"/>
+  <xsd:complexType name="OrdemClienteType">
+    <xsd:sequence>
+      <xsd:element name="codigoPedidoCliente" type="xsd:string"/>
+      <xsd:element name="codigoPedidoAtendimento" type="xsd:string"/>
+      <xsd:element name="tipoLocalDestino" type="xsd:string"/>
+      <xsd:element name="localDestino" type="xsd:string"/>
+      <xsd:element name="flagPodeSerAtendimentaParcialmente" type="xsd:string"/>
+      <xsd:element name="dataPrevisaoChegada" type="xsd:dateTime"/>
+      <xsd:element name="OrdemDetalheList" type="tns:OrdemDetalheType" maxOccurs="unbounded" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="OrdemCliente" type="tns:OrdemClienteType"/>
+</xsd:schema>

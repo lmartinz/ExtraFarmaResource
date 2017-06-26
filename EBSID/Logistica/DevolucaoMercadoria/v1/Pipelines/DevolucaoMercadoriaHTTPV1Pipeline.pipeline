@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="EBSID/Logistica/DevolucaoMercadoria/v1/WSDL/DevolucaoMercadoriaV1"/>
+            <con:binding>
+                <con:name>DevolucaoMercadoriaPortBinding</con:name>
+                <con:namespace>http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router>
+        <con:pipeline type="request" name="request-N3f57e124.4faf3ac5.0.15c7ebfa10b.N7fc7">
+            <con:stage id="_StageId-N3f57e124.4faf3ac5.0.15c7ebfa10b.N7fc5" name="StageInvalidOperation">
+                <con:context/>
+                <con:actions/>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57e124.4faf3ac5.0.15c7ebfa10b.N7fc6"/>
+        <con:flow>
+            <con:branch-node type="operation" id="_FlowId-N3f57e124.4faf3ac5.0.15c7ebfa10b.N7fce" name="RouteToProxyLocal_notificarDevolucaoMercadoriaOpBranch">
+                <con:context/>
+                <con:branch-table>
+                    <con:branch name="notificarDevolucaoMercadoria">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="RouteTonotificarDevolucaoMercadoria">
+                                <con:context>
+                                    <con2:userNsDecl prefix="ns1" namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"/>
+                                </con:context>
+                                <con:actions>
+                                    <con1:route>
+                                        <con2:id>_ActionId-N3f57e124.4faf3ac5.0.15c7ebfa10b.N7fcb</con2:id>
+                                        <con1:service ref="EBSID/Logistica/DevolucaoMercadoria/v1/ProxyService/DevolucaoMercadoriaV1" xsi:type="ref:ProxyRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con1:operation passThrough="true"/>
+                                        <con1:outboundTransform>
+                                            <con3:ifThenElse>
+                                                <con2:id>_ActionId-N3f57e124.20bbb23e.0.15c7ef019a8.N7fc1</con2:id>
+                                                <con3:case id="_BranchId-N3f57e124.20bbb23e.0.15c7ef019a8.N7fc0">
+                                                    <con3:condition>
+                                                        <con2:xqueryText>$inbound/ctx:transport/ctx:request/http:http-method = 'POST'</con2:xqueryText>
+                                                    </con3:condition>
+                                                    <con3:actions>
+                                                        <con3:replace varName="header">
+                                                            <con2:id>_ActionId-N3f57e124.4faf3ac5.0.15c7ebfa10b.N7f2b</con2:id>
+                                                            <con3:location>
+                                                                <con2:xpathText>.</con2:xpathText>
+                                                            </con3:location>
+                                                            <con3:expr>
+                                                                <con2:xqueryText><![CDATA[<soap-env:Header xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">  
+    
+      <ns1:MetaInformacao>
+    
+      	{  
+    
+        if (exists($inbound/ctx:transport/ctx:request/tp:headers/tp:user-header[@name='nomeServico']/@value))  
+          
+        then  
+        
+        <ns1:nomeServico>{data($inbound/ctx:transport/ctx:request/tp:headers/tp:user-header[@name='nomeServico']/@value)}</ns1:nomeServico>  
+          
+        else  
+          
+        ()  
+      
+        
+     	 }
+        
+         {  
+  
+        
+        if (exists($inbound/ctx:transport/ctx:request/tp:headers/tp:user-header[@name='datahoraRequisicao']/@value))  
+          
+        then  
+        
+        <ns1:datahoraRequisicao>{data($inbound/ctx:transport/ctx:request/tp:headers/tp:user-header[@name='datahoraRequisicao']/@value)}</ns1:datahoraRequisicao>  
+          
+        else()  
+          
+        } 
+		{
+           if (exists($inbound/ctx:transport/ctx:request/tp:headers/tp:user-header[@name='mensagem']/@value))  
+        
+        then  
+        
+        <ns1:mensagem>{data($inbound/ctx:transport/ctx:request/tp:headers/tp:user-header[@name='mensagem']/@value)}</ns1:mensagem>  
+          
+        else()  
+          
+        }  
+        
+       {  
+  
+        
+        if (exists($inbound/ctx:transport/ctx:request/tp:headers/tp:user-header[@name='passoFluxo']/@value))  
+          
+        then  
+        
+        <ns1:passoFluxo>{data($inbound/ctx:transport/ctx:request/tp:headers/tp:user-header[@name='passoFluxo']/@value)}</ns1:passoFluxo>  
+          
+        else()  
+          
+        }
+       {  
+  
+        
+        if (exists($inbound/ctx:transport/ctx:request/tp:headers/tp:user-header[@name='usuario']/@value))  
+          
+        then  
+        
+        <ns1:usuario>{data($inbound/ctx:transport/ctx:request/tp:headers/tp:user-header[@name='usuario']/@value)}</ns1:usuario>  
+          
+        else()  
+          
+        }  
+        {  
+  
+        
+        if (exists($inbound/ctx:transport/ctx:request/tp:headers/tp:user-header[@name='idControle']/@value))  
+          
+        then  
+        
+        <ns1:idControle>{data($inbound/ctx:transport/ctx:request/tp:headers/tp:user-header[@name='idControle']/@value)}</ns1:idControle>  
+          
+        else()  
+          
+        }  
+        {  
+  
+        
+        if (exists($inbound/ctx:transport/ctx:request/tp:headers/tp:user-header[@name='sistemaOrigem']/@value))  
+          
+        then  
+        
+        <ns1:sistemaOrigem>{data($inbound/ctx:transport/ctx:request/tp:headers/tp:user-header[@name='sistemaOrigem']/@value)}</ns1:sistemaOrigem>  
+          
+        else()  
+          
+        }  
+      
+        {
+           if (exists($inbound/ctx:transport/ctx:request/tp:headers/tp:user-header[@name='sistemaDestino']/@value))  
+        
+        then  
+        
+        <ns1:sistemaDestino>{data($inbound/ctx:transport/ctx:request/tp:headers/tp:user-header[@name='sistemaDestino']/@value)}</ns1:sistemaDestino>  
+          
+        else()  
+          
+        } 
+        {
+           if (exists($inbound/ctx:transport/ctx:request/tp:headers/tp:user-header[@name='status']/@value))  
+        
+        then  
+        
+        <ns1:status>{data($inbound/ctx:transport/ctx:request/tp:headers/tp:user-header[@name='status']/@value)}</ns1:status>  
+          
+        else()  
+          
+        }  
+		
+          
+      
+      
+
+    </ns1:MetaInformacao>
+    </soap-env:Header>]]></con2:xqueryText>
+                                                            </con3:expr>
+                                                        </con3:replace>
+                                                    </con3:actions>
+                                                </con3:case>
+                                                <con3:default/>
+                                            </con3:ifThenElse>
+                                        </con1:outboundTransform>
+                                        <con1:responseTransform/>
+                                    </con1:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:default-branch>
+                        <con:flow>
+                            <con:pipeline-node name="PipelinePairNodeInvalidOperation">
+                                <con:request>request-N3f57e124.4faf3ac5.0.15c7ebfa10b.N7fc7</con:request>
+                                <con:response>response-N3f57e124.4faf3ac5.0.15c7ebfa10b.N7fc6</con:response>
+                            </con:pipeline-node>
+                        </con:flow>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:branch-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>
