@@ -1,0 +1,19 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/logistica/RecebimentoMercadoria/v1" 
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns:tns="http://service.ultra.com.br/logistica/RecebimentoMercadoria/v1">
+    <xsd:include schemaLocation="RecebimentoDetalhe.xsd"/>
+    <xsd:complexType name="RecebimentoType" >
+		<xsd:sequence>
+			<xsd:element name="codigoFilial" type="xsd:integer" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="codigoPedidoTransferencia" type="xsd:integer" minOccurs="1" maxOccurs="1"/>
+   <xsd:element name="tipoRecebimento" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+   <xsd:element name="numeroNota" type="xsd:integer"/>
+   <xsd:element name="localOrigemRemessa" type="xsd:string"/>
+   <xsd:element name="nivelRecebimento" type="xsd:string"/>
+   <xsd:element name="tipoLocalOrigem" type="xsd:string"/>
+			<xsd:element name="RecebimentoDetalheList" type="tns:RecebimentoDetalheType" minOccurs="1" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:element name="Recebimento" type="tns:RecebimentoType"/>
+</xsd:schema>

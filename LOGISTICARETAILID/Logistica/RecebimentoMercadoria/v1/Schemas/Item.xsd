@@ -1,0 +1,12 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/logistica/RecebimentoMercadoria/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns:tns="http://service.ultra.com.br/logistica/RecebimentoMercadoria/v1">
+        <xsd:include schemaLocation="LoteItem.xsd"/>
+	<xsd:complexType name="ItemType">
+		<xsd:sequence>
+			<xsd:element name="LoteItemList" type="tns:LoteItemType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:element name="Item" type="tns:ItemType"></xsd:element>
+</xsd:schema>

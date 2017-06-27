@@ -1,0 +1,11 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/logistica/RecebimentoMercadoria/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns:tns="http://service.ultra.com.br/logistica/RecebimentoMercadoria/v1">
+	<xsd:complexType name="ImeiType">
+		<xsd:sequence>
+			<xsd:element name="imeiProduto" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:element name="Imei" type="tns:ImeiType"></xsd:element>
+</xsd:schema>

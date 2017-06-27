@@ -1,0 +1,15 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/logistica/RecebimentoMercadoria/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns:tns="http://service.ultra.com.br/logistica/RecebimentoMercadoria/v1">
+
+	<xsd:complexType name="LoteItemDetalheType">
+		<xsd:sequence>
+			<xsd:element name="codigoLote" type="xsd:string" minOccurs="1"/>
+			<xsd:element name="dataFabricacaoLote" type="xsd:dateTime"/>
+			<xsd:element name="dataValidade" type="xsd:dateTime" minOccurs="1"/>
+			<xsd:element name="quantidadeLote" type="xsd:integer" minOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:element name="LoteItemDetalhe" type="tns:LoteItemDetalheType"></xsd:element>
+</xsd:schema>

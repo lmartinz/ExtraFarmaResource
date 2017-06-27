@@ -24,7 +24,7 @@
                 </orawsp:wsm-assembly>
             </ser:owsm-policy-metadata>
         </ser:ws-policy>
-        <ser:invoke ref="LOGISTICARETAILID/Logistica/PedidoTransferenciaMercadoria/v1/Pipelines/PedidoTransferenciaMercadoriaHTTPV1Pipeline" xsi:type="con:PipelineRef" xmlns:con="http://www.bea.com/wli/sb/pipeline/config"/>
+        <ser:invoke ref="LOGISTICARETAILID/Logistica/PedidoTransferenciaMercadoria/v1/Pipelines/PedidoTransferenciaMercadoriaHTTPV1Pipeline" xsi:type="con1:PipelineRef" xmlns:con1="http://www.bea.com/wli/sb/pipeline/config"/>
         <ser:xqConfiguration>
             <ser:snippetVersion>1.0</ser:snippetVersion>
         </ser:xqConfiguration>

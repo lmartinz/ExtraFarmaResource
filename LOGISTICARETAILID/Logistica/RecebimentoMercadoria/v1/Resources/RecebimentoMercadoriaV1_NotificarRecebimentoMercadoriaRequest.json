@@ -1,0 +1,34 @@
+{
+  "codigoAgendamento" : 55,
+  "RecebimentoList" : {
+    "codigoFilial" : 56,
+    "codigoPedidoTransferencia" : 57,
+    "tipoRecebimento" : "tipoRecebimento58",
+    "numeroNota" : 59,
+    "localOrigemRemessa" : "localOrigemRemessa60",
+    "nivelRecebimento" : "nivelRecebimento61",
+    "tipoLocalOrigem" : "tipoLocalOrigem62",
+    "RecebimentoDetalheList" : [ {
+      "codigoProduto" : 63,
+      "quantidadeProduto" : 64,
+      "tipoRecebimentoProduto" : "tipoRecebimentoProduto65",
+      "dataRecebimento" : "2017-06-27T13:08:57.357",
+      "codigoLote" : 66,
+      "codigoPedidoTransferencia" : 67,
+      "ItemList" : [ {
+        "LoteItemList" : [ {
+          "codigoVolumeProduto" : 68,
+          "LoteItemDetalheList" : [ {
+            "codigoLote" : "codigoLote69",
+            "dataFabricacaoLote" : "2017-06-27T13:08:57.357",
+            "dataValidade" : "2017-06-27T13:08:57.357",
+            "quantidadeLote" : 70
+          } ],
+          "ImeiList" : [ {
+            "imeiProduto" : "imeiProduto71"
+          } ]
+        } ]
+      } ]
+    } ]
+  }
+}

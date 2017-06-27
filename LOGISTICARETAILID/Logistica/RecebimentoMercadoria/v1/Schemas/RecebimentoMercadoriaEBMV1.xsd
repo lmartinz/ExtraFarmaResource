@@ -1,0 +1,20 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/logistica/RecebimentoMercadoria/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns:tns="http://service.ultra.com.br/logistica/RecebimentoMercadoria/v1">
+    <xsd:include schemaLocation="Recebimento.xsd"/>
+    <xsd:complexType name="NotificarRecebimentoMercadoriaRequestType">
+      <xsd:sequence>
+        <xsd:element name="codigoAgendamento" type="xsd:integer" minOccurs="1"/>
+	       <xsd:element name="RecebimentoList" type="tns:RecebimentoType" minOccurs="1"/>
+      </xsd:sequence>
+    </xsd:complexType>
+	
+    <xsd:element name="NotificarRecebimentoMercadoriaRequest" type="tns:NotificarRecebimentoMercadoriaRequestType"/>
+    <xsd:element name="NotificarRecebimentoMercadoriaResponse">
+      <xsd:complexType>
+        <xsd:sequence>
+          <xsd:element name="out" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
