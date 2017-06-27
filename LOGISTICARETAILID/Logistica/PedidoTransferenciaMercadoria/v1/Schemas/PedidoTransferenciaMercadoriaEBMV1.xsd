@@ -1,0 +1,27 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/logistica/PedidoTransferenciaMercadoria/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://service.ultra.com.br/logistica/PedidoTransferenciaMercadoria/v1"
+            xmlns:moe="http://service.ultra.com.br/logistica/PedidoTransferenciaMercadoriaDet/v1">
+  <xsd:import namespace="http://service.ultra.com.br/logistica/PedidoTransferenciaMercadoriaDet/v1"
+              schemaLocation="PedidoTransferenciaMercadoriaDetalhe.xsd"/>
+  
+  <xsd:element name="PedidoTransferenciaMercadoriaRequest" type="tns:PedidoTransferenciaMercadoriaRequestType"/>
+  <xsd:complexType name="PedidoTransferenciaMercadoriaRequestType">
+    <xsd:sequence>
+      <xsd:element name="codigoLocalOrigem" type="xsd:integer" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="codigoCliente" type="xsd:integer" maxOccurs="1"/>
+      <xsd:element name="tipoLoja" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="numeroPedido" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="statusOrdemEstoque" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="PedidoTransferenciaMercadoriaDetalhe" minOccurs="1" maxOccurs="unbounded"
+                   type="moe:PedidoTransferenciaMercadoriaRequest"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="PedidoTransferenciaMercadoriaResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="out" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
