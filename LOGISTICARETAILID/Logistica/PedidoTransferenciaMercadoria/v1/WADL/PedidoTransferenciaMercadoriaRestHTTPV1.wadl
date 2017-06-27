@@ -9,7 +9,7 @@
    </grammars>
    <resources>
       <resource path="/logistica/v1/pedidoTransferenciaMercadoria">
-         <method name="PUT" soa:wsdlOperation="PedidoTransferenciaMercadoria">
+         <method name="PUT" soa:wsdlOperation="ModificarPedidoTransferenciaMercadoria">
             <request>
                <representation mediaType="application/json" element="cns:PedidoTransferenciaMercadoriaRequest" xmlns:cns="http://service.ultra.com.br/logistica/PedidoTransferenciaMercadoria/v1"/>
             </request>

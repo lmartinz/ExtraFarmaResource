@@ -13,5 +13,35 @@
         <module>System</module>
         <module>LOGISTICALEGADOID</module>
     </modules>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.oracle.adf.plugin</groupId>
+                <artifactId>ojdeploy</artifactId>
+                <version>12.2.1-0-0</version>
+                <configuration>
+                    <ojdeploy>
+                        ${oracleHome}/jdeveloper/jdev/bin/ojdeploy
+                    </ojdeploy>
+                    <workspace>
+                        ${basedir}/AppExtrafarmaServiceBUS.jws
+                    </workspace>
+                    <profile>
+                        AppExtrafarmaServiceBUS
+                    </profile>
+                    <outputfile>
+                        ${project.build.directory}/${project.build.finalName}.${project.packaging}
+                    </outputfile>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

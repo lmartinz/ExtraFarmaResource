@@ -41,7 +41,7 @@ xmlns:Q3="http://canonico.ultra.com.br/infcorp/v1">
 
     <!--HEADER-->
     <wsdl:portType name="PedidoTransferenciaMercadoriaPortType">
-        <wsdl:operation name="PedidoTransferenciaMercadoria">
+        <wsdl:operation name="ModificarPedidoTransferenciaMercadoria">
             <wsdl:input message="tns:PedidoTransferenciaMercadoriaRequest"/>
             <wsdl:output message="tns:PedidoTransferenciaMercadoriaResponse"/>
             <wsdl:fault name="PedidoTransferenciaMercadoriaFault" message="tns:PedidoTransferenciaMercadoriaFaultMsg"/>
@@ -49,7 +49,7 @@ xmlns:Q3="http://canonico.ultra.com.br/infcorp/v1">
     </wsdl:portType>
     <wsdl:binding name="PedidoTransferenciaMercadoriaPortBinding" type="tns:PedidoTransferenciaMercadoriaPortType">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-        <wsdl:operation name="PedidoTransferenciaMercadoria">
+        <wsdl:operation name="ModificarPedidoTransferenciaMercadoria">
             <soap:operation soapAction="http://service.ultra.com.br/PedidoTransferenciaMercadoria/v1/PedidoTransferenciaMercadoria"/>
             <wsdl:input>
                 <soap:header message="tns:requestHeader" part="parameters" use="literal"/>
