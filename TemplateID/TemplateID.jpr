@@ -105,6 +105,7 @@
          <string v="SOA"/>
          <string v="ServiceBusTechnology"/>
          <string v="XML"/>
+         <string v="XML_SCHEMA"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.compiler.OjcConfiguration">
