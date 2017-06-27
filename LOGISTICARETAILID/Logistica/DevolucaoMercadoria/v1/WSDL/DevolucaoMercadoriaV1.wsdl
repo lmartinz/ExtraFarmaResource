@@ -8,9 +8,9 @@
     </wsp:Policy>
     <wsdl:types>
         <xsd:schema targetNamespace="http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1" elementFormDefault="qualified">
-            <xsd:include schemaLocation="../Schemas/DevolucaoMercadoriaEBMV1.xsd"/>
-            <xsd:import schemaLocation="../Schemas/Fault.xsd" namespace="http://canonico.ultra.com.br/infcorp/v1"/>
-            <xsd:import schemaLocation="../Schemas/MetaInformacao.xsd" namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"/>
+            <xsd:include schemaLocation="../../../DevolucaoMercadoria/v1/Schemas/DevolucaoMercadoriaEBMV1.xsd"/>
+            <xsd:import schemaLocation="../../../../Comum/v1/Schemas/Fault.xsd" namespace="http://canonico.ultra.com.br/infcorp/v1"/>
+            <xsd:import schemaLocation="../../../../Comum/v1/Schemas/MetaInformacao.xsd" namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"/>
         </xsd:schema>
     </wsdl:types>
     <wsdl:message name="NotificarDevolucaoMercadoriaRequest">
