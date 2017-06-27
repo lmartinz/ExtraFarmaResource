@@ -31,7 +31,6 @@
       <hash><url n="URL" path="LOGISTICALEGADOID/LOGISTICALEGADOID.jpr"/></hash>
       <hash><url n="URL" path="LOGISTICARETAILID/LOGISTICARETAILID.jpr"/></hash>
       <hash><url n="URL" path="PedidoReservaIntegracaoServico/PedidoReservaIntegracaoServico.jpr"/></hash>
-      <hash><url n="URL" path="RecebimentoMercadoriaIntegracaoServico/RecebimentoMercadoriaIntegracaoServico.jpr"/></hash>
       <hash><url n="URL" path="TemplateID/TemplateID.jpr"/></hash>
       <hash><url n="URL" path="TransferenciaMercadoriaLojaIntegracaoServico/TransferenciaMercadoriaLojaIntegracaoServico.jpr"/></hash>
    </list>
