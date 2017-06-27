@@ -104,7 +104,6 @@
       <list n="technologyScope">
          <string v="ADFm"/>
          <string v="JAVASCRIPT"/>
-         <string v="SOA"/>
          <string v="ServiceBusTechnology"/>
          <string v="WSDL"/>
          <string v="WSPolicy"/>
