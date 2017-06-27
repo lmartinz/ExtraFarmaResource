@@ -2,7 +2,7 @@
 <con:businessServiceEntry xmlns:con="http://xmlns.oracle.com/servicebus/business/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:oper="http://xmlns.oracle.com/servicebus/business/operations" xmlns:ser="http://www.bea.com/wli/sb/services" xmlns:tran="http://www.bea.com/wli/sb/transports" xmlns:env="http://www.bea.com/wli/config/env" xmlns:soa="http://www.bea.com/wli/sb/transports/soa">
     <con:coreEntry>
         <con1:binding type="SOAP" xsi:type="con:SoapBindingType" isSoap12="false" xmlns:con="http://www.bea.com/wli/sb/services/bindings/config" xmlns:con1="http://xmlns.oracle.com/servicebus/business/config">
-            <con:wsdl ref="LOGISTICARETAILID/Logistica/DevolucaoMercadoriaIntegracaoServico/v1/WSDL/DevolucaoMercadoriaV1"/>
+            <con:wsdl ref="LOGISTICARETAILID/Logistica/DevolucaoMercadoria/v1/WSDL/DevolucaoMercadoriaV1"/>
             <con:port>
                 <con:name>DevolucaoMercadoriaPort</con:name>
                 <con:namespace>http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1</con:namespace>
