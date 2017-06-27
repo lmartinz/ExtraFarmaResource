@@ -1,0 +1,131 @@
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://www.oracle.com/retail/integration/base/bo/EXFItemDesc/v1"
+    version="1.0"
+    xmlns="http://www.oracle.com/retail/integration/base/bo/EXFItemDesc/v1"
+    xmlns:retailDoc="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <retailDoc:annotation>
+        <retailDoc:documentation>This is root element of this document which contains name space definitions for the document elements.</retailDoc:documentation>
+    </retailDoc:annotation>   
+    <xs:element name="EXFItemDesc">
+		<retailDoc:annotation>
+			<retailDoc:documentation>Item Details</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:complexType>
+			<xs:sequence>
+			    <xs:element minOccurs="0" maxOccurs="unbounded" ref="EXFItemDtl">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Item Detail Information</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+			</xs:sequence>
+		</xs:complexType>
+    </xs:element>	
+    <xs:element name="EXFItemDtl">
+		<retailDoc:annotation>
+			<retailDoc:documentation>Item Details</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="volume" type="varchar210">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Product volume code</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+			    <xs:element minOccurs="0" maxOccurs="unbounded" ref="EXFLotInfoDesc">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>Lot Information</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="EXFImei">
+                    <retailDoc:annotation>
+                        <retailDoc:documentation>List of IMEI</retailDoc:documentation>
+                    </retailDoc:annotation>
+                </xs:element>
+			</xs:sequence>
+		</xs:complexType>
+    </xs:element>
+    <xs:element name="EXFLotInfoDesc">
+		<retailDoc:annotation>
+			<retailDoc:documentation>Lot Information.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="lot_id" type="varchar220">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Lot Information.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="manufacture_date" type="xs:dateTime">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Lot manufacture date.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element name="expiration_date" type="xs:dateTime">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Lot expiration date.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element name="lot_qty" type="number12_4">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Lot quantity.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+    </xs:element>
+    <xs:element name="EXFImei">
+		<retailDoc:annotation>
+			<retailDoc:documentation>Lot Information.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="imei" type="varchar215">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Lot Information.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+    </xs:element>
+	<xs:simpleType name="number12_4">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a number of digits count 12 and fraction digit count of 4.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="12"/>
+			<xs:fractionDigits value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="varchar220">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max length of 20 characters.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="varchar210">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max length of 10 characters.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="varchar2120">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max length of 120 characters.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="120"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="varchar215">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max length of 15 characters.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="15"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

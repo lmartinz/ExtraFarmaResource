@@ -1,0 +1,49 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.oracle.com/retail/integration/rib/RibMessages" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:POScheduleDesc="http://www.oracle.com/retail/integration/base/bo/POScheduleDesc/v1">
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/POScheduleDesc/v1" schemaLocation="POScheduleDesc.xsd"/>
+  <xs:element name="name" type="xs:string"/>
+  <xs:element name="value" type="xs:string"/>
+  <xs:element name="family" type="xs:string"/>
+  <xs:element name="type" type="xs:string"/>
+  <xs:element name="id" type="xs:int"/>
+  <xs:element name="ribmessageID" type="xs:string"/>
+  <xs:element name="routingInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="rib:name" xmlns:rib="http://www.oracle.com/retail/integration/rib/RibMessages"/>
+        <xs:element ref="rib:value" xmlns:rib="http://www.oracle.com/retail/integration/rib/RibMessages"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="publishTime" type="xs:string"/>
+  <xs:element name="messageData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="POScheduleDesc:POScheduleDesc"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="customData" type="xs:string"/>
+  <xs:element name="customFlag" type="xs:string"/>
+  <xs:element name="ribMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="rib:family" xmlns:rib="http://www.oracle.com/retail/integration/rib/RibMessages"/>
+        <xs:element ref="rib:type" xmlns:rib="http://www.oracle.com/retail/integration/rib/RibMessages"/>
+        <xs:element ref="rib:id" xmlns:rib="http://www.oracle.com/retail/integration/rib/RibMessages"/>
+        <xs:element ref="rib:ribmessageID" xmlns:rib="http://www.oracle.com/retail/integration/rib/RibMessages"/>
+        <xs:element ref="rib:routingInfo" xmlns:rib="http://www.oracle.com/retail/integration/rib/RibMessages"/>
+        <xs:element ref="rib:publishTime" xmlns:rib="http://www.oracle.com/retail/integration/rib/RibMessages"/>
+        <xs:element ref="rib:messageData" xmlns:rib="http://www.oracle.com/retail/integration/rib/RibMessages"/>
+        <xs:element ref="rib:customData" xmlns:rib="http://www.oracle.com/retail/integration/rib/RibMessages"/>
+        <xs:element ref="rib:customFlag" xmlns:rib="http://www.oracle.com/retail/integration/rib/RibMessages"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RibMessages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="rib:ribMessage" xmlns:rib="http://www.oracle.com/retail/integration/rib/RibMessages"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

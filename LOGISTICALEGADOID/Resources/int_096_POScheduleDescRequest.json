@@ -1,0 +1,28 @@
+{
+  "po" : {
+    "ExtOfPOScheduleDesc" : {
+      "EXFNFInfoDescList" : {
+        "EXFNFInfoDesc" : [ {
+          "EXFNFInfoDtlList" : null,
+          "chaveNotaFiscal" : "chaveNotaFiscal45",
+          "cnpjFornecedor" : "cnpjFornecedor46",
+          "dataEmissaoNota" : "2017-06-26T14:54:49.818",
+          "numeroNotaFiscal" : 47,
+          "numeroSerieNotaFiscal" : 48
+        } ]
+      }
+    },
+    "POScheduleList" : {
+      "POSchedule" : [ {
+        "POScheduleDtl" : {
+          "QuantidadeProduto" : 49,
+          "codigoProduto" : 50
+        },
+        "codigoPedido" : 51,
+        "tipoRequisicao" : "tipoRequisicao52"
+      } ]
+    },
+    "codigoAgendamento" : 53,
+    "codigoFilial" : 54
+  }
+}
