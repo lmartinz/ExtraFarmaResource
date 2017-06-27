@@ -4,8 +4,8 @@
   "tipoLoja" : "tipoLoja3",
   "numeroPedido" : "numeroPedido4",
   "statusOrdemEstoque" : "statusOrdemEstoque5",
-  "ModificarOrdemEstoqueDetalhe" : [ {
-    "ModificarOrdemEstoqueRequestItem" : {
+  "PedidoTransferenciaMercadoriaDetalhe" : [ {
+    "PedidoTransferenciaMercadoriaRequestItem" : {
       "codigoLocalRecebimento" : 6,
       "tipoLocal" : "tipoLocal7",
       "tipoLoja" : "tipoLoja8",

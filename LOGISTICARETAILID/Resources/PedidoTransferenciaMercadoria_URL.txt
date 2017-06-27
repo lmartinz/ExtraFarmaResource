@@ -1,1 +1,0 @@
-http://<host>:<port>/<proxy-uri>/logistica/v1/transferência/modificarOrdemEstoque
