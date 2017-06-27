@@ -4,12 +4,12 @@
   "codigoLocalOrigem" : 3,
   "tipoLocalDestino" : "tipoLocalDestino4",
   "codigoLocalDestino" : 5,
-  "dataEntregaDestino" : "2017-06-16T11:42:09.798",
+  "dataEntregaDestino" : "2017-06-27T14:51:12.665",
   "tipoTransferencia" : "tipoTransferencia6",
   "status" : "status7",
   "codigoUsuario" : 8,
   "comentario" : "comentario9",
-  "TransferenciaDetalheList" : {
+  "CriarTransferenciaDetalhe" : {
     "codigoProduto" : 10,
     "quantidadeProduto" : 11
   }
