@@ -27,7 +27,6 @@
       <string v="oracle.jdeveloper.model.PathsConfiguration/ResourceBundlesContentSet"/>
    </list>
    <list n="listOfChildren">
-      <hash><url n="URL" path="LOGISTICAID/LOGISTICAID.jpr"/></hash>
       <hash><url n="URL" path="LOGISTICALEGADOID/LOGISTICALEGADOID.jpr"/></hash>
       <hash><url n="URL" path="LOGISTICARETAILID/LOGISTICARETAILID.jpr"/></hash>
       <hash><url n="URL" path="PedidoReservaIntegracaoServico/PedidoReservaIntegracaoServico.jpr"/></hash>
