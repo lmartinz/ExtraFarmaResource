@@ -207,10 +207,15 @@
             <value n="profileClass" v="oracle.tip.tools.ide.fabric.deploy.sar.SarProfile"/>
             <value n="profileName" v="LOGISTICARETAILID"/>
          </hash>
+         <hash n="ServiceBus1">
+            <value n="profileClass" v="SbProjectDeployProfile"/>
+            <value n="profileName" v="ServiceBus1"/>
+         </hash>
       </hash>
       <list n="profileList">
          <string v="LOGISTICARETAILID"/>
          <string v="LOGISTICARETAILID"/>
+         <string v="ServiceBus1"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.maven.compiler.MavenConfiguration">

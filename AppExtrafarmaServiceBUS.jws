@@ -38,9 +38,14 @@
             <value n="profileClass" v="SbAppDeployProfile"/>
             <value n="profileName" v="AppExtrafarmaServiceBUS"/>
          </hash>
+         <hash n="ServiceBus1">
+            <value n="profileClass" v="SbProjectDeployProfile"/>
+            <value n="profileName" v="ServiceBus1"/>
+         </hash>
       </hash>
       <list n="profileList">
          <string v="AppExtrafarmaServiceBUS"/>
+         <string v="ServiceBus1"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.maven.compiler.MavenConfiguration">
@@ -49,6 +54,6 @@
       </hash>
    </hash>
    <hash n="oracle.sb.tooling.ide.core.internal.application.SbApplication">
-      <value n="configContextSessionName" v="OSB-IDE_build_1498586184801"/>
+      <value n="configContextSessionName" v="OSB-IDE_build_1498600373699"/>
    </hash>
 </jws:workspace>
