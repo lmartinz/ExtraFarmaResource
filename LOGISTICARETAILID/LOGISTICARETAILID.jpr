@@ -104,6 +104,7 @@
       <list n="technologyScope">
          <string v="ADFm"/>
          <string v="JAVASCRIPT"/>
+         <string v="SOA"/>
          <string v="ServiceBusTechnology"/>
          <string v="WSDL"/>
          <string v="WSPolicy"/>
@@ -255,7 +256,7 @@
             <value n="name" v="Default"/>
             <hash n="oracle.jdevimpl.runner.debug.DebugConfiguration">
                <value n="promptForRemoteDebugging" v="false"/>
-               <value n="remoteParameter:SOA:hostname" v="192.168.0.12"/>
+               <value n="remoteParameter:SOA:hostname" v="IBM486"/>
                <value n="remoteParameter:SOA:port" v="5004"/>
                <value n="remoteProtocol" v="SOA"/>
             </hash>

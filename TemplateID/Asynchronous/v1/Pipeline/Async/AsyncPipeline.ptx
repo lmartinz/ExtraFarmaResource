@@ -72,7 +72,7 @@
             <con:stage id="_StageId-N3f57fff4.67ea00d2.0.15cdc0d8d97.N7ca3" name="StageReplay">
                 <con:context/>
                 <con:actions>
-                    <con2:reply>
+                    <con2:reply isError="true">
                         <con2:id>_ActionId-N3f57fff4.67ea00d2.0.15cdc0d8d97.N7ca2</con2:id>
                     </con2:reply>
                 </con:actions>

@@ -1,0 +1,34 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns:tns="http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1">
+            
+    <xsd:include schemaLocation="InformacoesAdicionais.xsd"/>
+    <xsd:include schemaLocation="DevolucaoDetalhe.xsd"/>
+    <xsd:complexType name="NotificarDevolucaoMercadoriaRequestType">
+      <xsd:sequence>
+        <xsd:element name="codigoFilial" type="xsd:integer" minOccurs="1" maxOccurs="1"/>
+	<xsd:element name="numeroPedido" type="xsd:integer" minOccurs="1" maxOccurs="1"/>
+	<xsd:element name="codigoFornecedor" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+	<xsd:element name="endereco1" type="xsd:string"/>
+	<xsd:element name="endereco2" type="xsd:string"/>
+	<xsd:element name="endereco3" type="xsd:string"/>
+	<xsd:element name="estado" type="xsd:string"/>
+	<xsd:element name="cidade" type="xsd:string"/>
+        <xsd:element name="cep" type="xsd:string"/>
+	<xsd:element name="dataCriacao" type="xsd:dateTime"/>
+	<xsd:element name="comentarios" type="xsd:string"/>
+	<xsd:element name="numeroPedidoFornecedor" type="xsd:integer"/>
+	<xsd:element name="DevolucaoDetalheList" type="tns:DevolucaoDetalheType" maxOccurs="unbounded" minOccurs="0"/>
+	<xsd:element name="InformacoesAdicionaisList" type="tns:InformacoesAdicionaisType" maxOccurs="unbounded" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+	
+    <xsd:element name="NotificarDevolucaoMercadoriaRequest" type="tns:NotificarDevolucaoMercadoriaRequestType"/>
+    <xsd:element name="NotificarDevolucaoMercadoriaResponse">
+      <xsd:complexType>
+        <xsd:sequence>
+          <xsd:element name="out" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

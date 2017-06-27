@@ -1,0 +1,13 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns:tns="http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1">
+        <xsd:include schemaLocation="LoteItemDetalhe.xsd"/>
+	<xsd:complexType name="LoteItemType">
+		<xsd:sequence>
+			<xsd:element name="codigoVolumeProduto" type="xsd:integer"/>
+			<xsd:element name="LoteItemDetalheList" type="tns:LoteItemDetalheType" maxOccurs="unbounded" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:element name="LoteItem" type="tns:LoteItemType"></xsd:element>
+</xsd:schema>
