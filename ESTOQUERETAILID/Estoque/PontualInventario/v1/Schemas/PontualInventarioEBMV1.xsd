@@ -1,0 +1,19 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/estoque/PontualInventario/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.ultra.com.br/estoque/PontualInventario/v1">
+            
+    <xsd:include schemaLocation="AjusteDetalhe.xsd"/>
+    <xsd:complexType name="AjustePontualInventarioRequestType">
+      <xsd:sequence>
+        <xsd:element name="codigoFilial" type="xsd:integer" minOccurs="1" maxOccurs="1"/>
+								<xsd:element name="AjusteDetalheList" type="tns:AjusteDetalheType" maxOccurs="unbounded" minOccurs="1"/>
+      </xsd:sequence>
+    </xsd:complexType>
+	
+    <xsd:element name="AjustePontualInventarioRequest" type="tns:AjustePontualInventarioRequestType"/>
+    <xsd:element name="AjustePontualInventarioResponse">
+      <xsd:complexType>
+        <xsd:sequence>
+          <xsd:element name="out" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

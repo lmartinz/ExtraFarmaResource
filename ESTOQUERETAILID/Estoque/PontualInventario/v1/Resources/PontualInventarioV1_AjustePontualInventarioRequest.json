@@ -1,0 +1,21 @@
+{
+  "codigoFilial" : 65,
+  "AjusteDetalheList" : [ {
+    "codigoProduto" : 66,
+    "codigoMotivoAjuste" : 67,
+    "quantidadeAjuste" : 68,
+    "statusDeInventario" : "statusDeInventario69",
+    "statusParaInventario" : "statusParaInventario70",
+    "codigoUsuario" : "codigoUsuario71",
+    "dataAjuste" : "2017-06-28T13:26:46.571",
+    "ItemList" : [ {
+      "LoteItemList" : [ {
+        "LoteItemDetalheList" : [ {
+          "codigoLote" : "codigoLote72",
+          "dataValidade" : "2017-06-28T13:26:46.572",
+          "quantidadeLote" : 73
+        } ]
+      } ]
+    } ]
+  } ]
+}

@@ -1,0 +1,10 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/estoque/PontualInventario/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.ultra.com.br/estoque/PontualInventario/v1">
+        <xsd:include schemaLocation="LoteItem.xsd"/>
+	<xsd:complexType name="ItemType">
+		<xsd:sequence>
+			<xsd:element name="LoteItemList" type="tns:LoteItemType" maxOccurs="unbounded" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:element name="Item" type="tns:ItemType"/>
+</xsd:schema>
