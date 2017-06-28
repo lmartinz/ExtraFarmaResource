@@ -4,7 +4,7 @@
     <xsd:complexType name="AjustePontualInventarioRequestType">
       <xsd:sequence>
         <xsd:element name="codigoFilial" type="xsd:integer" minOccurs="1" maxOccurs="1"/>
-								<xsd:element name="AjusteDetalheList" type="tns:AjusteDetalheType" maxOccurs="unbounded" minOccurs="1"/>
+        <xsd:element name="AjusteDetalheList" type="tns:AjusteDetalheType" maxOccurs="unbounded" minOccurs="1"/>
       </xsd:sequence>
     </xsd:complexType>
 	
