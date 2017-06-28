@@ -38,8 +38,8 @@
                                 <con:placeholder-override id="PlaceholderID_N3f57fff4.67ea00d2.0.15cdc0d8d97.N7e8d"/>
                                 <con:action-override id="_ActionId-N3f57fff3.5821b348.0.15ce17d9ef1.N7aeb">
                                     <con1:route xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config">
-                                        <con1:service ref="LOGISTICARETAILID/Logistica/PedidoTransferenciaMercadoria/v1/ProxyService/PedidoTransferenciaMercadoriaV1" xsi:type="ref:ProxyRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
-                                        <con1:operation>ModificarPedidoTransferenciaMercadoria</con1:operation>
+                                        <con1:service ref="LOGISTICARETAILID/Logistica/PedidoTransferenciaMercadoria/v1/BusinessService/PedidoTransferenciaMercadoriaBPELV1" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con1:operation passThrough="true"/>
                                     </con1:route>
                                 </con:action-override>
                             </con:template-overrides>

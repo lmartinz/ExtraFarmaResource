@@ -1,0 +1,20 @@
+{
+  "codigoLocalDestino" : "codigoLocalDestino1",
+  "tipoLocalDestino" : "tipoLocalDestino2",
+  "codigoLocalOrigem" : "codigoLocalOrigem3",
+  "tipoLocalOrigem" : "tipoLocalOrigem4",
+  "numeroPedido" : "numeroPedido5",
+  "qtdCaixa" : 6,
+  "dataLiberacao" : "2017-06-28",
+  "ExpedicaoDetalheList" : [ {
+    "numeroDistribuicao" : "numeroDistribuicao7",
+    "tipoDistribuicao" : "tipoDistribuicao8",
+    "ContainerList" : {
+      "codigoContainer" : "codigoContainer9",
+      "ItemList" : {
+        "codigoProduto" : "codigoProduto10",
+        "quantidadeProduto" : 11
+      }
+    }
+  } ]
+}

@@ -1,0 +1,11 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/logistica/ExpedicaoMercadoria/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://service.ultra.com.br/logistica/ExpedicaoMercadoria/v1">
+  <xsd:complexType name="ItemType">
+    <xsd:sequence>
+      <xsd:element name="codigoProduto" type="xsd:string"/>
+      <xsd:element name="quantidadeProduto" type="xsd:int"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Item" type="tns:ItemType"></xsd:element>
+</xsd:schema>

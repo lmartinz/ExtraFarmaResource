@@ -1,0 +1,13 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/logistica/ExpedicaoMercadoria/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://service.ultra.com.br/logistica/ExpedicaoMercadoria/v1">
+  <xsd:include schemaLocation="Container.xsd"/>
+  <xsd:complexType name="ExpedicaoDetalheType">
+    <xsd:sequence>
+      <xsd:element name="numeroDistribuicao" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="tipoDistribuicao" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="ContainerList" type="tns:containerType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ExpedicaoDetalhe" type="tns:ExpedicaoDetalheType"/>
+</xsd:schema>

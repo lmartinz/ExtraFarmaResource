@@ -2,10 +2,10 @@
 <con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <con:coreEntry>
         <con:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType">
-            <con:wsdl ref="LOGISTICARETAILID/Logistica/RecebimentoMercadoria/v1/WSDL/RecebimentoMercadoriaV1"/>
+            <con:wsdl ref="LOGISTICARETAILID/Logistica/ExpedicaoMercadoria/v1/WSDL/ExpedicaoMercadoriaV1"/>
             <con:binding>
-                <con:name>RecebimentoMercadoriaPortBinding</con:name>
-                <con:namespace>http://service.ultra.com.br/logistica/RecebimentoMercadoria/v1</con:namespace>
+                <con:name>ExpedicaoMercadoriaPortBinding</con:name>
+                <con:namespace>http://service.ultra.com.br/logistica/ExpedicaoMercadoria/v1</con:namespace>
             </con:binding>
         </con:binding>
         <con:xqConfiguration>
@@ -17,28 +17,28 @@
             <con:template-branch-override id="_FlowId-N3f57fff4.67ea00d2.0.15cdc0d8d97.N7f34">
                 <con:branch-node>
                     <con:branch-table>
-                        <con:branch name="notificarRecebimentoMercadoria">
+                        <con:branch name="notificarExpedicaoMercadoria">
                             <con:operator>equals</con:operator>
                             <con:value/>
                             <con:template-overrides>
                                 <con:action-override id="_ActionId-N3f57fff4.67ea00d2.0.15cdc0d8d97.N7ec9">
                                     <con1:validate xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
-                                        <con1:wsdl ref="LOGISTICARETAILID/Logistica/RecebimentoMercadoria/v1/WSDL/RecebimentoMercadoriaV1"/>
+                                        <con1:wsdl ref="LOGISTICARETAILID/Logistica/ExpedicaoMercadoria/v1/WSDL/ExpedicaoMercadoriaV1"/>
                                         <con1:schemaType xmlns:v1="http://service.ultra.com.br/infcorp/LogIntegration/v1">v1:MetaInformacaoType</con1:schemaType>
                                         <con1:varName>header</con1:varName>
                                     </con1:validate>
                                 </con:action-override>
                                 <con:action-override id="_ActionId-N3f57fff4.67ea00d2.0.15cdc0d8d97.N7ec6">
                                     <con1:validate xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
-                                        <con1:wsdl ref="LOGISTICARETAILID/Logistica/RecebimentoMercadoria/v1/WSDL/RecebimentoMercadoriaV1"/>
-                                        <con1:schemaElement xmlns:v1="http://service.ultra.com.br/logistica/RecebimentoMercadoria/v1">v1:NotificarRecebimentoMercadoriaRequest</con1:schemaElement>
+                                        <con1:wsdl ref="LOGISTICARETAILID/Logistica/ExpedicaoMercadoria/v1/WSDL/ExpedicaoMercadoriaV1"/>
+                                        <con1:schemaElement xmlns:v1="http://service.ultra.com.br/logistica/ExpedicaoMercadoria/v1">v1:NotificarExpedicaoMercadoriaRequest</con1:schemaElement>
                                     </con1:validate>
                                 </con:action-override>
                                 <con:placeholder-override id="PlaceholderID_N3f57fff3.5821b348.0.15ce17d9ef1.N7aef"/>
                                 <con:placeholder-override id="PlaceholderID_N3f57fff4.67ea00d2.0.15cdc0d8d97.N7e8d"/>
                                 <con:action-override id="_ActionId-N3f57fff3.5821b348.0.15ce17d9ef1.N7aeb">
                                     <con1:route xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config">
-                                        <con1:service ref="LOGISTICARETAILID/Logistica/RecebimentoMercadoria/v1/BusinessService/RecebimentoMercadoriaBPELV1" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con1:service ref="LOGISTICARETAILID/Logistica/ExpedicaoMercadoria/v1/BusinessService/ExpedicaoMercadoriaBPELV1" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
                                         <con1:operation passThrough="true"/>
                                     </con1:route>
                                 </con:action-override>
