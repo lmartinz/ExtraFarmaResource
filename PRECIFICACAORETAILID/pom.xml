@@ -3,18 +3,18 @@
 
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>com.oracle.servicebus</groupId>
+        <artifactId>sbar-project-common</artifactId>
+        <version>12.2.1-1-0</version>
+    </parent>
+
     <groupId>AppExtrafarmaServiceBUS</groupId>
-    <artifactId>AppExtrafarmaServiceBUS</artifactId>
+    <artifactId>PRECIFICACAORETAILID</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <packaging>pom</packaging>
+    <packaging>sbar</packaging>
 
-    <modules>
-        <module>System</module>
-        <module>LOGISTICALEGADOID</module>
-        <module>ESTOQUERETAILID</module>
-        <module>FISCALRETAILID</module>
-        <module>PRECIFICACAORETAILID</module>
-    </modules>
+    <description/>
 
 </project>

@@ -1,0 +1,29 @@
+<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.5.-->
+<xs:schema version="1.0" targetNamespace="http://www.oracle.com/retail/rms/integration/services/InventoryDetailService/v1" xmlns:tns="http://www.oracle.com/retail/rms/integration/services/InventoryDetailService/v1" xmlns:ns2="http://www.oracle.com/retail/integration/base/bo/InvAvailColDesc/v1" xmlns:ns1="http://www.oracle.com/retail/integration/base/bo/InvAvailCriVo/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/InvAvailCriVo/v1" schemaLocation="InventoryDetailService4.xsd"/>
+   <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/InvAvailColDesc/v1" schemaLocation="InventoryDetailService5.xsd"/>
+   <xs:element name="lookupInvAvailCriVo" type="tns:lookupInvAvailCriVo"/>
+   <xs:element name="lookupInvAvailCriVoResponse" type="tns:lookupInvAvailCriVoResponse"/>
+   <xs:element name="ping" type="tns:ping"/>
+   <xs:element name="pingResponse" type="tns:pingResponse"/>
+   <xs:complexType name="ping">
+      <xs:sequence>
+         <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="pingResponse">
+      <xs:sequence>
+         <xs:element name="return" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lookupInvAvailCriVo">
+      <xs:sequence>
+         <xs:element ref="ns1:InvAvailCriVo" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lookupInvAvailCriVoResponse">
+      <xs:sequence>
+         <xs:element ref="ns2:InvAvailColDesc" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>
