@@ -1,0 +1,34 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1"
+            targetNamespace="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1"
+            elementFormDefault="qualified">
+  <xsd:include schemaLocation="NFSaidaDetalhe.xsd"/>
+  <xsd:complexType name="CriarNFSaidaMercadoriaRequestType">
+    <xsd:sequence>
+      <xsd:element name="codigoLocalDestino" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="tipoLocalDestino" type="xsd:string"/>
+      <xsd:element name="codigoLocalOrigem" type="xsd:string"/>
+      <xsd:element name="tipoLocalOrigem" type="xsd:string"/>
+      <xsd:element name="numeroPedidoCliente" type="xsd:string"/>
+      <xsd:element name="tipoPedidoTransferencia" type="xsd:string"/>
+      <xsd:element name="quantidadeCaixasPedido" type="xsd:int"/>
+      <xsd:element name="identificacaoTransferencia" type="xsd:string"/>
+      <xsd:element name="dataTransferencia" type="xsd:date"/>
+      <xsd:element name="codigoIdentificacaoTransportadora" type="xsd:string"/>
+      <xsd:element name="codigoNivelServicoTransportadora" type="xsd:string"/>
+      <xsd:element name="codigoIdentificacaoImpressora" type="xsd:string"/>
+      <xsd:element name="IdentificacaoImpressaoRequerida" type="xsd:string"/>
+      <xsd:element name="IdentificacaiEntregaDomicilio" type="xsd:string"/>
+      <xsd:element name="NFSaidaDetalheList" type="tns:NFSaidaDetalheType" maxOccurs="unbounded" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="CriarNFSaidaMercadoriaRequest"
+               type="tns:CriarNFSaidaMercadoriaRequestType"/>
+  <xsd:element name="CriarNFSaidaMercadoriaResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="out" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

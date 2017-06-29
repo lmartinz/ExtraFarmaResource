@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:ns="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1"
+            targetNamespace="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1"
+            elementFormDefault="qualified">
+  <xsd:complexType name="ItemType">
+    <xsd:sequence>
+      <xsd:element name="codigoProduto" type="xsd:string"/>
+      <xsd:element name="quantidadeProduto" type="xsd:int"/>
+      <xsd:element name="percentagemDescontoItem" type="xsd:decimal"/>
+      <xsd:element name="codigoLote" type="xsd:string"/>
+      <xsd:element name="dataExpiracaoLote" type="xsd:date"/>
+      <xsd:element name="quantidadeLote" type="xsd:int"/>
+      <xsd:element name="codigoEmeiItem" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="NotaFiscalSaidaItemType" type="ns:ItemType"/>
+</xsd:schema>

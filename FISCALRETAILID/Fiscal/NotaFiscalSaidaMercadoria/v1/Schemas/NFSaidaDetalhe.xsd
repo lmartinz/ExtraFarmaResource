@@ -1,0 +1,15 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1"
+            targetNamespace="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1" elementFormDefault="qualified">
+  <xsd:include schemaLocation="CaixasNotaFiscalSaida.xsd"/>
+  <xsd:complexType name="NFSaidaDetalheType">
+    <xsd:sequence>
+      <xsd:element name="codigoItemPedidoTransferencia" type="xsd:string"/>
+      <xsd:element name="tipoItemPedidoTransferencia" type="xsd:string"/>
+      <xsd:element name="codigoItemPedidoCliente" type="xsd:string"/>
+      <xsd:element name="tipoItemPedidoCliente" type="xsd:string"/>
+      <xsd:element name="tipoClienteDireto" type="xsd:string"/>
+      <xsd:element name="CaixasNotaFiscalSaidaList" type="tns:CaixasNotaFiscalSaidaType" maxOccurs="unbounded" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

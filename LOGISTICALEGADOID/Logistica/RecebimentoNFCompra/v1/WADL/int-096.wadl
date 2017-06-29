@@ -1,0 +1,489 @@
+
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns="http://wadl.dev.java.net/2009/02">
+    <doc title="api" />
+    <resources base="http://localhost">
+            <resource path="erp-imifarma/v1/recebimento/cd/agendamento">
+                <doc title="erp-imifarma/v1/recebimento/cd/agendamento" /> 
+                <method name="POST">
+                    
+                        <request>
+                                                            <representation mediaType="application/json">
+                                    <doc>{
+  &quot;codigoAgendamento&quot;: 1,
+  &quot;codigoFilial&quot;: 2,
+  &quot;AgendamentoList&quot;: [
+    {
+      &quot;codigoPedido&quot;: 1,
+      &quot;tipoRequisicao&quot;: &quot;sample string 2&quot;,
+      &quot;AgendamentoDetalhe&quot;: {
+        &quot;codigoProduto&quot;: 1,
+        &quot;QuantidadeProduto&quot;: 2
+      }
+    },
+    {
+      &quot;codigoPedido&quot;: 1,
+      &quot;tipoRequisicao&quot;: &quot;sample string 2&quot;,
+      &quot;AgendamentoDetalhe&quot;: {
+        &quot;codigoProduto&quot;: 1,
+        &quot;QuantidadeProduto&quot;: 2
+      }
+    }
+  ],
+  &quot;DetalheNotaFiscal&quot;: {
+    &quot;NotaFiscalList&quot;: [
+      {
+        &quot;numeroNotaFiscal&quot;: 1,
+        &quot;numeroSerieNotaFiscal&quot;: 2,
+        &quot;cnpjFornecedor&quot;: &quot;sample string 3&quot;,
+        &quot;dataEmissaoNota&quot;: &quot;2017-06-29T14:40:52.6450636-03:00&quot;,
+        &quot;chaveNotaFiscal&quot;: &quot;sample string 5&quot;,
+        &quot;ProdutoList&quot;: [
+          {
+            &quot;codigoProduto&quot;: 1,
+            &quot;QuantidadeNotaFiscal&quot;: 2,
+            &quot;LoteList&quot;: [
+              {
+                &quot;loteProduto&quot;: &quot;sample string 1&quot;,
+                &quot;dataFabricacao&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;dataValidade&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;quantidadeLote&quot;: 4
+              },
+              {
+                &quot;loteProduto&quot;: &quot;sample string 1&quot;,
+                &quot;dataFabricacao&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;dataValidade&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;quantidadeLote&quot;: 4
+              }
+            ]
+          },
+          {
+            &quot;codigoProduto&quot;: 1,
+            &quot;QuantidadeNotaFiscal&quot;: 2,
+            &quot;LoteList&quot;: [
+              {
+                &quot;loteProduto&quot;: &quot;sample string 1&quot;,
+                &quot;dataFabricacao&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;dataValidade&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;quantidadeLote&quot;: 4
+              },
+              {
+                &quot;loteProduto&quot;: &quot;sample string 1&quot;,
+                &quot;dataFabricacao&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;dataValidade&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;quantidadeLote&quot;: 4
+              }
+            ]
+          }
+        ]
+      },
+      {
+        &quot;numeroNotaFiscal&quot;: 1,
+        &quot;numeroSerieNotaFiscal&quot;: 2,
+        &quot;cnpjFornecedor&quot;: &quot;sample string 3&quot;,
+        &quot;dataEmissaoNota&quot;: &quot;2017-06-29T14:40:52.6450636-03:00&quot;,
+        &quot;chaveNotaFiscal&quot;: &quot;sample string 5&quot;,
+        &quot;ProdutoList&quot;: [
+          {
+            &quot;codigoProduto&quot;: 1,
+            &quot;QuantidadeNotaFiscal&quot;: 2,
+            &quot;LoteList&quot;: [
+              {
+                &quot;loteProduto&quot;: &quot;sample string 1&quot;,
+                &quot;dataFabricacao&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;dataValidade&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;quantidadeLote&quot;: 4
+              },
+              {
+                &quot;loteProduto&quot;: &quot;sample string 1&quot;,
+                &quot;dataFabricacao&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;dataValidade&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;quantidadeLote&quot;: 4
+              }
+            ]
+          },
+          {
+            &quot;codigoProduto&quot;: 1,
+            &quot;QuantidadeNotaFiscal&quot;: 2,
+            &quot;LoteList&quot;: [
+              {
+                &quot;loteProduto&quot;: &quot;sample string 1&quot;,
+                &quot;dataFabricacao&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;dataValidade&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;quantidadeLote&quot;: 4
+              },
+              {
+                &quot;loteProduto&quot;: &quot;sample string 1&quot;,
+                &quot;dataFabricacao&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;dataValidade&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;quantidadeLote&quot;: 4
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}</doc>
+                                </representation>
+                                <representation mediaType="text/json">
+                                    <doc>{
+  &quot;codigoAgendamento&quot;: 1,
+  &quot;codigoFilial&quot;: 2,
+  &quot;AgendamentoList&quot;: [
+    {
+      &quot;codigoPedido&quot;: 1,
+      &quot;tipoRequisicao&quot;: &quot;sample string 2&quot;,
+      &quot;AgendamentoDetalhe&quot;: {
+        &quot;codigoProduto&quot;: 1,
+        &quot;QuantidadeProduto&quot;: 2
+      }
+    },
+    {
+      &quot;codigoPedido&quot;: 1,
+      &quot;tipoRequisicao&quot;: &quot;sample string 2&quot;,
+      &quot;AgendamentoDetalhe&quot;: {
+        &quot;codigoProduto&quot;: 1,
+        &quot;QuantidadeProduto&quot;: 2
+      }
+    }
+  ],
+  &quot;DetalheNotaFiscal&quot;: {
+    &quot;NotaFiscalList&quot;: [
+      {
+        &quot;numeroNotaFiscal&quot;: 1,
+        &quot;numeroSerieNotaFiscal&quot;: 2,
+        &quot;cnpjFornecedor&quot;: &quot;sample string 3&quot;,
+        &quot;dataEmissaoNota&quot;: &quot;2017-06-29T14:40:52.6450636-03:00&quot;,
+        &quot;chaveNotaFiscal&quot;: &quot;sample string 5&quot;,
+        &quot;ProdutoList&quot;: [
+          {
+            &quot;codigoProduto&quot;: 1,
+            &quot;QuantidadeNotaFiscal&quot;: 2,
+            &quot;LoteList&quot;: [
+              {
+                &quot;loteProduto&quot;: &quot;sample string 1&quot;,
+                &quot;dataFabricacao&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;dataValidade&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;quantidadeLote&quot;: 4
+              },
+              {
+                &quot;loteProduto&quot;: &quot;sample string 1&quot;,
+                &quot;dataFabricacao&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;dataValidade&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;quantidadeLote&quot;: 4
+              }
+            ]
+          },
+          {
+            &quot;codigoProduto&quot;: 1,
+            &quot;QuantidadeNotaFiscal&quot;: 2,
+            &quot;LoteList&quot;: [
+              {
+                &quot;loteProduto&quot;: &quot;sample string 1&quot;,
+                &quot;dataFabricacao&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;dataValidade&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;quantidadeLote&quot;: 4
+              },
+              {
+                &quot;loteProduto&quot;: &quot;sample string 1&quot;,
+                &quot;dataFabricacao&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;dataValidade&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;quantidadeLote&quot;: 4
+              }
+            ]
+          }
+        ]
+      },
+      {
+        &quot;numeroNotaFiscal&quot;: 1,
+        &quot;numeroSerieNotaFiscal&quot;: 2,
+        &quot;cnpjFornecedor&quot;: &quot;sample string 3&quot;,
+        &quot;dataEmissaoNota&quot;: &quot;2017-06-29T14:40:52.6450636-03:00&quot;,
+        &quot;chaveNotaFiscal&quot;: &quot;sample string 5&quot;,
+        &quot;ProdutoList&quot;: [
+          {
+            &quot;codigoProduto&quot;: 1,
+            &quot;QuantidadeNotaFiscal&quot;: 2,
+            &quot;LoteList&quot;: [
+              {
+                &quot;loteProduto&quot;: &quot;sample string 1&quot;,
+                &quot;dataFabricacao&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;dataValidade&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;quantidadeLote&quot;: 4
+              },
+              {
+                &quot;loteProduto&quot;: &quot;sample string 1&quot;,
+                &quot;dataFabricacao&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;dataValidade&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;quantidadeLote&quot;: 4
+              }
+            ]
+          },
+          {
+            &quot;codigoProduto&quot;: 1,
+            &quot;QuantidadeNotaFiscal&quot;: 2,
+            &quot;LoteList&quot;: [
+              {
+                &quot;loteProduto&quot;: &quot;sample string 1&quot;,
+                &quot;dataFabricacao&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;dataValidade&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;quantidadeLote&quot;: 4
+              },
+              {
+                &quot;loteProduto&quot;: &quot;sample string 1&quot;,
+                &quot;dataFabricacao&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;dataValidade&quot;: &quot;2017-06-29T14:40:52.6460645-03:00&quot;,
+                &quot;quantidadeLote&quot;: 4
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}</doc>
+                                </representation>
+                                <representation mediaType="application/xml">
+                                    <doc>&lt;RecebimentoFisicoCD xmlns:i=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://schemas.datacontract.org/2004/07/Integration.Wadl.Models.int_096&quot;&gt;
+  &lt;AgendamentoList&gt;
+    &lt;Agendamento&gt;
+      &lt;AgendamentoDetalhe&gt;
+        &lt;QuantidadeProduto&gt;2&lt;/QuantidadeProduto&gt;
+        &lt;codigoProduto&gt;1&lt;/codigoProduto&gt;
+      &lt;/AgendamentoDetalhe&gt;
+      &lt;codigoPedido&gt;1&lt;/codigoPedido&gt;
+      &lt;tipoRequisicao&gt;sample string 2&lt;/tipoRequisicao&gt;
+    &lt;/Agendamento&gt;
+    &lt;Agendamento&gt;
+      &lt;AgendamentoDetalhe&gt;
+        &lt;QuantidadeProduto&gt;2&lt;/QuantidadeProduto&gt;
+        &lt;codigoProduto&gt;1&lt;/codigoProduto&gt;
+      &lt;/AgendamentoDetalhe&gt;
+      &lt;codigoPedido&gt;1&lt;/codigoPedido&gt;
+      &lt;tipoRequisicao&gt;sample string 2&lt;/tipoRequisicao&gt;
+    &lt;/Agendamento&gt;
+  &lt;/AgendamentoList&gt;
+  &lt;DetalheNotaFiscal&gt;
+    &lt;NotaFiscalList&gt;
+      &lt;NotaFiscal&gt;
+        &lt;ProdutoList&gt;
+          &lt;Produto&gt;
+            &lt;LoteList&gt;
+              &lt;Lote&gt;
+                &lt;dataFabricacao&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataFabricacao&gt;
+                &lt;dataValidade&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataValidade&gt;
+                &lt;loteProduto&gt;sample string 1&lt;/loteProduto&gt;
+                &lt;quantidadeLote&gt;4&lt;/quantidadeLote&gt;
+              &lt;/Lote&gt;
+              &lt;Lote&gt;
+                &lt;dataFabricacao&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataFabricacao&gt;
+                &lt;dataValidade&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataValidade&gt;
+                &lt;loteProduto&gt;sample string 1&lt;/loteProduto&gt;
+                &lt;quantidadeLote&gt;4&lt;/quantidadeLote&gt;
+              &lt;/Lote&gt;
+            &lt;/LoteList&gt;
+            &lt;QuantidadeNotaFiscal&gt;2&lt;/QuantidadeNotaFiscal&gt;
+            &lt;codigoProduto&gt;1&lt;/codigoProduto&gt;
+          &lt;/Produto&gt;
+          &lt;Produto&gt;
+            &lt;LoteList&gt;
+              &lt;Lote&gt;
+                &lt;dataFabricacao&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataFabricacao&gt;
+                &lt;dataValidade&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataValidade&gt;
+                &lt;loteProduto&gt;sample string 1&lt;/loteProduto&gt;
+                &lt;quantidadeLote&gt;4&lt;/quantidadeLote&gt;
+              &lt;/Lote&gt;
+              &lt;Lote&gt;
+                &lt;dataFabricacao&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataFabricacao&gt;
+                &lt;dataValidade&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataValidade&gt;
+                &lt;loteProduto&gt;sample string 1&lt;/loteProduto&gt;
+                &lt;quantidadeLote&gt;4&lt;/quantidadeLote&gt;
+              &lt;/Lote&gt;
+            &lt;/LoteList&gt;
+            &lt;QuantidadeNotaFiscal&gt;2&lt;/QuantidadeNotaFiscal&gt;
+            &lt;codigoProduto&gt;1&lt;/codigoProduto&gt;
+          &lt;/Produto&gt;
+        &lt;/ProdutoList&gt;
+        &lt;chaveNotaFiscal&gt;sample string 5&lt;/chaveNotaFiscal&gt;
+        &lt;cnpjFornecedor&gt;sample string 3&lt;/cnpjFornecedor&gt;
+        &lt;dataEmissaoNota&gt;2017-06-29T14:40:52.6450636-03:00&lt;/dataEmissaoNota&gt;
+        &lt;numeroNotaFiscal&gt;1&lt;/numeroNotaFiscal&gt;
+        &lt;numeroSerieNotaFiscal&gt;2&lt;/numeroSerieNotaFiscal&gt;
+      &lt;/NotaFiscal&gt;
+      &lt;NotaFiscal&gt;
+        &lt;ProdutoList&gt;
+          &lt;Produto&gt;
+            &lt;LoteList&gt;
+              &lt;Lote&gt;
+                &lt;dataFabricacao&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataFabricacao&gt;
+                &lt;dataValidade&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataValidade&gt;
+                &lt;loteProduto&gt;sample string 1&lt;/loteProduto&gt;
+                &lt;quantidadeLote&gt;4&lt;/quantidadeLote&gt;
+              &lt;/Lote&gt;
+              &lt;Lote&gt;
+                &lt;dataFabricacao&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataFabricacao&gt;
+                &lt;dataValidade&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataValidade&gt;
+                &lt;loteProduto&gt;sample string 1&lt;/loteProduto&gt;
+                &lt;quantidadeLote&gt;4&lt;/quantidadeLote&gt;
+              &lt;/Lote&gt;
+            &lt;/LoteList&gt;
+            &lt;QuantidadeNotaFiscal&gt;2&lt;/QuantidadeNotaFiscal&gt;
+            &lt;codigoProduto&gt;1&lt;/codigoProduto&gt;
+          &lt;/Produto&gt;
+          &lt;Produto&gt;
+            &lt;LoteList&gt;
+              &lt;Lote&gt;
+                &lt;dataFabricacao&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataFabricacao&gt;
+                &lt;dataValidade&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataValidade&gt;
+                &lt;loteProduto&gt;sample string 1&lt;/loteProduto&gt;
+                &lt;quantidadeLote&gt;4&lt;/quantidadeLote&gt;
+              &lt;/Lote&gt;
+              &lt;Lote&gt;
+                &lt;dataFabricacao&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataFabricacao&gt;
+                &lt;dataValidade&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataValidade&gt;
+                &lt;loteProduto&gt;sample string 1&lt;/loteProduto&gt;
+                &lt;quantidadeLote&gt;4&lt;/quantidadeLote&gt;
+              &lt;/Lote&gt;
+            &lt;/LoteList&gt;
+            &lt;QuantidadeNotaFiscal&gt;2&lt;/QuantidadeNotaFiscal&gt;
+            &lt;codigoProduto&gt;1&lt;/codigoProduto&gt;
+          &lt;/Produto&gt;
+        &lt;/ProdutoList&gt;
+        &lt;chaveNotaFiscal&gt;sample string 5&lt;/chaveNotaFiscal&gt;
+        &lt;cnpjFornecedor&gt;sample string 3&lt;/cnpjFornecedor&gt;
+        &lt;dataEmissaoNota&gt;2017-06-29T14:40:52.6450636-03:00&lt;/dataEmissaoNota&gt;
+        &lt;numeroNotaFiscal&gt;1&lt;/numeroNotaFiscal&gt;
+        &lt;numeroSerieNotaFiscal&gt;2&lt;/numeroSerieNotaFiscal&gt;
+      &lt;/NotaFiscal&gt;
+    &lt;/NotaFiscalList&gt;
+  &lt;/DetalheNotaFiscal&gt;
+  &lt;codigoAgendamento&gt;1&lt;/codigoAgendamento&gt;
+  &lt;codigoFilial&gt;2&lt;/codigoFilial&gt;
+&lt;/RecebimentoFisicoCD&gt;</doc>
+                                </representation>
+                                <representation mediaType="text/xml">
+                                    <doc>&lt;RecebimentoFisicoCD xmlns:i=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://schemas.datacontract.org/2004/07/Integration.Wadl.Models.int_096&quot;&gt;
+  &lt;AgendamentoList&gt;
+    &lt;Agendamento&gt;
+      &lt;AgendamentoDetalhe&gt;
+        &lt;QuantidadeProduto&gt;2&lt;/QuantidadeProduto&gt;
+        &lt;codigoProduto&gt;1&lt;/codigoProduto&gt;
+      &lt;/AgendamentoDetalhe&gt;
+      &lt;codigoPedido&gt;1&lt;/codigoPedido&gt;
+      &lt;tipoRequisicao&gt;sample string 2&lt;/tipoRequisicao&gt;
+    &lt;/Agendamento&gt;
+    &lt;Agendamento&gt;
+      &lt;AgendamentoDetalhe&gt;
+        &lt;QuantidadeProduto&gt;2&lt;/QuantidadeProduto&gt;
+        &lt;codigoProduto&gt;1&lt;/codigoProduto&gt;
+      &lt;/AgendamentoDetalhe&gt;
+      &lt;codigoPedido&gt;1&lt;/codigoPedido&gt;
+      &lt;tipoRequisicao&gt;sample string 2&lt;/tipoRequisicao&gt;
+    &lt;/Agendamento&gt;
+  &lt;/AgendamentoList&gt;
+  &lt;DetalheNotaFiscal&gt;
+    &lt;NotaFiscalList&gt;
+      &lt;NotaFiscal&gt;
+        &lt;ProdutoList&gt;
+          &lt;Produto&gt;
+            &lt;LoteList&gt;
+              &lt;Lote&gt;
+                &lt;dataFabricacao&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataFabricacao&gt;
+                &lt;dataValidade&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataValidade&gt;
+                &lt;loteProduto&gt;sample string 1&lt;/loteProduto&gt;
+                &lt;quantidadeLote&gt;4&lt;/quantidadeLote&gt;
+              &lt;/Lote&gt;
+              &lt;Lote&gt;
+                &lt;dataFabricacao&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataFabricacao&gt;
+                &lt;dataValidade&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataValidade&gt;
+                &lt;loteProduto&gt;sample string 1&lt;/loteProduto&gt;
+                &lt;quantidadeLote&gt;4&lt;/quantidadeLote&gt;
+              &lt;/Lote&gt;
+            &lt;/LoteList&gt;
+            &lt;QuantidadeNotaFiscal&gt;2&lt;/QuantidadeNotaFiscal&gt;
+            &lt;codigoProduto&gt;1&lt;/codigoProduto&gt;
+          &lt;/Produto&gt;
+          &lt;Produto&gt;
+            &lt;LoteList&gt;
+              &lt;Lote&gt;
+                &lt;dataFabricacao&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataFabricacao&gt;
+                &lt;dataValidade&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataValidade&gt;
+                &lt;loteProduto&gt;sample string 1&lt;/loteProduto&gt;
+                &lt;quantidadeLote&gt;4&lt;/quantidadeLote&gt;
+              &lt;/Lote&gt;
+              &lt;Lote&gt;
+                &lt;dataFabricacao&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataFabricacao&gt;
+                &lt;dataValidade&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataValidade&gt;
+                &lt;loteProduto&gt;sample string 1&lt;/loteProduto&gt;
+                &lt;quantidadeLote&gt;4&lt;/quantidadeLote&gt;
+              &lt;/Lote&gt;
+            &lt;/LoteList&gt;
+            &lt;QuantidadeNotaFiscal&gt;2&lt;/QuantidadeNotaFiscal&gt;
+            &lt;codigoProduto&gt;1&lt;/codigoProduto&gt;
+          &lt;/Produto&gt;
+        &lt;/ProdutoList&gt;
+        &lt;chaveNotaFiscal&gt;sample string 5&lt;/chaveNotaFiscal&gt;
+        &lt;cnpjFornecedor&gt;sample string 3&lt;/cnpjFornecedor&gt;
+        &lt;dataEmissaoNota&gt;2017-06-29T14:40:52.6450636-03:00&lt;/dataEmissaoNota&gt;
+        &lt;numeroNotaFiscal&gt;1&lt;/numeroNotaFiscal&gt;
+        &lt;numeroSerieNotaFiscal&gt;2&lt;/numeroSerieNotaFiscal&gt;
+      &lt;/NotaFiscal&gt;
+      &lt;NotaFiscal&gt;
+        &lt;ProdutoList&gt;
+          &lt;Produto&gt;
+            &lt;LoteList&gt;
+              &lt;Lote&gt;
+                &lt;dataFabricacao&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataFabricacao&gt;
+                &lt;dataValidade&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataValidade&gt;
+                &lt;loteProduto&gt;sample string 1&lt;/loteProduto&gt;
+                &lt;quantidadeLote&gt;4&lt;/quantidadeLote&gt;
+              &lt;/Lote&gt;
+              &lt;Lote&gt;
+                &lt;dataFabricacao&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataFabricacao&gt;
+                &lt;dataValidade&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataValidade&gt;
+                &lt;loteProduto&gt;sample string 1&lt;/loteProduto&gt;
+                &lt;quantidadeLote&gt;4&lt;/quantidadeLote&gt;
+              &lt;/Lote&gt;
+            &lt;/LoteList&gt;
+            &lt;QuantidadeNotaFiscal&gt;2&lt;/QuantidadeNotaFiscal&gt;
+            &lt;codigoProduto&gt;1&lt;/codigoProduto&gt;
+          &lt;/Produto&gt;
+          &lt;Produto&gt;
+            &lt;LoteList&gt;
+              &lt;Lote&gt;
+                &lt;dataFabricacao&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataFabricacao&gt;
+                &lt;dataValidade&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataValidade&gt;
+                &lt;loteProduto&gt;sample string 1&lt;/loteProduto&gt;
+                &lt;quantidadeLote&gt;4&lt;/quantidadeLote&gt;
+              &lt;/Lote&gt;
+              &lt;Lote&gt;
+                &lt;dataFabricacao&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataFabricacao&gt;
+                &lt;dataValidade&gt;2017-06-29T14:40:52.6460645-03:00&lt;/dataValidade&gt;
+                &lt;loteProduto&gt;sample string 1&lt;/loteProduto&gt;
+                &lt;quantidadeLote&gt;4&lt;/quantidadeLote&gt;
+              &lt;/Lote&gt;
+            &lt;/LoteList&gt;
+            &lt;QuantidadeNotaFiscal&gt;2&lt;/QuantidadeNotaFiscal&gt;
+            &lt;codigoProduto&gt;1&lt;/codigoProduto&gt;
+          &lt;/Produto&gt;
+        &lt;/ProdutoList&gt;
+        &lt;chaveNotaFiscal&gt;sample string 5&lt;/chaveNotaFiscal&gt;
+        &lt;cnpjFornecedor&gt;sample string 3&lt;/cnpjFornecedor&gt;
+        &lt;dataEmissaoNota&gt;2017-06-29T14:40:52.6450636-03:00&lt;/dataEmissaoNota&gt;
+        &lt;numeroNotaFiscal&gt;1&lt;/numeroNotaFiscal&gt;
+        &lt;numeroSerieNotaFiscal&gt;2&lt;/numeroSerieNotaFiscal&gt;
+      &lt;/NotaFiscal&gt;
+    &lt;/NotaFiscalList&gt;
+  &lt;/DetalheNotaFiscal&gt;
+  &lt;codigoAgendamento&gt;1&lt;/codigoAgendamento&gt;
+  &lt;codigoFilial&gt;2&lt;/codigoFilial&gt;
+&lt;/RecebimentoFisicoCD&gt;</doc>
+                                </representation>
+                                <representation mediaType="application/x-www-form-urlencoded">
+                                    <doc>Failed to generate the sample for media type &#39;application/x-www-form-urlencoded&#39;. Cannot use formatter &#39;JQueryMvcFormUrlEncodedFormatter&#39; to write type &#39;RecebimentoFisicoCD&#39;.</doc>
+                                </representation>
+                        </request>
+                    </method>
+            </resource>           
+    </resources>
+</application>
