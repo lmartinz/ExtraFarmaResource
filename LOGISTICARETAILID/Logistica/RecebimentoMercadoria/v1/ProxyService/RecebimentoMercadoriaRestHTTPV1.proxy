@@ -19,12 +19,12 @@
             <ser:owsm-policy-metadata>
                 <orawsp:wsm-assembly xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy">
                     <sca11:policySet name="policySet" appliesTo="PROXY-REST-SERVICE()" attachTo="PROXY-REST-SERVICE('.')" orawsp:highId="1" xml:id="PROXY-REST-SERVICE__PROXY-REST-SERVICE_____" xmlns:sca11="http://docs.oasis-open.org/ns/opencsa/sca/200912">
-                        <wsp:PolicyReference DigestAlgorithm="http://www.w3.org/ns/ws-policy/Sha1Exc" URI="oracle/http_saml20_token_bearer_over_ssl_service_policy" orawsp:status="enabled" orawsp:id="1" xmlns:wsp="http://www.w3.org/ns/ws-policy"/>
+                        <wsp:PolicyReference DigestAlgorithm="http://www.w3.org/ns/ws-policy/Sha1Exc" URI="oracle/wss_http_token_service_policy" orawsp:status="enabled" orawsp:id="1" xmlns:wsp="http://www.w3.org/ns/ws-policy"/>
                     </sca11:policySet>
                 </orawsp:wsm-assembly>
             </ser:owsm-policy-metadata>
         </ser:ws-policy>
-        <ser:invoke ref="LOGISTICARETAILID/Logistica/RecebimentoMercadoria/v1/Pipelines/RecebimentoMercadoriaHTTPV1Pipeline" xsi:type="con:PipelineRef" xmlns:con="http://www.bea.com/wli/sb/pipeline/config"/>
+        <ser:invoke ref="LOGISTICARETAILID/Logistica/RecebimentoMercadoria/v1/Pipelines/RecebimentoMercadoriaRestHTTPV1Pipeline" xsi:type="con:PipelineRef" xmlns:con="http://www.bea.com/wli/sb/pipeline/config"/>
         <ser:xqConfiguration>
             <ser:snippetVersion>1.0</ser:snippetVersion>
         </ser:xqConfiguration>

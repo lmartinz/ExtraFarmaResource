@@ -5,12 +5,12 @@
   <xsd:complexType name="MetaInformacaoType">
     <xsd:sequence>
       <xsd:element name="nomeServico" type="xsd:string"/>
-      <xsd:element name="datahoraRequisicao" type="xsd:dateTime"/>
+      <xsd:element name="datahoraRequisicao" type="xsd:dateTime" minOccurs="1"/>
       <xsd:element name="passoFluxo" type="xsd:string"/>
       <xsd:element name="mensagem" type="xsd:string"/>
-      <xsd:element name="usuario" type="xsd:string"/>
-      <xsd:element name="idControle" type="xsd:integer"/>
-      <xsd:element name="sistemaOrigem" type="xsd:string"/>
+      <xsd:element name="usuario" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="idControle" type="xsd:integer" minOccurs="1"/>
+      <xsd:element name="sistemaOrigem" type="xsd:string" minOccurs="1"/>
       <xsd:element name="sistemaDestino" type="xsd:string"/>
       <xsd:element name="status" type="xsd:integer"/>
     </xsd:sequence>

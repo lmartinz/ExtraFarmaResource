@@ -60,7 +60,7 @@
                         <con2:id>_ActionId-N3f57fff1.N379083f8.0.15cdc77edd0.N7fcb</con2:id>
                         <con1:expr>
                             <con2:xqueryTransform>
-                                <con2:resource ref="TemplateID/Asynchronous/v1/Transforms/Fault"/>
+                                <con2:resource ref="TemplateID/Asynchronous/v1/Transforms/transformToFault"/>
                                 <con2:param name="faultDetail">
                                     <con2:path>$fault</con2:path>
                                 </con2:param>

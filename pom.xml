@@ -11,10 +11,7 @@
 
     <modules>
         <module>System</module>
-        <module>LOGISTICALEGADOID</module>
-        <module>ESTOQUERETAILID</module>
-        <module>FISCALRETAILID</module>
-        <module>PRECIFICACAORETAILID</module>
+        <module>ATACADORETAILID</module>
     </modules>
 
 </project>
