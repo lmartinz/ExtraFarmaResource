@@ -1,0 +1,122 @@
+<wsdl:definitions name="PedidoReserva" targetNamespace="http://service.ultra.com.br/atacado/PedidoReserva/v1"
+xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+xmlns:tns="http://service.ultra.com.br/atacado/PedidoReserva/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+xmlns:Q2="http://service.ultra.com.br/infcorp/LogIntegration/v1"
+xmlns:Q3="http://canonico.ultra.com.br/infcorp/v1">
+
+  <wsp:Policy wsu:Id="wss_username_token_over_ssl_service_policy"
+              xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+              xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+              xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+    <sp:UsernameToken>
+      <wsp:Policy>
+        <sp:WssUsernameToken11/>
+      </wsp:Policy>
+    </sp:UsernameToken>
+  </wsp:Policy>
+    <wsdl:types>
+      <xsd:schema targetNamespace="http://service.ultra.com.br/atacado/PedidoReserva/v1" elementFormDefault="qualified">
+          <xsd:include schemaLocation="../Schemas/PedidoReservaEBMV1.xsd"/>
+      <xsd:import schemaLocation="../../../../Comum/v1/Schemas/Fault.xsd" namespace="http://canonico.ultra.com.br/infcorp/v1"/>
+      <xsd:import schemaLocation="../../../../Comum/v1/Schemas/MetaInformacao.xsd"
+                  namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"/>
+      </xsd:schema> 
+    </wsdl:types>
+    <wsdl:message name="requestHeader">
+        <wsdl:part element="Q2:MetaInformacao" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="CriarPedidoReservaRequest">
+        <wsdl:part element="tns:CriarPedidoReservaRequest" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="CriarPedidoReservaResponse">
+        <wsdl:part element="tns:CriarPedidoReservaResponse" name="parameters"/>
+    </wsdl:message>
+  <wsdl:message name="CriarPedidoReservaFaultMsg">
+    <wsdl:part name="CriarPedidoReservaFault" element="Q3:Fault"/>
+  </wsdl:message>
+    <wsdl:message name="ConfirmarPedidoReservaRequest">
+        <wsdl:part element="tns:ConfirmarPedidoReservaRequest" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ConfirmarPedidoReservaResponse">
+        <wsdl:part element="tns:ConfirmarPedidoReservaResponse" name="parameters"/>
+    </wsdl:message>
+  <wsdl:message name="ConfirmarPedidoReservaFaultMsg">
+    <wsdl:part name="ConfirmarPedidoReservaFault" element="Q3:Fault"/>
+  </wsdl:message>
+    <wsdl:message name="CancelarPedidoReservaRequest">
+        <wsdl:part element="tns:CancelarPedidoReservaRequest" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="CancelarPedidoReservaResponse">
+        <wsdl:part element="tns:CancelarPedidoReservaResponse" name="parameters"/>
+    </wsdl:message>
+  <wsdl:message name="CancelarPedidoReservaFaultMsg">
+    <wsdl:part name="CancelarPedidoReservaFault" element="Q3:Fault"/>
+  </wsdl:message>
+
+    <!--HEADER-->
+    <wsdl:portType name="PedidoReservaPortType">
+        <wsdl:operation name="criarPedidoReserva">
+            <wsdl:input message="tns:CriarPedidoReservaRequest"/>
+            <wsdl:output message="tns:CriarPedidoReservaResponse"/>
+            <wsdl:fault name="CriarPedidoReservaFault" message="tns:CriarPedidoReservaFaultMsg"/>
+        </wsdl:operation>
+        <wsdl:operation name="cancelarPedidoReserva">
+            <wsdl:input message="tns:CancelarPedidoReservaRequest"/>
+            <wsdl:output message="tns:CancelarPedidoReservaResponse"/>
+            <wsdl:fault name="CancelarPedidoReservaFault" message="tns:CancelarPedidoReservaFaultMsg"/>
+        </wsdl:operation>
+        <wsdl:operation name="confirmarPedidoReserva">
+            <wsdl:input message="tns:ConfirmarPedidoReservaRequest"/>
+            <wsdl:output message="tns:ConfirmarPedidoReservaResponse"/>
+            <wsdl:fault name="ConfirmarPedidoReservaFault" message="tns:ConfirmarPedidoReservaFaultMsg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="PedidoReservaPortBinding" type="tns:PedidoReservaPortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="criarPedidoReserva">
+            <soap:operation soapAction="http://service.ultra.com.br/PedidoReserva/v1/criarPedidoReserva"/>
+            <wsdl:input>
+                <soap:header message="tns:requestHeader" part="parameters" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CriarPedidoReservaFault">
+                <soap:fault use="literal" name="CriarPedidoReservaFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="cancelarPedidoReserva">
+            <soap:operation soapAction="http://service.ultra.com.br/PedidoReserva/v1/cancelarPedidoReserva"/>
+            <wsdl:input>
+                <soap:header message="tns:requestHeader" part="parameters" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="CancelarPedidoReservaFault">
+                <soap:fault use="literal" name="CancelarPedidoReservaFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="confirmarPedidoReserva">
+            <soap:operation soapAction="http://service.ultra.com.br/PedidoReserva/v1/confirmarPedidoReserva"/>
+            <wsdl:input>
+                <soap:header message="tns:requestHeader" part="parameters" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ConfirmarPedidoReservaFault">
+                <soap:fault use="literal" name="ConfirmarPedidoReservaFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="PedidoReservaService">
+        <wsdl:port binding="tns:PedidoReservaPortBinding" name="PedidoReservaPort">
+            <soap:address location="http://service.ultra.com.br/atacado/PedidoReserva/v1"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

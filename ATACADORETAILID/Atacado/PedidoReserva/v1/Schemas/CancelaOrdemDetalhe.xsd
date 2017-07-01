@@ -1,0 +1,15 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/atacado/PedidoReserva/v1" elementFormDefault="qualified"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://service.ultra.com.br/atacado/PedidoReserva/v1">
+
+  <xsd:complexType name="CancelaOrdemDetalheType">
+    <xsd:sequence>
+         <xsd:element name="codigoItem" type="xsd:string" minOccurs="1"/>
+         <xsd:element name="upcItem" type="xsd:string"/>
+         <xsd:element name="quantidadeCanceladaItem" type="xsd:double" minOccurs="1"/>
+         <xsd:element name="unidadeMedidaPadrao" type="xsd:string" minOccurs="1"/>
+         <xsd:element name="unidadeMedidaCancelada" type="xsd:string" minOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="CancelaOrdemDetalhe" type="tns:CancelaOrdemDetalheType"/>
+</xsd:schema>

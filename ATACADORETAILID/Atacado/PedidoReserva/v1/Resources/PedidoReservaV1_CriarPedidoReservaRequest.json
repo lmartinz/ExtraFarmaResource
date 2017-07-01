@@ -1,0 +1,23 @@
+{
+  "quantidadePedido" : 39,
+  "OrdemClienteList" : [ {
+    "codigoPedidoCliente" : "codigoPedidoCliente40",
+    "codigoPedidoAtendimento" : "codigoPedidoAtendimento41",
+    "tipoLocalOrigem" : "tipoLocalOrigem42",
+    "localOrigem" : 43,
+    "tipoLocalDestino" : "tipoLocalDestino44",
+    "localDestino" : 45,
+    "flagPodeSerAtendimentaParcialmente" : "flagPodeSerAtendimentaParcialmente46",
+    "tipoEntrega" : "tipoEntrega47",
+    "dataPrevisaoChegada" : "2017-07-01T13:22:53.134",
+    "comentario" : "comentario48",
+    "OrdemDetalheList" : [ {
+      "codigoItem" : "codigoItem49",
+      "quantidadeSolicitadaItem" : 500.72,
+      "unidadeMedidaPadrao" : "unidadeMedidaPadrao51",
+      "quantidadeMedidaUtilizada" : "quantidadeMedidaUtilizada52",
+      "flagItemPodeSerSubstituido" : "flagItemPodeSerSubstituido53",
+      "precoVenda" : 540.72
+    } ]
+  } ]
+}

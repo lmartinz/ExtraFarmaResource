@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"  
+				targetNamespace="http://service.ultra.com.br/atacado/PedidoReserva/v1" 
+				xmlns:this="http://service.ultra.com.br/atacado/PedidoReserva/v1">
+
+   <xsd:complexType name="ConfirmaOrdemDetalheType">
+       <xsd:sequence>
+         <xsd:element name="codigoItem" type="xsd:string"/>
+         <xsd:element name="upcItem" type="xsd:string"/>
+         <xsd:element name="quantidadeConfirmadaItem" type="xsd:double"/>
+         <xsd:element name="unidadeMedidaConfirmada" type="xsd:string"/>
+      </xsd:sequence>
+	  </xsd:complexType>
+	
+	<xsd:element name="ConfirmaOrdemDetalhe" type="this:ConfirmaOrdemDetalheType"></xsd:element>
+</xsd:schema>

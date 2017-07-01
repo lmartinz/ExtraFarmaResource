@@ -1,0 +1,15 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/atacado/PedidoReserva/v1" elementFormDefault="qualified"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://service.ultra.com.br/atacado/PedidoReserva/v1">
+  <xsd:include schemaLocation="ConfirmaOrdemDetalhe.xsd"/>
+  <xsd:complexType name="ConfirmaOrdemClienteType">
+    <xsd:sequence>
+      <xsd:element name="codigoPedidoCliente" type="xsd:integer" minOccurs="1"/>
+      <xsd:element name="codigoOrdemAtendimentoConfirmado" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="tipoConfirmado" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="codigoAssociadoConfirmadoTransferencia" type="xsd:integer" minOccurs="1"/>
+      <xsd:element name="ConfirmaOrdemDetalheList" type="tns:ConfirmaOrdemDetalheType" maxOccurs="unbounded" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ConfirmaOrdemCliente" type="tns:ConfirmaOrdemClienteType"/>
+</xsd:schema>

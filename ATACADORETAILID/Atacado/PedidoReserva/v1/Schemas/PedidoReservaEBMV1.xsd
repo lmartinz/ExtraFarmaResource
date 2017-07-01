@@ -1,0 +1,57 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/atacado/PedidoReserva/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:this="http://service.ultra.com.br/atacado/PedidoReserva/v1" >
+ 
+
+  
+  <xsd:include schemaLocation="OrdemCliente.xsd"/>
+  <xsd:include schemaLocation="ConfirmaOrdemCliente.xsd"/>
+  <xsd:include schemaLocation="CancelaOrdemDetalhe.xsd"/>
+  <xsd:complexType name="CriarPedidoReservaRequestType">
+    <xsd:sequence>
+      <xsd:element name="quantidadePedido" type="xsd:integer" minOccurs="1"/>
+      <xsd:element name="OrdemClienteList" type="this:OrdemClienteType" maxOccurs="unbounded" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  
+    <xsd:complexType name="ConfirmarPedidoReservaRequestType">
+      <xsd:sequence>
+        <xsd:element name="quantidadePedido" type="xsd:integer" minOccurs="1"/>
+        <xsd:element name="ConfirmaOrdemClienteList" type="this:ConfirmaOrdemClienteType" maxOccurs="unbounded" minOccurs="0"/>
+      </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="CancelarPedidoReservaRequestType">
+      <xsd:sequence>
+        <xsd:element name="codigoPedidoCliente" type="xsd:string" minOccurs="1"/>
+        <xsd:element name="codigoOrdemAtendimentoConfirmado" type="xsd:string" minOccurs="1"/>
+        <xsd:element name="localOrigem" type="xsd:integer"/>
+        <xsd:element name="tipoLocalDestino" type="xsd:string" minOccurs="1"/>
+        <xsd:element name="localDestino" type="xsd:integer" minOccurs="1"/>
+        <xsd:element name="CancelaOrdemDetalheList" type="this:CancelaOrdemDetalheType" maxOccurs="unbounded" minOccurs="1"/>
+      </xsd:sequence>
+    </xsd:complexType>
+
+  <xsd:element name="CriarPedidoReservaRequest" type="this:CriarPedidoReservaRequestType"/>
+  <xsd:element name="ConfirmarPedidoReservaRequest" type="this:ConfirmarPedidoReservaRequestType"/>
+  <xsd:element name="CancelarPedidoReservaRequest" type="this:CancelarPedidoReservaRequestType"/>
+  <xsd:element name="CriarPedidoReservaResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="out" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ConfirmarPedidoReservaResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="out" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="CancelarPedidoReservaResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="out" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
