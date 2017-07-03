@@ -56,17 +56,36 @@
             <con:stage id="_StageId-N3f57fff1.N379083f8.0.15cdc77edd0.N7fce" name="StageFault">
                 <con:context/>
                 <con:actions>
-                    <con1:assign varName="body">
-                        <con2:id>_ActionId-N3f57fff1.N379083f8.0.15cdc77edd0.N7fcb</con2:id>
-                        <con1:expr>
-                            <con2:xqueryTransform>
-                                <con2:resource ref="TemplateID/Asynchronous/v1/Transforms/transformToFault"/>
-                                <con2:param name="faultDetail">
-                                    <con2:path>$fault</con2:path>
-                                </con2:param>
-                            </con2:xqueryTransform>
-                        </con1:expr>
-                    </con1:assign>
+                    <con1:ifThenElse>
+                        <con2:comment>Verifica se ja e um SOAP Fault, caso nao seja, cria um.</con2:comment>
+                        <con2:id>_ActionId-N3f57e124.3224fd02.0.15d08e1ceb9.N7fcb</con2:id>
+                        <con1:case id="_BranchId-N3f57e124.3224fd02.0.15d08e1ceb9.N7fca">
+                            <con1:condition>
+                                <con2:xqueryText>not(fn:empty($body/soap-env:Fault))</con2:xqueryText>
+                            </con1:condition>
+                            <con1:actions>
+                                <con1:replace varName="body" contents-only="true">
+                                    <con2:id>_ActionId-N3f57e124.3224fd02.0.15d08e1ceb9.N7f95</con2:id>
+                                    <con1:expr>
+                                        <con2:xqueryText>$body/soap-env:Fault</con2:xqueryText>
+                                    </con1:expr>
+                                </con1:replace>
+                            </con1:actions>
+                        </con1:case>
+                        <con1:default>
+                            <con1:assign varName="body">
+                                <con2:id>_ActionId-N3f57fff1.N379083f8.0.15cdc77edd0.N7fcb</con2:id>
+                                <con1:expr>
+                                    <con2:xqueryTransform>
+                                        <con2:resource ref="TemplateID/Asynchronous/v1/Transforms/transformToFault"/>
+                                        <con2:param name="faultDetail">
+                                            <con2:path>$fault</con2:path>
+                                        </con2:param>
+                                    </con2:xqueryTransform>
+                                </con1:expr>
+                            </con1:assign>
+                        </con1:default>
+                    </con1:ifThenElse>
                 </con:actions>
             </con:stage>
             <con:stage id="_StageId-N3f57fff4.67ea00d2.0.15cdc0d8d97.N7ca3" name="StageReplay">
