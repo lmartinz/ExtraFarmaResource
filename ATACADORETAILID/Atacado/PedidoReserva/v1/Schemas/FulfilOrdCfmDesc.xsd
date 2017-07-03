@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmDesc/v1" xmlns:FulfilOrdCfmDtl="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmDtl/v1" xmlns:retailDoc="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmDesc/v1" version="1.0">
+	<retailDoc:annotation>
+		<retailDoc:documentation>This object is used to communicate customer order confirmation and detail 
+			back to OMS from RMS and SIM. This object is also used by SIM to confirm that an order can 
+			be picked up for store pickup fulfillment.
+		</retailDoc:documentation>
+	</retailDoc:annotation>
+	<xs:import namespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmDtl/v1" schemaLocation="FulfilOrdCfmDtl.xsd">
+		<retailDoc:annotation>
+			<retailDoc:documentation>It's a referenced element. For detailed
+				description, please refer referenced element doc.
+			</retailDoc:documentation>
+		</retailDoc:annotation>
+	</xs:import>
+	<xs:element name="FulfilOrdCfmDesc">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This object is used to communicate customer order confirmation and detail back to OMS from RMS and SIM. This object is also used by SIM to confirm that an order can be picked up for store pickup fulfillment.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="customer_order_no" type="varchar248">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Holds the master customer order number from OMS.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element name="fulfill_order_no" type="varchar248">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Unique number from OMS related to the fulfillment details. One or more fulfillment orders could relate back to a single customer order in OMS.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element name="confirm_type" type="confirm_type">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains the confirmation type. 'P' - Order Partially Created; 'X' - Order Could not be Created.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="confirm_no" type="number12">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Contains the PO or Transfer number in RMS related to the fulfillment order line. Required if fulfillment status is 'P'.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element maxOccurs="unbounded" minOccurs="0" ref="FulfilOrdCfmDtl:FulfilOrdCfmDtl">
+					<retailDoc:annotation>
+						<retailDoc:documentation>References a collection of customer order confirmation item details.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="varchar248">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max
+				length of 48 characters.
+			</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="48"/>
+		</xs:restriction>
+	</xs:simpleType>
+      <xs:simpleType name="confirm_type">
+		<retailDoc:annotation>
+			<retailDoc:documentation>Defines a confirmation type. 'P' - Order Partially Created; 
+							'X' - Order Could not be Created.
+                  </retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+		<xs:maxLength value="1"/>			
+			<xs:enumeration value="P"/>
+			<xs:enumeration value="X"/>
+		</xs:restriction>
+	</xs:simpleType> 
+	<xs:simpleType name="number12">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a number of digits
+				count 12.
+			</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:long">
+			<xs:totalDigits value="12"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

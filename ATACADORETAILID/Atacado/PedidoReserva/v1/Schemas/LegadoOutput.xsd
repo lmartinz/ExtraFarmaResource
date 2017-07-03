@@ -1,0 +1,13 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datacontract.org/2004/07/Wsdl.Integration"
+     xmlns:tns="http://schemas.datacontract.org/2004/07/Wsdl.Integration" targetNamespace="http://schemas.datacontract.org/2004/07/Wsdl.Integration"
+     elementFormDefault="qualified">
+    <xsd:complexType name="RetornoServico">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="id" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="message" nillable="true" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="success" type="xsd:boolean"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="RetornoServico" nillable="true" type="tns:RetornoServico"/>
+</xsd:schema>

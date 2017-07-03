@@ -1,0 +1,14 @@
+{
+  "codigoPedidoCliente" : "codigoPedidoCliente89",
+  "codigoOrdemAtendimentoConfirmado" : "codigoOrdemAtendimentoConfirmado90",
+  "localOrigem" : 91,
+  "tipoLocalDestino" : "tipoLocalDestino92",
+  "localDestino" : 93,
+  "CancelaOrdemDetalheList" : [ {
+    "codigoItem" : "codigoItem94",
+    "upcItem" : "upcItem95",
+    "quantidadeCanceladaItem" : 960.72,
+    "unidadeMedidaPadrao" : "unidadeMedidaPadrao97",
+    "unidadeMedidaCancelada" : "unidadeMedidaCancelada98"
+  } ]
+}

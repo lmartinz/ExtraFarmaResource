@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmDtl/v1" xmlns:retailDoc="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmDtl/v1" version="1.0">
+	<retailDoc:annotation>
+		<retailDoc:documentation>This object is used to communicate item details of a customer order 
+			confirmation message to OMS from RMS and SIM. 
+		</retailDoc:documentation>
+	</retailDoc:annotation>
+	<xs:element name="FulfilOrdCfmDtl">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This object is used to communicate item details of a customer order confirmation message to OMS from RMS and SIM.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="item" type="varchar225">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Indicates the item ordered by the customer.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="ref_item" type="varchar225">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Indicates the reference item ordered by the customer. Used only if a specific UPC is ordered.  This is supported for vendor drop-ships orders only as we don't support transfer requests for a specific reference item.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element name="confirm_qty" type="number12_4">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Indicates the quantity of the item that can be sourced or fulfilled on the order.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+				<xs:element name="confirm_qty_uom" type="varchar24">
+					<retailDoc:annotation>
+						<retailDoc:documentation>Indicates the unit of measure of the confirmation quantity.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="varchar225">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max
+				length of 25 characters.
+			</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="25"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="number12_4">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a number of digits
+				count of 12 and decimal count of 4.
+			</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="12"/>
+			<xs:fractionDigits value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="varchar24">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max
+				length of 4 characters.
+			</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
