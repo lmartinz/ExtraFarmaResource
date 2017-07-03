@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="RecebimentoNFCompraRestReference">RestReference</doc>
+   <resources>
+      <resource path="erp-imifarma/v1/recebimento/cd/agendamento">
+         <method name="POST" soa:name="ReceberNFCompra">
+            <request>
+               <representation mediaType="application/json"/>
+               <representation mediaType="*/*"/>
+               <representation mediaType="application/xml"/>
+               <representation mediaType="application/x-www-form-urlencoded"/>
+            </request>
+            <response>
+               <representation mediaType="application/xml"/>
+            </response>
+            <response>
+               <representation mediaType="application/xml"/>
+            </response>
+         </method>
+      </resource>
+   </resources>
+</application>
