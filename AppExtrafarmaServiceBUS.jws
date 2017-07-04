@@ -30,9 +30,7 @@
       <hash><url n="URL" path="ATACADORETAILID/ATACADORETAILID.jpr"/></hash>
       <hash><url n="URL" path="ESTOQUERETAILID/ESTOQUERETAILID.jpr"/></hash>
       <hash><url n="URL" path="FISCALRETAILID/FISCALRETAILID.jpr"/></hash>
-      <hash><url n="URL" path="LOGISTICALEGADOID/LOGISTICALEGADOID.jpr"/></hash>
       <hash><url n="URL" path="LOGISTICARETAILID/LOGISTICARETAILID.jpr"/></hash>
-      <hash><url n="URL" path="PedidoReservaIntegracaoServico/PedidoReservaIntegracaoServico.jpr"/></hash>
       <hash><url n="URL" path="PRECIFICACAORETAILID/PRECIFICACAORETAILID.jpr"/></hash>
       <hash><url n="URL" path="TemplateID/TemplateID.jpr"/></hash>
    </list>

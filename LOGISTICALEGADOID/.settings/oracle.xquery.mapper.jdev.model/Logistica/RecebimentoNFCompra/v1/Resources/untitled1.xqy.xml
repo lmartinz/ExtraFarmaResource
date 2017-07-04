@@ -1,6 +1,0 @@
-<view_states>
-   <function arity="1" name="func">
-      <source_tree_view last.visible.row="18" last.visible.path="/sourceRoot[[0]]/RibMessages[[0]]/ribMessage[[0]]/customFlag[[8]]" first.visible.path="/sourceRoot[[0]]/RibMessages[[0]]" expanded.paths="/sourceRoot[[0]]/RibMessages[[0]]&#xA;/sourceRoot[[0]]/RibMessages[[0]]/ribMessage[[0]]&#xA;/sourceRoot[[0]]/RibMessages[[0]]/ribMessage[[0]]/messageData[[6]]&#xA;/sourceRoot[[0]]/RibMessages[[0]]/ribMessage[[0]]/messageData[[6]]/POScheduleDesc[[0]]&#xA;/sourceRoot[[0]]/RibMessages[[0]]/ribMessage[[0]]/messageData[[6]]/POScheduleDesc[[0]]/POSchedule[[2]]" first.visible.row="0" selected.paths="/sourceRoot[[0]]/RibMessages[[0]]/ribMessage[[0]]/messageData[[6]]/POScheduleDesc[[0]]/schedule_nbr[[0]]"/>
-      <target_tree_view last.visible.row="0" last.visible.path="/TargetRoot[[0]]/text[[0]]" first.visible.path="/TargetRoot[[0]]/text[[0]]" expanded.paths="" first.visible.row="0" selected.paths=""/>
-   </function>
-</view_states>
