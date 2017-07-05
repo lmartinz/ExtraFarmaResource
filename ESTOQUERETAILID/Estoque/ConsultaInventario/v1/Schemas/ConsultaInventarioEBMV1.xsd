@@ -1,26 +1,24 @@
-<?xml version="1.0" encoding="windows-1252" ?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-            xmlns:tns="http://service.ultra.com.br/estoque/ConsultaInventario/v1"
-            targetNamespace="http://service.ultra.com.br/estoque/ConsultaInventario/v1" elementFormDefault="qualified">
-  <xsd:include schemaLocation="ConsultaInventarioDetalhe.xsd"/>
+<xsd:schema targetNamespace="http://service.ultra.com.br/estoque/ConsultaInventario/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://service.ultra.com.br/estoque/ConsultaInventario/v1">
+  <xsd:include schemaLocation="ConsultaInventarioLocalizacao.xsd"/>
   <xsd:complexType name="ConsultaInventarioRequestType">
     <xsd:sequence>
-      <xsd:element name="codigoItem" type="tns:varchar25"/>
-      <xsd:element name="tipoInventario" type="tns:varchar25"/>
-      <xsd:element name="ConsultaInventarioDetalheList" type="tns:ConsultaInventarioDetalheRequestType"/>
+      <xsd:element name="codigoItem" type="xsd:string"/>
+      <xsd:element name="localizacaoInventarioLista" type="tns:LocalizacaoInventarioType"/>
+      <xsd:element name="codigoCanal" type="xsd:string"/>
     </xsd:sequence>
   </xsd:complexType>
-  <xsd:element name="ConsultaInventarioRequest" type="tns:ConsultaInventarioDetalheRequestType"/>
-  <xsd:element name="ConsultaInventarioResponse">
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element name="out" type="xsd:string"/>
-      </xsd:sequence>
-    </xsd:complexType>
-  </xsd:element>
-  <xsd:simpleType name="varchar25">
-    <xsd:restriction base="xsd:string">
-      <xsd:maxLength value="25"/>
-    </xsd:restriction>
-  </xsd:simpleType>
+  <xsd:complexType name="ConsultaInventarioResponseType">
+    <xsd:sequence>
+      <xsd:element name="codigoItem" type="xsd:string"/>
+      <xsd:element name="codigoLocal" type="xsd:string"/>
+      <xsd:element name="tipoLocal" type="xsd:string"/>
+      <xsd:element name="codigoCanal" type="xsd:string"/>
+      <xsd:element name="qtdDisponivel" type="xsd:int"/>
+      <xsd:element name="undMedida" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ConsultaInventarioRequest" type="tns:ConsultaInventarioRequestType"/>
+  <xsd:element name="ConsultaInventarioResponse" type="tns:ConsultaInventarioResponseType"/>
 </xsd:schema>

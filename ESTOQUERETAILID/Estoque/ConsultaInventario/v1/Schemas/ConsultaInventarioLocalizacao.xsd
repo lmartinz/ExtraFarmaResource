@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://service.ultra.com.br/estoque/ConsultaInventario/v1"
+            targetNamespace="http://service.ultra.com.br/estoque/ConsultaInventario/v1">
+  <xsd:complexType name="LocalizacaoInventarioType">
+    <xsd:sequence>
+      <xsd:element name="codigoLocalizacao" type="xsd:int">
+      </xsd:element>
+      <xsd:element name="tipoLocalizacao" type="xsd:string"></xsd:element>
+      <xsd:element name="codigoCanal" type="xsd:int"></xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="LocalizacaoInventarioRequestType" type="tns:LocalizacaoInventarioType"/>
+</xsd:schema>
