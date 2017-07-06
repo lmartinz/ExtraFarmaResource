@@ -1,6 +1,4 @@
-<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.oracle.com/retail/integration/rib/RibMessages" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:md="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmDesc/v1">
-  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmDesc/v1"
-             schemaLocation="FulfilOrdCfmDesc.xsd"/>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.oracle.com/retail/integration/rib/RibMessages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="name" type="xs:string"/>
   <xs:element name="value" type="xs:string"/>
   <xs:element name="family" type="xs:string"/>
@@ -19,7 +17,7 @@
   <xs:element name="messageData">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="md:FulfilOrdCfmDesc"/>
+        <xs:any minOccurs="0"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
