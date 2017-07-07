@@ -1,47 +1,45 @@
-<wsdl:definitions name="PedidoTransferenciaMercadoria" 
-targetNamespace="http://service.ultra.com.br/logistica/PedidoTransferenciaMercadoria/v1"
-xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-xmlns:tns="http://service.ultra.com.br/logistica/PedidoTransferenciaMercadoria/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-xmlns:Q2="http://service.ultra.com.br/infcorp/LogIntegration/v1"
-xmlns:Q3="http://canonico.ultra.com.br/infcorp/v1">
-
-  <wsp:Policy wsu:Id="wss_username_token_over_ssl_service_policy"
-              xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
-              xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
-              xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-    <sp:UsernameToken>
-      <wsp:Policy>
-        <sp:WssUsernameToken11/>
-      </wsp:Policy>
-    </sp:UsernameToken>
-  </wsp:Policy>
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="PedidoTransferenciaMercadoria"
+     targetNamespace="http://service.ultra.com.br/logistica/PedidoTransferenciaMercadoria/v1"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:tns="http://service.ultra.com.br/logistica/PedidoTransferenciaMercadoria/v1"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:Q2="http://service.ultra.com.br/infcorp/LogIntegration/v1"
+     xmlns:Q3="http://canonico.ultra.com.br/infcorp/v1"
+    >
+    <wsp:Policy wsu:Id="wss_username_token_over_ssl_service_policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+         xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+         xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+        <sp:UsernameToken>
+            <wsp:Policy>
+                <sp:WssUsernameToken11/>
+            </wsp:Policy>
+        </sp:UsernameToken>
+    </wsp:Policy>
     <wsdl:types>
-      <xsd:schema targetNamespace="http://service.ultra.com.br/logistica/PedidoTransferenciaMercadoria/v1" elementFormDefault="qualified">
-          <xsd:include schemaLocation="../Schemas/PedidoTransferenciaMercadoriaEBMV1.xsd"/>
-      <xsd:import schemaLocation="../../../../Comum/v1/Schemas/Fault.xsd" 
-                  namespace="http://canonico.ultra.com.br/infcorp/v1"/>
-      <xsd:import schemaLocation="../../../../Comum/v1/Schemas/MetaInformacao.xsd"
-                  namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"/>
-      </xsd:schema> 
+        <xsd:schema targetNamespace="http://service.ultra.com.br/logistica/PedidoTransferenciaMercadoria/v1"
+             elementFormDefault="qualified">
+            <xsd:include schemaLocation="../Schemas/PedidoTransferenciaMercadoriaEBMV1.xsd"/>
+            <xsd:import schemaLocation="../../../../Comum/v1/Schemas/Fault.xsd" namespace="http://canonico.ultra.com.br/infcorp/v1"/>
+            <xsd:import schemaLocation="../../../../Comum/v1/Schemas/MetaInformacao.xsd" namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"/>
+        </xsd:schema>
     </wsdl:types>
-    <wsdl:message name="requestHeader">
-        <wsdl:part element="Q2:MetaInformacao" name="parameters"/>
-    </wsdl:message>
     <wsdl:message name="PedidoTransferenciaMercadoriaRequest">
-        <wsdl:part element="tns:PedidoTransferenciaMercadoriaRequest" name="parameters"/>
+        <wsdl:part name="parameters" element="tns:PedidoTransferenciaMercadoriaRequest"/>
     </wsdl:message>
     <wsdl:message name="PedidoTransferenciaMercadoriaResponse">
-        <wsdl:part element="tns:PedidoTransferenciaMercadoriaResponse" name="parameters"/>
+        <wsdl:part name="parameters" element="tns:PedidoTransferenciaMercadoriaResponse"/>
     </wsdl:message>
-  <wsdl:message name="PedidoTransferenciaMercadoriaFaultMsg">
-    <wsdl:part name="PedidoTransferenciaMercadoriaFault" element="Q3:Fault"/>
-  </wsdl:message>
-    
-
-    <!--HEADER-->
+    <wsdl:message name="PedidoTransferenciaMercadoriaFaultMsg">
+        <wsdl:part name="PedidoTransferenciaMercadoriaFault" element="Q3:Fault"/>
+    </wsdl:message>
+    <wsdl:message name="requestHeader">
+        <wsdl:part name="parameters" element="Q2:MetaInformacao"/>
+    </wsdl:message>
     <wsdl:portType name="PedidoTransferenciaMercadoriaPortType">
-        <wsdl:operation name="ModificarPedidoTransferenciaMercadoria">
+        <wsdl:operation name="modificarPedidoTransferenciaMercadoria">
             <wsdl:input message="tns:PedidoTransferenciaMercadoriaRequest"/>
             <wsdl:output message="tns:PedidoTransferenciaMercadoriaResponse"/>
             <wsdl:fault name="PedidoTransferenciaMercadoriaFault" message="tns:PedidoTransferenciaMercadoriaFaultMsg"/>
@@ -49,7 +47,7 @@ xmlns:Q3="http://canonico.ultra.com.br/infcorp/v1">
     </wsdl:portType>
     <wsdl:binding name="PedidoTransferenciaMercadoriaPortBinding" type="tns:PedidoTransferenciaMercadoriaPortType">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-        <wsdl:operation name="ModificarPedidoTransferenciaMercadoria">
+        <wsdl:operation name="modificarPedidoTransferenciaMercadoria">
             <soap:operation soapAction="http://service.ultra.com.br/PedidoTransferenciaMercadoria/v1/PedidoTransferenciaMercadoria"/>
             <wsdl:input>
                 <soap:header message="tns:requestHeader" part="parameters" use="literal"/>
@@ -59,13 +57,12 @@ xmlns:Q3="http://canonico.ultra.com.br/infcorp/v1">
                 <soap:body use="literal"/>
             </wsdl:output>
             <wsdl:fault name="PedidoTransferenciaMercadoriaFault">
-                <soap:fault use="literal" name="PedidoTransferenciaMercadoriaFault"/>
+                <soap:fault name="PedidoTransferenciaMercadoriaFault" use="literal"/>
             </wsdl:fault>
         </wsdl:operation>
-       
     </wsdl:binding>
     <wsdl:service name="PedidoTransferenciaMercadoriaService">
-        <wsdl:port binding="tns:PedidoTransferenciaMercadoriaPortBinding" name="PedidoTransferenciaMercadoriaPort">
+        <wsdl:port name="PedidoTransferenciaMercadoriaPort" binding="tns:PedidoTransferenciaMercadoriaPortBinding">
             <soap:address location="http://service.ultra.com.br/logistica/PedidoTransferenciaMercadoria/v1"/>
         </wsdl:port>
     </wsdl:service>

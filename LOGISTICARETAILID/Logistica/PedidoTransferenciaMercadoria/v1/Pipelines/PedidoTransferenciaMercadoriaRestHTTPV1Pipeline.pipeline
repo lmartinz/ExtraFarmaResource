@@ -17,7 +17,7 @@
             <con:template-branch-override id="_FlowId-N3f57fff4.67ea00d2.0.15cdc0d8d97.N7f34">
                 <con:branch-node>
                     <con:branch-table>
-                        <con:branch name="PedidoTransferenciaMercadoria">
+                        <con:branch name="modificarPedidoTransferenciaMercadoria">
                             <con:operator>equals</con:operator>
                             <con:value/>
                             <con:template-overrides>
