@@ -3,7 +3,9 @@ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
 xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
 xmlns:tns="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 xmlns:Q2="http://service.ultra.com.br/infcorp/LogIntegration/v1"
-xmlns:Q3="http://canonico.ultra.com.br/infcorp/v1">
+xmlns:Q3="http://canonico.ultra.com.br/infcorp/v1"
+xmlns:Q4="http://schemas.datacontract.org/2004/07/Wsdl.Integration"
+xmlns:rib="http://www.oracle.com/retail/integration/rib/RibMessages">
 
   <wsp:Policy wsu:Id="wss_username_token_over_ssl_service_policy"
               xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
@@ -19,6 +21,8 @@ xmlns:Q3="http://canonico.ultra.com.br/infcorp/v1">
       <xsd:schema targetNamespace="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1" elementFormDefault="qualified">
           <xsd:include schemaLocation="../Schemas/NFSaidaMercadoriaEBMV1.xsd"/>
       <xsd:import schemaLocation="../../../../Comum/v1/Schemas/Fault.xsd" namespace="http://canonico.ultra.com.br/infcorp/v1"/>
+      <xsd:import schemaLocation="../Schemas/LegadoOutput.xsd" namespace="http://schemas.datacontract.org/2004/07/Wsdl.Integration"/>
+      <xsd:import schemaLocation="../Schemas/RibMessages.xsd" namespace="http://www.oracle.com/retail/integration/rib/RibMessages"/>
       <xsd:import schemaLocation="../../../../Comum/v1/Schemas/MetaInformacao.xsd"
                   namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"/>
       </xsd:schema> 
@@ -35,13 +39,26 @@ xmlns:Q3="http://canonico.ultra.com.br/infcorp/v1">
   <wsdl:message name="CriarNFSaidaMercadoriaFaultMsg">
     <wsdl:part name="CriarNFSaidaMercadoriaFault" element="Q3:Fault"/>
   </wsdl:message>
-
+    <wsdl:message name="PublicacaoNFSaidaMercadoriaRequest">
+        <wsdl:part name="parameters" element="rib:RibMessages"/>
+    </wsdl:message>
+    <wsdl:message name="PublicacaoNFSaidaMercadoriaResponse">
+        <wsdl:part name="parameters" element="Q4:RetornoServico"/>
+    </wsdl:message>
+    <wsdl:message name="PublicacaoNFSaidaMercadoriaFaultMsg">
+        <wsdl:part name="PublicacaoNFSaidaMercadoriaFault" element="Q3:Fault"/>
+    </wsdl:message>
     <!--HEADER-->
     <wsdl:portType name="NFSaidaMercadoriaPortType">
         <wsdl:operation name="criarNFSaidaMercadoria">
             <wsdl:input message="tns:CriarNFSaidaMercadoriaRequest"/>
             <wsdl:output message="tns:CriarNFSaidaMercadoriaResponse"/>
             <wsdl:fault name="CriarNFSaidaMercadoriaFault" message="tns:CriarNFSaidaMercadoriaFaultMsg"/>
+        </wsdl:operation>
+        <wsdl:operation name="publicacaoNFSaidaMercadoria">
+            <wsdl:input message="tns:PublicacaoNFSaidaMercadoriaRequest"/>
+            <wsdl:output message="tns:PublicacaoNFSaidaMercadoriaResponse"/>
+            <wsdl:fault name="PublicacaoNFSaidaMercadoriaFault" message="tns:PublicacaoNFSaidaMercadoriaFaultMsg"/>
         </wsdl:operation>
     </wsdl:portType>
     <wsdl:binding name="NFSaidaMercadoriaPortBinding" type="tns:NFSaidaMercadoriaPortType">
@@ -57,6 +74,19 @@ xmlns:Q3="http://canonico.ultra.com.br/infcorp/v1">
             </wsdl:output>
             <wsdl:fault name="CriarNFSaidaMercadoriaFault">
                 <soap:fault use="literal" name="CriarNFSaidaMercadoriaFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="publicacaoNFSaidaMercadoria">
+            <soap:operation soapAction="http://service.ultra.com.br/NFSaidaMercadoria/v1/publicacaoNFSaidaMercadoria"/>
+            <wsdl:input>
+                <soap:header message="tns:requestHeader" part="parameters" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="PublicacaoNFSaidaMercadoriaFault">
+                <soap:fault name="PublicacaoNFSaidaMercadoriaFault" use="literal"/>
             </wsdl:fault>
         </wsdl:operation>
     </wsdl:binding>

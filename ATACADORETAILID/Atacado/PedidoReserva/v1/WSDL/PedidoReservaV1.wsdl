@@ -26,7 +26,7 @@
             <xsd:import schemaLocation="../../../../Comum/v1/Schemas/Fault.xsd" namespace="http://canonico.ultra.com.br/infcorp/v1"/>
             <xsd:import schemaLocation="../../../../Comum/v1/Schemas/MetaInformacao.xsd" namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"/>
             <xsd:import schemaLocation="../Schemas/LegadoOutput.xsd" namespace="http://schemas.datacontract.org/2004/07/Wsdl.Integration"/>
-            <xsd:import schemaLocation="../Schemas/RibMessage.xsd" namespace="http://www.oracle.com/retail/integration/rib/RibMessages"/>
+            <xsd:import schemaLocation="../Schemas/RibMessages.xsd" namespace="http://www.oracle.com/retail/integration/rib/RibMessages"/>
         </xsd:schema>
     </wsdl:types>
     <wsdl:message name="CriarPedidoReservaRequest">
