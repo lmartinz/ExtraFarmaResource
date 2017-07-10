@@ -1,0 +1,64 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="AtualizacaoPreco"
+     targetNamespace="http://service.ultra.com.br/precificacao/AtualizacaoPreco/v1"
+     xmlns:tns="http://service.ultra.com.br/precificacao/AtualizacaoPreco/v1"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:Q2="http://service.ultra.com.br/infcorp/LogIntegration/v1"
+     xmlns:Q3="http://canonico.ultra.com.br/infcorp/v1"
+    >
+    <wsp:Policy wsu:Id="wss_username_token_over_ssl_service_policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+         xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+         xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+        <sp:UsernameToken>
+            <wsp:Policy>
+                <sp:WssUsernameToken11/>
+            </wsp:Policy>
+        </sp:UsernameToken>
+    </wsp:Policy>
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://service.ultra.com.br/precificacao/AtualizacaoPreco/v1"
+             elementFormDefault="qualified">
+            <xsd:include schemaLocation="../Schemas/AtualizacaoPrecoEBMV1.xsd"/>
+            <xsd:import schemaLocation="../../../../Comum/v1/Schemas/Fault.xsd" namespace="http://canonico.ultra.com.br/infcorp/v1"/>
+            <xsd:import schemaLocation="../../../../Comum/v1/Schemas/MetaInformacao.xsd" namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"/>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="AtualizacaoPrecoRequest">
+        <wsdl:part name="parameters" element="tns:AtualizacaoPrecoRequest"/>
+    </wsdl:message>
+    <wsdl:message name="AtualizacaoPrecoResponse">
+        <wsdl:part name="parameters" element="tns:AtualizacaoPrecoResponse"/>
+    </wsdl:message>
+    <wsdl:message name="AtualizacaoPrecoFaultMsg">
+        <wsdl:part name="AtualizacaoPrecoFault" element="Q3:Fault"/>
+    </wsdl:message>
+    <wsdl:message name="requestHeader">
+        <wsdl:part name="parameters" element="Q2:MetaInformacao"/>
+    </wsdl:message>
+    <wsdl:portType name="AtualizacaoPrecoPortType">
+        <wsdl:operation name="atualizarPreco">
+            <wsdl:input message="tns:AtualizacaoPrecoRequest"/>
+            <wsdl:output message="tns:AtualizacaoPrecoResponse"/>
+            <wsdl:fault name="AtualizacaoPrecoFault" message="tns:AtualizacaoPrecoFaultMsg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="AtualizacaoPrecoPortBinding" type="tns:AtualizacaoPrecoPortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="atualizarPreco">
+            <soap:operation soapAction="http://service.ultra.com.br/AtualizacaoPreco/v1/atualizarPreco"/>
+            <wsdl:input>
+                <soap:header message="tns:requestHeader" part="parameters" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="AtualizacaoPrecoFault">
+                <soap:fault name="AtualizacaoPrecoFault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

@@ -1,0 +1,12 @@
+{
+  "codigoLocalDestino" : 141,
+  "tipoLocalDestino" : "tipoLocalDestino142",
+  "codigoLocalOrigem" : "codigoLocalOrigem143",
+  "codigoProduto" : "codigoProduto144",
+  "tipoMudancaPreco" : "tipoMudancaPreco145",
+  "AtualizacaoPrecoDetalheList" : [ {
+    "precoVarejo" : 146,
+    "dataInicioVigenciaPreco" : "2017-07-09T23:21:39.807",
+    "dataFimVigenciaPreco" : "2017-07-09T23:21:39.807"
+  } ]
+}

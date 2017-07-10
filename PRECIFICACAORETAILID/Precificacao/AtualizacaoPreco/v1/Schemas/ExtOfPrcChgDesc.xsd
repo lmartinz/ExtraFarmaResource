@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema elementFormDefault="qualified"
+    targetNamespace="http://www.oracle.com/retail/integration/custom/bo/ExtOfPrcChgDesc/v1"
+    version="1.0"
+    xmlns="http://www.oracle.com/retail/integration/custom/bo/ExtOfPrcChgDesc/v1"
+    xmlns:retailDoc="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">	   
+	<xs:element name="ExtOfPrcChgDtl">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="pmc_id" type="number5">
+					<retailDoc:annotation>
+						<retailDoc:documentation>UDA ID for PMC</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>	
+				<xs:element minOccurs="0" name="pmc_value" type="varchar230">
+					<retailDoc:annotation>
+						<retailDoc:documentation>UDA Value for PMC.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>	      
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ExtOfPrcChgDesc">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" ref="ExtOfPrcChgDtl">
+					<retailDoc:annotation>
+						<retailDoc:documentation>PrcChgDesc extension hook.</retailDoc:documentation>
+					</retailDoc:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="number5">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a number of digits count
+				5.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:long">
+			<xs:totalDigits value="5" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="varchar230">
+		<retailDoc:annotation>
+			<retailDoc:documentation>This type can hold a string of max length of 30 characters.</retailDoc:documentation>
+		</retailDoc:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="30"/>
+		</xs:restriction>
+	</xs:simpleType>   
+</xs:schema>

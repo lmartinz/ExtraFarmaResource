@@ -1,0 +1,24 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/precificacao/AtualizacaoPreco/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://service.ultra.com.br/precificacao/AtualizacaoPreco/v1">
+  <xsd:include schemaLocation="AtualizacaoPrecoDetalhe.xsd"/>
+  <xsd:complexType name="AtualizacaoPrecoRequestType">
+    <xsd:sequence>
+      <xsd:element name="codigoLocalDestino" type="xsd:int"/>
+      <xsd:element name="tipoLocalDestino" type="xsd:string"/>
+      <xsd:element name="codigoLocalOrigem" type="xsd:string"/>
+      <xsd:element name="codigoProduto" type="xsd:string"/>
+      <xsd:element name="tipoMudancaPreco" type="xsd:string"/>
+      <xsd:element name="AtualizacaoPrecoDetalheList" type="tns:AtualizacaoPrecoDetalheType" maxOccurs="unbounded"
+                   minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="AtualizacaoPrecoRequest" type="tns:AtualizacaoPrecoRequestType"/>
+  <xsd:element name="AtualizacaoPrecoResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="out" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
