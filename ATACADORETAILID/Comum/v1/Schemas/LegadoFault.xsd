@@ -5,7 +5,7 @@
    <xsd:element name="RetornoServicoFault">
       <xsd:complexType>
          <xsd:sequence>
-            <xsd:element name="success" type="xsd:string"/>
+            <xsd:element name="success" type="xsd:boolean"/>
             <xsd:element name="errors" maxOccurs="unbounded">
                <xsd:complexType>
                   <xsd:sequence>
