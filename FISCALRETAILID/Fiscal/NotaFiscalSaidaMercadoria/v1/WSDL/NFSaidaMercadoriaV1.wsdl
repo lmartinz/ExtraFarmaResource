@@ -4,7 +4,8 @@ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
 xmlns:tns="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 xmlns:Q2="http://service.ultra.com.br/infcorp/LogIntegration/v1"
 xmlns:Q3="http://canonico.ultra.com.br/infcorp/v1"
-xmlns:Q4="http://schemas.datacontract.org/2004/07/Wsdl.Integration"
+xmlns:Q4="http://canonico.ultra.com.br/LegadoOutput/v1"
+xmlns:Q5="http://canonico.ultra.com.br/LegadoFault/v1"
 xmlns:rib="http://www.oracle.com/retail/integration/rib/RibMessages">
 
   <wsp:Policy wsu:Id="wss_username_token_over_ssl_service_policy"
@@ -21,7 +22,8 @@ xmlns:rib="http://www.oracle.com/retail/integration/rib/RibMessages">
       <xsd:schema targetNamespace="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1" elementFormDefault="qualified">
           <xsd:include schemaLocation="../Schemas/NFSaidaMercadoriaEBMV1.xsd"/>
       <xsd:import schemaLocation="../../../../Comum/v1/Schemas/Fault.xsd" namespace="http://canonico.ultra.com.br/infcorp/v1"/>
-      <xsd:import schemaLocation="../Schemas/LegadoOutput.xsd" namespace="http://schemas.datacontract.org/2004/07/Wsdl.Integration"/>
+      <xsd:import schemaLocation="../../../../Comum/v1/Schemas/LegadoOutput.xsd" namespace="http://canonico.ultra.com.br/LegadoOutput/v1"/>
+      <xsd:import schemaLocation="../../../../Comum/v1/Schemas/LegadoFault.xsd" namespace="http://canonico.ultra.com.br/LegadoFault/v1"/>
       <xsd:import schemaLocation="../Schemas/RibMessages.xsd" namespace="http://www.oracle.com/retail/integration/rib/RibMessages"/>
       <xsd:import schemaLocation="../../../../Comum/v1/Schemas/MetaInformacao.xsd"
                   namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"/>
@@ -46,7 +48,7 @@ xmlns:rib="http://www.oracle.com/retail/integration/rib/RibMessages">
         <wsdl:part name="parameters" element="Q4:RetornoServico"/>
     </wsdl:message>
     <wsdl:message name="PublicacaoNFSaidaMercadoriaFaultMsg">
-        <wsdl:part name="PublicacaoNFSaidaMercadoriaFault" element="Q3:Fault"/>
+        <wsdl:part name="PublicacaoNFSaidaMercadoriaFault" element="Q5:RetornoServicoFault"/>
     </wsdl:message>
     <!--HEADER-->
     <wsdl:portType name="NFSaidaMercadoriaPortType">
