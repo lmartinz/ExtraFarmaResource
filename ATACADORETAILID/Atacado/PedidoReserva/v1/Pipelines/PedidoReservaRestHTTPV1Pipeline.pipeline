@@ -26,12 +26,18 @@
                                         <con1:wsdl ref="ATACADORETAILID/Atacado/PedidoReserva/v1/WSDL/PedidoReservaV1"/>
                                         <con1:schemaType xmlns:v1="http://service.ultra.com.br/infcorp/LogIntegration/v1">v1:MetaInformacaoType</con1:schemaType>
                                         <con1:varName>header</con1:varName>
+                                        <con1:location>
+                                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">.</con2:xpathText>
+                                        </con1:location>
                                     </con1:validate>
                                 </con:action-override>
                                 <con:action-override id="_ActionId-N3f57fff4.67ea00d2.0.15cdc0d8d97.N7ec6">
                                     <con1:validate xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
                                         <con1:wsdl ref="ATACADORETAILID/Atacado/PedidoReserva/v1/WSDL/PedidoReservaV1"/>
                                         <con1:schemaElement xmlns:v1="http://service.ultra.com.br/atacado/PedidoReserva/v1">v1:CriarPedidoReservaRequest</con1:schemaElement>
+                                        <con1:location>
+                                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">./v1:CriarPedidoReservaRequest</con2:xpathText>
+                                        </con1:location>
                                     </con1:validate>
                                 </con:action-override>
                                 <con:placeholder-override id="PlaceholderID_N3f57fff3.5821b348.0.15ce17d9ef1.N7aef"/>
@@ -42,6 +48,11 @@
                                         <con1:operation passThrough="true"/>
                                     </con1:route>
                                 </con:action-override>
+                                <con:stage-override id="_StageId-N3f57fff4.67ea00d2.0.15cdc0d8d97.N7ecd">
+                                    <con:context>
+                                        <con1:userNsDecl prefix="v1" namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                                    </con:context>
+                                </con:stage-override>
                             </con:template-overrides>
                         </con:branch>
                         <con:branch name="cancelarPedidoReserva">
@@ -52,12 +63,18 @@
                                     <con1:validate xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
                                         <con1:wsdl ref="ATACADORETAILID/Atacado/PedidoReserva/v1/WSDL/PedidoReservaV1"/>
                                         <con1:schemaType xmlns:v1="http://service.ultra.com.br/infcorp/LogIntegration/v1">v1:MetaInformacaoType</con1:schemaType>
+                                        <con1:location>
+                                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">.</con2:xpathText>
+                                        </con1:location>
                                     </con1:validate>
                                 </con:action-override>
                                 <con:action-override id="_ActionId-N3f57fff4.67ea00d2.0.15cdc0d8d97.N7ec6">
                                     <con1:validate xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
                                         <con1:wsdl ref="ATACADORETAILID/Atacado/PedidoReserva/v1/WSDL/PedidoReservaV1"/>
                                         <con1:schemaElement xmlns:v1="http://service.ultra.com.br/atacado/PedidoReserva/v1">v1:CancelarPedidoReservaRequest</con1:schemaElement>
+                                        <con1:location>
+                                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">./v1:CancelarPedidoReservaRequest</con2:xpathText>
+                                        </con1:location>
                                     </con1:validate>
                                 </con:action-override>
                                 <con:placeholder-override id="PlaceholderID_N3f57fff3.5821b348.0.15ce17d9ef1.N7aef"/>
@@ -68,6 +85,11 @@
                                         <con1:operation passThrough="true"/>
                                     </con1:route>
                                 </con:action-override>
+                                <con:stage-override id="_StageId-N3f57fff4.67ea00d2.0.15cdc0d8d97.N7ecd">
+                                    <con:context>
+                                        <con1:userNsDecl prefix="v1" namespace="http://service.ultra.com.br/atacado/PedidoReserva/v1" xmlns:con1="http://www.bea.com/wli/sb/stages/config"/>
+                                    </con:context>
+                                </con:stage-override>
                             </con:template-overrides>
                         </con:branch>
                         <con:default-branch>
