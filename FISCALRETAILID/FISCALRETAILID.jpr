@@ -209,4 +209,5 @@
          </list>
       </hash>
    </hash>
+   <value n="SOA_WSDL_FOLDER_NAME" v="Fiscal/CriacaoNotaFiscalSaidaMercadoria/v1/WSDL/"/>
 </jpr:project>

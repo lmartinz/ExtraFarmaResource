@@ -1,6 +1,6 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-            xmlns:tns="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1"
-            targetNamespace="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1" elementFormDefault="qualified">
+            xmlns:tns="http://service.ultra.com.br/fiscal/criarNFSaidaMercadoria/v1"
+            targetNamespace="http://service.ultra.com.br/fiscal/criarNFSaidaMercadoria/v1" elementFormDefault="qualified">
   <xsd:include schemaLocation="CaixasNotaFiscalSaida.xsd"/>
   <xsd:complexType name="NFSaidaDetalheType">
     <xsd:sequence>

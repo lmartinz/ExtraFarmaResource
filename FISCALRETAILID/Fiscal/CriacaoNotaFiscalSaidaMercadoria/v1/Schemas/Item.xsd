@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-            xmlns:ns="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1"
-            targetNamespace="http://service.ultra.com.br/fiscal/NFSaidaMercadoria/v1"
+            xmlns:ns="http://service.ultra.com.br/fiscal/criarNFSaidaMercadoria/v1"
+            targetNamespace="http://service.ultra.com.br/fiscal/criarNFSaidaMercadoria/v1"
             elementFormDefault="qualified">
   <xsd:complexType name="ItemType">
     <xsd:sequence>

@@ -1,0 +1,27 @@
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://service.ultra.com.br/fiscal/criarNFSaidaMercadoria/v1" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="CriacaoNotaFiscalSaidaMercadoriaRestHTTPV1">CriarNotaFiscalSaidaMercadoriaRestHTTPV1</doc>
+   <grammars>
+      <xsd:schema xmlns:inp1="http://service.ultra.com.br/fiscal/criarNFSaidaMercadoria/v1" xmlns:inp2="http://canonico.ultra.com.br/infcorp/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            <xsd:import namespace="http://service.ultra.com.br/fiscal/criarNFSaidaMercadoria/v1" schemaLocation="../Schemas/CriacaoNotaFiscalSaidaMercadoriaEBMV1.xsd"/>
+        </xsd:schema>
+      <xsd:schema xmlns:inp1="http://service.ultra.com.br/fiscal/criarNFSaidaMercadoria/v1" xmlns:inp2="http://canonico.ultra.com.br/infcorp/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            <xsd:import namespace="http://canonico.ultra.com.br/infcorp/v1" schemaLocation="../../../../Comum/v1/Schemas/Fault.xsd"/>
+        </xsd:schema>
+   </grammars>
+   <resources>
+      <resource path="/http://extrafarma/fiscal/CriacaoNotaFiscalSaidaMercadoria/v1/">
+         <method name="PUT" soa:wsdlOperation="criarNFSaidaMercadoria">
+            <request>
+               <representation mediaType="application/json" element="cns:CriacaoNotaFiscalSaidaMercadoriaRequest" xmlns:cns="http://service.ultra.com.br/fiscal/criarNFSaidaMercadoria/v1"/>
+            </request>
+            <response status="200">
+               <representation mediaType="application/xml" element="cns:CriacaoNotaFiscalSaidaMercadoriaResponse" xmlns:cns="http://service.ultra.com.br/fiscal/criarNFSaidaMercadoria/v1"/>
+            </response>
+            <response status="400" soa:wsdlFaultName="criarNFSaidaMercadoriafault">
+               <representation mediaType="application/xml" element="cns:Fault" xmlns:cns="http://canonico.ultra.com.br/infcorp/v1"/>
+               <representation mediaType="application/json" element="cns:Fault" xmlns:cns="http://canonico.ultra.com.br/infcorp/v1"/>
+            </response>
+         </method>
+      </resource>
+   </resources>
+</application>

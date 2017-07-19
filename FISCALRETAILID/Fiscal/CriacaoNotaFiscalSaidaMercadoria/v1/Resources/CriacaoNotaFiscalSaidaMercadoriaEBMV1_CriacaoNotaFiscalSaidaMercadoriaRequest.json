@@ -1,0 +1,37 @@
+{
+  "codigoLocalDestino" : "codigoLocalDestino121",
+  "tipoLocalDestino" : "tipoLocalDestino122",
+  "codigoLocalOrigem" : "codigoLocalOrigem123",
+  "tipoLocalOrigem" : "tipoLocalOrigem124",
+  "numeroPedidoCliente" : "numeroPedidoCliente125",
+  "tipoPedidoTransferencia" : "tipoPedidoTransferencia126",
+  "quantidadeCaixasPedido" : 127,
+  "identificacaoTransferencia" : "identificacaoTransferencia128",
+  "dataTransferencia" : "2017-07-19",
+  "codigoIdentificacaoTransportadora" : "codigoIdentificacaoTransportadora129",
+  "codigoNivelServicoTransportadora" : "codigoNivelServicoTransportadora130",
+  "codigoIdentificacaoImpressora" : "codigoIdentificacaoImpressora131",
+  "IdentificacaoImpressaoRequerida" : "IdentificacaoImpressaoRequerida132",
+  "IdentificacaiEntregaDomicilio" : "IdentificacaiEntregaDomicilio133",
+  "NFSaidaDetalheList" : [ {
+    "codigoItemPedidoTransferencia" : "codigoItemPedidoTransferencia134",
+    "tipoItemPedidoTransferencia" : "tipoItemPedidoTransferencia135",
+    "codigoItemPedidoCliente" : "codigoItemPedidoCliente136",
+    "tipoItemPedidoCliente" : "tipoItemPedidoCliente137",
+    "tipoClienteDireto" : "tipoClienteDireto138",
+    "CaixasNotaFiscalSaidaList" : [ {
+      "codigoItemPedidoCliente" : "codigoItemPedidoCliente139",
+      "quantidadeItemPedidoCliente" : "quantidadeItemPedidoCliente140",
+      "tipoPedidoUrgente" : "tipoPedidoUrgente141",
+      "ItemNotaFiscalSaidaList" : [ {
+        "codigoProduto" : "codigoProduto142",
+        "quantidadeProduto" : 143,
+        "percentagemDescontoItem" : 144,
+        "codigoLote" : "codigoLote145",
+        "dataExpiracaoLote" : "2017-07-19",
+        "quantidadeLote" : 146,
+        "codigoEmeiItem" : "codigoEmeiItem147"
+      } ]
+    } ]
+  } ]
+}
