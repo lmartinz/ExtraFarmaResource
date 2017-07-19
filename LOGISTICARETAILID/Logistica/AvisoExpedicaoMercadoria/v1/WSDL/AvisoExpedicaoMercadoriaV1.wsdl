@@ -1,0 +1,69 @@
+<wsdl:definitions name="ExpedicaoMercadoria"
+                  targetNamespace="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tns="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:Q2="http://service.ultra.com.br/infcorp/LogIntegration/v1"
+                  xmlns:Q3="http://canonico.ultra.com.br/infcorp/v1">
+  <wsp:Policy wsu:Id="wss_username_token_over_ssl_service_policy"
+              xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+              xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+              xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+    <sp:UsernameToken>
+      <wsp:Policy>
+        <sp:WssUsernameToken11/>
+      </wsp:Policy>
+    </sp:UsernameToken>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1"
+                elementFormDefault="qualified">
+      <xsd:include schemaLocation="../Schemas/AvisoExpedicaoMercadoriaEBMV1.xsd"/>
+      <xsd:import schemaLocation="../../../../Comum/v1/Schemas/Fault.xsd"
+                  namespace="http://canonico.ultra.com.br/infcorp/v1"/>
+      <xsd:import schemaLocation="../../../../Comum/v1/Schemas/MetaInformacao.xsd"
+                  namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="requestHeader">
+    <wsdl:part element="Q2:MetaInformacao" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="NotificarExpedicaoMercadoriaRequest">
+    <wsdl:part element="tns:NotificarExpedicaoMercadoriaRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="NotificarExpedicaoMercadoriaResponse">
+    <wsdl:part element="tns:NotificarExpedicaoMercadoriaResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="NotificarExpedicaoMercadoriaFaultMsg">
+    <wsdl:part name="NotificarExpedicaoMercadoriaFault" element="Q3:Fault"/>
+  </wsdl:message>
+  <!--HEADER-->
+  <wsdl:portType name="ExpedicaoMercadoriaPortType">
+    <wsdl:operation name="notificarExpedicaoMercadoria">
+      <wsdl:input message="tns:NotificarExpedicaoMercadoriaRequest"/>
+      <wsdl:output message="tns:NotificarExpedicaoMercadoriaResponse"/>
+      <wsdl:fault name="NotificarExpedicaoMercadoriaFault" message="tns:NotificarExpedicaoMercadoriaFaultMsg"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ExpedicaoMercadoriaPortBinding" type="tns:ExpedicaoMercadoriaPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="notificarExpedicaoMercadoria">
+      <soap:operation soapAction="http://service.ultra.com.br/ExpedicaoMercadoria/v1/notificarExpedicaoMercadoria"/>
+      <wsdl:input>
+        <soap:header message="tns:requestHeader" part="parameters" use="literal"/>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="NotificarExpedicaoMercadoriaFault">
+        <soap:fault use="literal" name="NotificarExpedicaoMercadoriaFault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ExpedicaoMercadoriaService">
+    <wsdl:port binding="tns:ExpedicaoMercadoriaPortBinding" name="ExpedicaoMercadoriaPort">
+      <soap:address location="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -61,11 +61,6 @@
       <wsdl:output message="tns:CriarNFSaidaMercadoriaResponse"/>
       <wsdl:fault name="CriarNFSaidaMercadoriaFault" message="tns:CriarNFSaidaMercadoriaFaultMsg"/>
     </wsdl:operation>
-    <wsdl:operation name="publicacaoNFSaidaMercadoria">
-      <wsdl:input message="tns:PublicacaoNFSaidaMercadoriaRequest"/>
-      <wsdl:output message="tns:PublicacaoNFSaidaMercadoriaResponse"/>
-      <wsdl:fault name="PublicacaoNFSaidaMercadoriaFault" message="tns:PublicacaoNFSaidaMercadoriaFaultMsg"/>
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NFSaidaMercadoriaPortBinding" type="tns:NFSaidaMercadoriaPortType">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
@@ -80,19 +75,6 @@
       </wsdl:output>
       <wsdl:fault name="CriarNFSaidaMercadoriaFault">
         <soap:fault use="literal" name="CriarNFSaidaMercadoriaFault"/>
-      </wsdl:fault>
-    </wsdl:operation>
-    <wsdl:operation name="publicacaoNFSaidaMercadoria">
-      <soap:operation soapAction="http://service.ultra.com.br/NFSaidaMercadoria/v1/publicacaoNFSaidaMercadoria"/>
-      <wsdl:input>
-        <soap:header message="tns:requestHeader" part="parameters" use="literal"/>
-        <soap:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal"/>
-      </wsdl:output>
-      <wsdl:fault name="PublicacaoNFSaidaMercadoriaFault">
-        <soap:fault name="PublicacaoNFSaidaMercadoriaFault" use="literal"/>
       </wsdl:fault>
     </wsdl:operation>
   </wsdl:binding>

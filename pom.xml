@@ -11,6 +11,8 @@
 
     <modules>
         <module>System</module>
+        <module>PRECIFICACAORETAILID</module>
+        <module>FISCALRETAILID</module>
     </modules>
 
 </project>

@@ -1,0 +1,26 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1">
+  <xsd:include schemaLocation="AvisoExpedicaoMercadoriaDetalhe.xsd"/>
+  <xsd:complexType name="NotificarExpedicaoMercadoriaRequestType">
+    <xsd:sequence>
+      <xsd:element name="codigoLocalDestino" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="tipoLocalDestino" type="xsd:string"/>
+      <xsd:element name="codigoLocalOrigem" type="xsd:string"/>
+      <xsd:element name="tipoLocalOrigem" type="xsd:string"/>
+      <xsd:element name="numeroPedido" type="xsd:string"/>
+      <xsd:element name="qtdCaixa" type="xsd:int"/>
+      <xsd:element name="dataLiberacao" type="xsd:date"/>
+      <xsd:element name="ExpedicaoDetalheList" type="tns:NotificarExpedicaoMercadoriaDetalheType" maxOccurs="unbounded"
+                   minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="NotificarExpedicaoMercadoriaRequest" type="tns:NotificarExpedicaoMercadoriaRequestType"/>
+  <xsd:element name="NotificarExpedicaoMercadoriaResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="out" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

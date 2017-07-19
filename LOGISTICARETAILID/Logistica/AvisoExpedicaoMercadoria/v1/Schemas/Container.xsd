@@ -1,0 +1,12 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1">
+  <xsd:include schemaLocation="Item.xsd"/>
+  <xsd:complexType name="containerType">
+    <xsd:sequence>
+      <xsd:element name="codigoContainer" type="xsd:string"/>
+      <xsd:element name="ItemList" type="tns:ItemType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Container" type="tns:containerType"/>
+</xsd:schema>
