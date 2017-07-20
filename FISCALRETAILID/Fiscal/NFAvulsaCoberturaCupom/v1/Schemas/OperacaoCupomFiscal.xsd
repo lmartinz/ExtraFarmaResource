@@ -1,0 +1,14 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/fiscal/NFAvulsaCoberturaCupom/v1" 
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns:tns="http://service.ultra.com.br/fiscal/NFAvulsaCoberturaCupom/v1">
+    <xsd:complexType name="OperacaoCupomFiscalType" >
+		<xsd:sequence>
+			<xsd:element name="modeloCupomFiscal" type="xsd:string"/>
+			<xsd:element name="numeroContadorOrdemOperacao" type="xsd:integer"/>
+                        <xsd:element name="numeroContadorCupomFiscal" type="xsd:integer"/>
+                        <xsd:element name="chaveAcessoCupom" type="xsd:integer"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:element name="OperacaoCupomFiscal" type="tns:OperacaoCupomFiscalType"/>
+</xsd:schema>

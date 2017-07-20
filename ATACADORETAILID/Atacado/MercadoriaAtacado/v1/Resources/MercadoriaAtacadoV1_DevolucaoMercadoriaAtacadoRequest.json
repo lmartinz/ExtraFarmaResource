@@ -1,0 +1,43 @@
+{
+  "codigoFilial" : 1,
+  "tipoLocalizacao" : "tipoLocalizacao2",
+  "tipoNotaFiscal" : "tipoNotaFiscal3",
+  "comentario" : "comentario4",
+  "codigoUsuarioEmissorNota" : 5,
+  "Cliente" : {
+    "codigoCliente" : 6,
+    "nome" : "nome7",
+    "cpfCnpj" : "cpfCnpj8",
+    "endereco" : "endereco9",
+    "numeroEndereco" : "numeroEndereco10",
+    "complemento" : "complemento11",
+    "bairro" : "bairro12",
+    "cep" : "cep13",
+    "cidade" : "cidade14",
+    "codigoIbgeCidade" : "codigoIbgeCidade15",
+    "estado" : "estado16"
+  },
+  "ItemCupomList" : [ {
+    "codigoItem" : 17,
+    "quantidade" : 18,
+    "precoUnitario" : 19,
+    "percentualDesconto" : 20,
+    "valorDesconto" : 21,
+    "ItemDetalheList" : [ {
+      "volume" : "volume22",
+      "LoteItemList" : [ {
+        "identificacaoLote" : "identificacaoLote23",
+        "dataFabricacao" : "2017-07-20T02:25:26.288",
+        "dataValidade" : "2017-07-20T02:25:26.288",
+        "quantidadeLote" : 24
+      } ],
+      "ImeiItemList" : [ {
+        "imeiItem" : "imeiItem25"
+      } ]
+    } ]
+  } ],
+  "RmaList" : [ {
+    "chaveNotaOrigem" : "chaveNotaOrigem26",
+    "dataEmissaoRma" : "2017-07-20T02:25:26.288"
+  } ]
+}

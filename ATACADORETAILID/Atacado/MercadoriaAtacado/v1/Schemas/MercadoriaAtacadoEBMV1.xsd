@@ -1,0 +1,28 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/atacado/MercadoriaAtacado/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns:tns="http://service.ultra.com.br/atacado/MercadoriaAtacado/v1">
+    <xsd:include schemaLocation="Cliente.xsd"/>
+    <xsd:include schemaLocation="ItemCupom.xsd"/>
+    <xsd:include schemaLocation="Rma.xsd"/>
+    <xsd:complexType name="DevolucaoMercadoriaAtacadoRequestType">
+      <xsd:sequence>
+        <xsd:element name="codigoFilial" type="xsd:integer" minOccurs="1"/>
+        <xsd:element name="tipoLocalizacao" type="xsd:string" minOccurs="1"/>
+        <xsd:element name="tipoNotaFiscal" type="xsd:string"/>
+        <xsd:element name="comentario" type="xsd:string"/>
+        <xsd:element name="codigoUsuarioEmissorNota" type="xsd:integer"/>
+          <xsd:element name="Cliente" type="tns:ClienteType" minOccurs="1" maxOccurs="1"/>
+          <xsd:element name="ItemCupomList" type="tns:ItemCupomType" maxOccurs="unbounded"/>
+          <xsd:element name="RmaList" type="tns:RmaType" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+	
+    <xsd:element name="DevolucaoMercadoriaAtacadoRequest" type="tns:DevolucaoMercadoriaAtacadoRequestType"/>
+    <xsd:element name="DevolucaoMercadoriaAtacadoResponse">
+      <xsd:complexType>
+        <xsd:sequence>
+          <xsd:element name="out" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

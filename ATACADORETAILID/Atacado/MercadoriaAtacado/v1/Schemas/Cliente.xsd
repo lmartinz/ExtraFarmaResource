@@ -1,0 +1,21 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/atacado/MercadoriaAtacado/v1" 
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns:tns="http://service.ultra.com.br/atacado/MercadoriaAtacado/v1">
+    <xsd:complexType name="ClienteType" >
+		<xsd:sequence>
+			<xsd:element name="codigoCliente" type="xsd:integer" minOccurs="1"/>
+			<xsd:element name="nome" type="xsd:string" minOccurs="1"/>
+                        <xsd:element name="cpfCnpj" type="xsd:string" minOccurs="1"/>
+                        <xsd:element name="endereco" type="xsd:string" minOccurs="1"/>
+                        <xsd:element name="numeroEndereco" type="xsd:string"/>
+                        <xsd:element name="complemento" type="xsd:string"/>
+                        <xsd:element name="bairro" type="xsd:string" minOccurs="1"/>
+                        <xsd:element name="cep" type="xsd:string" minOccurs="1"/>
+                        <xsd:element name="cidade" type="xsd:string" minOccurs="1"/>
+                        <xsd:element name="codigoIbgeCidade" type="xsd:string" minOccurs="1"/>
+                        <xsd:element name="estado" type="xsd:string" minOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:element name="Cliente" type="tns:ClienteType"/>
+</xsd:schema>
