@@ -1,0 +1,14 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/atacado/MercadoriaAtacado/v1" 
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns:tns="http://service.ultra.com.br/atacado/MercadoriaAtacado/v1">
+    <xsd:complexType name="LoteItemType" >
+		<xsd:sequence>
+			<xsd:element name="identificacaoLote" type="xsd:string" minOccurs="1"/>
+			<xsd:element name="dataFabricacao" type="xsd:dateTime"/>
+                        <xsd:element name="dataValidade" type="xsd:dateTime"/>
+                        <xsd:element name="quantidadeLote" type="xsd:decimal"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:element name="LoteItem" type="tns:LoteItemType"/>
+</xsd:schema>

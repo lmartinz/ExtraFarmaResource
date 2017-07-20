@@ -1,0 +1,17 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/atacado/MercadoriaAtacado/v1" 
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns:tns="http://service.ultra.com.br/atacado/MercadoriaAtacado/v1">
+    <xsd:include schemaLocation="ItemDetalhe.xsd"/>
+    <xsd:complexType name="ItemCupomType" >
+		<xsd:sequence>
+			<xsd:element name="codigoItem" type="xsd:integer" minOccurs="1"/>
+			<xsd:element name="quantidade" type="xsd:integer" minOccurs="1"/>
+                        <xsd:element name="precoUnitario" type="xsd:decimal" minOccurs="1"/>
+                        <xsd:element name="percentualDesconto" type="xsd:integer"/>
+                        <xsd:element name="valorDesconto" type="xsd:decimal"/>
+			<xsd:element name="ItemDetalheList" type="tns:ItemDetalheType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:element name="ItemCupom" type="tns:ItemCupomType"/>
+</xsd:schema>

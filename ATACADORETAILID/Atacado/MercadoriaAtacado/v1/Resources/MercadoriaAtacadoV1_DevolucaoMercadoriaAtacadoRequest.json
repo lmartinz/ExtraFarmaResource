@@ -1,0 +1,52 @@
+{
+  "codigoFilial" : 1,
+  "tipoLocalizacao" : "tipoLocalizacao2",
+  "tipoNotaFiscal" : "tipoNotaFiscal3",
+  "OperacaoCupomFiscalList" : [ {
+    "modeloCupomFiscal" : "modeloCupomFiscal4",
+    "numeroContadorOrdemOperacao" : 5,
+    "numeroContadorCupomFiscal" : 6,
+    "chaveAcessoCupom" : 7
+  } ],
+  "comentario" : "comentario8",
+  "codigoUsuarioEmissorNota" : 9,
+  "Cliente" : {
+    "codigoCliente" : 10,
+    "nome" : "nome11",
+    "cpfCnpj" : "cpfCnpj12",
+    "endereco" : "endereco13",
+    "numeroEndereco" : "numeroEndereco14",
+    "complemento" : "complemento15",
+    "bairro" : "bairro16",
+    "cep" : "cep17",
+    "cidade" : "cidade18",
+    "codigoIbgeCidade" : "codigoIbgeCidade19",
+    "estado" : "estado20"
+  },
+  "ItemCupomList" : [ {
+    "codigoItem" : 21,
+    "quantidade" : 22,
+    "precoUnitario" : 23,
+    "percentualDesconto" : 24,
+    "valorDesconto" : 25,
+    "ItemDetalheList" : [ {
+      "volume" : "volume26",
+      "LoteItemList" : [ {
+        "identificacaoLote" : "identificacaoLote27",
+        "dataFabricacao" : "2017-07-20T01:21:58.220",
+        "dataValidade" : "2017-07-20T01:21:58.221",
+        "quantidadeLote" : 28
+      } ],
+      "ImeiItemList" : [ {
+        "imeiItem" : "imeiItem29"
+      } ]
+    } ]
+  } ],
+  "valorTotalNotaFiscal" : 30,
+  "valorTotalDescontos" : 31,
+  "valorTotalOutrasDespesas" : 32,
+  "RmaList" : [ {
+    "chaveNotaOrigem" : "chaveNotaOrigem33",
+    "dataEmissaoRma" : "2017-07-20T01:21:58.221"
+  } ]
+}
