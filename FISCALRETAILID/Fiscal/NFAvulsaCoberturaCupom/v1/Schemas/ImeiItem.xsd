@@ -1,0 +1,11 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/fiscal/NFAvulsaCoberturaCupom/v1" 
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns:tns="http://service.ultra.com.br/fiscal/NFAvulsaCoberturaCupom/v1">
+    <xsd:complexType name="ImeiItemType" >
+		<xsd:sequence>
+			<xsd:element name="imeiItem" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:element name="ImeiItem" type="tns:ImeiItemType"/>
+</xsd:schema>

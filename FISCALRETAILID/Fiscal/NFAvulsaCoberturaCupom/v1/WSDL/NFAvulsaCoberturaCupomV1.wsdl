@@ -1,0 +1,68 @@
+<wsdl:definitions name="NFAvulsaCoberturaCupom" targetNamespace="http://service.ultra.com.br/fiscal/NFAvulsaCoberturaCupom/v1"
+xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+xmlns:tns="http://service.ultra.com.br/fiscal/NFAvulsaCoberturaCupom/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+xmlns:Q2="http://service.ultra.com.br/infcorp/LogIntegration/v1"
+xmlns:Q3="http://canonico.ultra.com.br/infcorp/v1">
+
+  <wsp:Policy wsu:Id="wss_username_token_over_ssl_service_policy"
+              xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+              xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+              xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+    <sp:UsernameToken>
+      <wsp:Policy>
+        <sp:WssUsernameToken11/>
+      </wsp:Policy>
+    </sp:UsernameToken>
+  </wsp:Policy>
+    <wsdl:types>
+      <xsd:schema targetNamespace="http://service.ultra.com.br/fiscal/NFAvulsaCoberturaCupom/v1" elementFormDefault="qualified">
+          <xsd:include schemaLocation="../Schemas/NFAvulsaCoberturaCupomEBMV1.xsd"/>
+      <xsd:import schemaLocation="../../../../Comum/v1/Schemas/Fault.xsd" namespace="http://canonico.ultra.com.br/infcorp/v1"/>
+      <xsd:import schemaLocation="../../../../Comum/v1/Schemas/MetaInformacao.xsd"
+                  namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"/>
+      </xsd:schema> 
+    </wsdl:types>
+    <wsdl:message name="requestHeader">
+        <wsdl:part element="Q2:MetaInformacao" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="EmitirNFAvulsaCoberturaCupomRequest">
+        <wsdl:part element="tns:EmitirNFAvulsaCoberturaCupomRequest" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="EmitirNFAvulsaCoberturaCupomResponse">
+        <wsdl:part element="tns:EmitirNFAvulsaCoberturaCupomResponse" name="parameters"/>
+    </wsdl:message>
+  <wsdl:message name="EmitirNFAvulsaCoberturaCupomFaultMsg">
+    <wsdl:part name="EmitirNFAvulsaCoberturaCupomFault" element="Q3:Fault"/>
+  </wsdl:message>
+
+    <!--HEADER-->
+    <wsdl:portType name="NFAvulsaCoberturaCupomPortType">
+        <wsdl:operation name="emitirNFAvulsaCoberturaCupom">
+            <wsdl:input message="tns:EmitirNFAvulsaCoberturaCupomRequest"/>
+            <wsdl:output message="tns:EmitirNFAvulsaCoberturaCupomResponse"/>
+            <wsdl:fault name="EmitirNFAvulsaCoberturaCupomFault" message="tns:EmitirNFAvulsaCoberturaCupomFaultMsg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="NFAvulsaCoberturaCupomPortBinding" type="tns:NFAvulsaCoberturaCupomPortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="emitirNFAvulsaCoberturaCupom">
+            <soap:operation soapAction="http://service.ultra.com.br/NFAvulsaCoberturaCupom/v1/emitirNFAvulsaCoberturaCupom"/>
+            <wsdl:input>
+                <soap:header message="tns:requestHeader" part="parameters" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="EmitirNFAvulsaCoberturaCupomFault">
+                <soap:fault use="literal" name="EmitirNFAvulsaCoberturaCupomFault"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="NFAvulsaCoberturaCupomService">
+        <wsdl:port binding="tns:NFAvulsaCoberturaCupomPortBinding" name="NFAvulsaCoberturaCupomPort">
+            <soap:address location="http://service.ultra.com.br/fiscal/NFAvulsaCoberturaCupom/v1"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

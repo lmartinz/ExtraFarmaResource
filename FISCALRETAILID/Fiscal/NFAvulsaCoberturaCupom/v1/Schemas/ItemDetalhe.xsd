@@ -1,0 +1,14 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/fiscal/NFAvulsaCoberturaCupom/v1" 
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns:tns="http://service.ultra.com.br/fiscal/NFAvulsaCoberturaCupom/v1">
+    <xsd:include schemaLocation="LoteItem.xsd"/>
+    <xsd:include schemaLocation="ImeiItem.xsd"/>
+    <xsd:complexType name="ItemDetalheType" >
+		<xsd:sequence>
+                        <xsd:element name="LoteItemList" type="tns:LoteItemType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ImeiItemList" type="tns:ImeiItemType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:element name="ItemDetalhe" type="tns:ItemDetalheType"/>
+</xsd:schema>

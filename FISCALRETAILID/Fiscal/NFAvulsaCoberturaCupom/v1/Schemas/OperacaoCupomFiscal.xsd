@@ -1,6 +1,6 @@
-<xsd:schema targetNamespace="http://service.ultra.com.br/atacado/MercadoriaAtacado/v1" 
+<xsd:schema targetNamespace="http://service.ultra.com.br/fiscal/NFAvulsaCoberturaCupom/v1" 
             xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
-            xmlns:tns="http://service.ultra.com.br/atacado/MercadoriaAtacado/v1">
+            xmlns:tns="http://service.ultra.com.br/fiscal/NFAvulsaCoberturaCupom/v1">
     <xsd:complexType name="OperacaoCupomFiscalType" >
 		<xsd:sequence>
 			<xsd:element name="modeloCupomFiscal" type="xsd:string"/>
