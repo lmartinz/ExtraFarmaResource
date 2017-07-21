@@ -1,14 +1,5 @@
-<wsdl:definitions name="ExpedicaoMercadoria"
-                  targetNamespace="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1"
-                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-                  xmlns:tns="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1"
-                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-                  xmlns:Q2="http://service.ultra.com.br/infcorp/LogIntegration/v1"
-                  xmlns:Q3="http://canonico.ultra.com.br/infcorp/v1">
-  <wsp:Policy wsu:Id="wss_username_token_over_ssl_service_policy"
-              xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
-              xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
-              xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+<wsdl:definitions name="ExpedicaoMercadoria" targetNamespace="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:Q2="http://service.ultra.com.br/infcorp/LogIntegration/v1" xmlns:Q3="http://canonico.ultra.com.br/infcorp/v1">
+  <wsp:Policy wsu:Id="wss_username_token_over_ssl_service_policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
     <sp:UsernameToken>
       <wsp:Policy>
         <sp:WssUsernameToken11/>
@@ -16,13 +7,10 @@
     </sp:UsernameToken>
   </wsp:Policy>
   <wsdl:types>
-    <xsd:schema targetNamespace="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1"
-                elementFormDefault="qualified">
-      <xsd:include schemaLocation="../Schemas/AvisoExpedicaoMercadoriaEBMV1.xsd"/>
-      <xsd:import schemaLocation="../../../../Comum/v1/Schemas/Fault.xsd"
-                  namespace="http://canonico.ultra.com.br/infcorp/v1"/>
-      <xsd:import schemaLocation="../../../../Comum/v1/Schemas/MetaInformacao.xsd"
-                  namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"/>
+    <xsd:schema targetNamespace="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1" elementFormDefault="qualified">
+      <xsd:include schemaLocation="../Schemas/ExpedicaoMercadoriaEBMV1.xsd"/>
+      <xsd:import schemaLocation="../../../../Comum/v1/Schemas/Fault.xsd" namespace="http://canonico.ultra.com.br/infcorp/v1"/>
+      <xsd:import schemaLocation="../../../../Comum/v1/Schemas/MetaInformacao.xsd" namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"/>
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="requestHeader">

@@ -1,0 +1,25 @@
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="AvisoExpedicaoMercadoriaRestHTTPV1">AvisoExpedicaoMercadoriaRestHTTPV1</doc>
+  <grammars>
+    <xsd:schema targetNamespace="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1" elementFormDefault="qualified" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1" xmlns:Q2="http://service.ultra.com.br/infcorp/LogIntegration/v1" xmlns:Q3="http://canonico.ultra.com.br/infcorp/v1">
+      <xsd:include schemaLocation="../Schemas/ExpedicaoMercadoriaEBMV1.xsd"/>
+      <xsd:import schemaLocation="../../../../Comum/v1/Schemas/Fault.xsd" namespace="http://canonico.ultra.com.br/infcorp/v1"/>
+      <xsd:import schemaLocation="../../../../Comum/v1/Schemas/MetaInformacao.xsd" namespace="http://service.ultra.com.br/infcorp/LogIntegration/v1"/>
+    </xsd:schema>
+  </grammars>
+  <resources>
+    <resource path="/logistica/AvisoExpedicaoMercadoria/v1">
+      <method name="POST" soa:wsdlOperation="notificarExpedicaoMercadoria">
+        <request>
+          <representation mediaType="application/json" element="tns:NotificarExpedicaoMercadoriaRequest" xmlns:tns="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1"/>
+        </request>
+        <response status="200">
+          <representation mediaType="application/xml" element="tns:NotificarExpedicaoMercadoriaResponse" xmlns:tns="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1"/>
+        </response>
+        <response status="400" soa:wsdlFaultName="NotificarExpedicaoMercadoriaFault">
+          <representation mediaType="application/xml" element="tns:Fault" xmlns:tns="http://canonico.ultra.com.br/infcorp/v1"/>
+        </response>
+      </method>
+    </resource>
+  </resources>
+</application>
