@@ -8,7 +8,7 @@
         </xsd:schema>
    </grammars>
    <resources>
-      <resource path="/logistica/v1/devolucaoMercadoria/notificarDevolucaoMercadoria">
+      <resource path="notificarDevolucaoMercadoria">
          <method name="POST" soa:wsdlOperation="notificarDevolucaoMercadoria">
             <request>
                <representation mediaType="application/json" element="cns:NotificarDevolucaoMercadoriaRequest" xmlns:cns="http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1"/>
