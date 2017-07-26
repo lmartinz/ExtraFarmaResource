@@ -27,7 +27,7 @@
                                         <con1:schemaType xmlns:v1="http://service.ultra.com.br/infcorp/LogIntegration/v1">v1:MetaInformacaoType</con1:schemaType>
                                         <con1:varName>header</con1:varName>
                                         <con1:location>
-                                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">.</con2:xpathText>
+                                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">$header</con2:xpathText>
                                         </con1:location>
                                     </con1:validate>
                                 </con:action-override>
@@ -36,7 +36,7 @@
                                         <con1:wsdl ref="LOGISTICARETAILID/Logistica/RecebimentoMercadoria/v1/WSDL/RecebimentoMercadoriaV1"/>
                                         <con1:schemaElement xmlns:v1="http://service.ultra.com.br/logistica/RecebimentoMercadoria/v1">v1:NotificarRecebimentoMercadoriaRequest</con1:schemaElement>
                                         <con1:location>
-                                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">./v1:NotificarRecebimentoMercadoriaRequest</con2:xpathText>
+                                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">$body/*[1]</con2:xpathText>
                                         </con1:location>
                                     </con1:validate>
                                 </con:action-override>

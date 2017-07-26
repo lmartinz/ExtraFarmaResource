@@ -3,12 +3,12 @@ xquery version "1.0" encoding "utf-8";
 (:: OracleAnnotationVersion "1.0" ::)
 
 declare namespace ns1="http://service.ultra.com.br/infcorp/LogIntegration/v1";
-(:: import schema at "../../v1/Schemas/MetaInformacao.xsd" ::)
+(:: import schema at "../Schemas/MetaInformacao.xsd" ::)
 declare namespace ctx="http://www.bea.com/wli/sb/context";
-(:: import schema at "../../v1/Schemas/MessageContext.xsd" ::)
+(:: import schema at "../Schemas/MessageContext.xsd" ::)
 
 declare namespace soap="http://schemas.xmlsoap.org/soap/envelope/";
-(:: import schema at "../../v1/Schemas/Soap-env.xsd" ::)
+(:: import schema at "../Schemas/Soap-env.xsd" ::)
 
 declare namespace tp="http://www.bea.com/wli/sb/transports";  
 

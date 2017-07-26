@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:templateEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/logging/config">
+    <con:coreEntry>
+        <con:description>Pipeline para servicos sinncronos.</con:description>
+        <con:binding type="SOAP" xsi:type="con:AnyWsdlSoapBindingType"/>
+    </con:coreEntry>
+    <con:router errorHandler="error-N53eaeb0b.34fa83ba.0.15ad2737140.N7cfc">
+        <con:pipeline type="request" name="request-N53eaeb0b.34fa83ba.0.15ad2737140.N7f69">
+            <con:stage id="_StageId-N53eaeb0b.34fa83ba.0.15ad2737140.N7f67" name="ValidationRequest">
+                <con:comment>Coloque aqui as validacoes necessarias do payload de entrada</con:comment>
+                <con:context/>
+                <con:actions>
+                    <con1:validate>
+                        <con2:id>_ActionId-N53eaeb0b.34fa83ba.0.15ad2737140.N7a75</con2:id>
+                        <con1:schema/>
+                        <con1:varName>body</con1:varName>
+                        <con1:location>
+                            <con2:xpathText>$body/*[1]</con2:xpathText>
+                        </con1:location>
+                    </con1:validate>
+                    <con:placeholder-node id="PlaceholderID_N53eaeb0b.34fa83ba.0.15ad2737140.N7ef7" name="ActionsValidateSpecific">
+                        <con:comment>Adicione as acoes de validacao especifica para a operacao</con:comment>
+                    </con:placeholder-node>
+                </con:actions>
+            </con:stage>
+            <con:placeholder-node id="PlaceholderID_N53eaeb0b.34fa83ba.0.15ad2737140.N7ec3" name="StagesRequestSpecific">
+                <con:comment>Passos especificos para o request</con:comment>
+            </con:placeholder-node>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N53eaeb0b.34fa83ba.0.15ad2737140.N7f68">
+            <con:stage id="_StageId-7f000001.77f8d473.0.15ce9e006ce.N7f2b" name="ValidationResponse">
+                <con:comment>Coloque aqui as validacoes necessarias do payload de entrada</con:comment>
+                <con:context/>
+                <con:actions>
+                    <con1:validate>
+                        <con2:id>_ActionId-7f000001.77f8d473.0.15ce9e006ce.N7f2a</con2:id>
+                        <con1:schema/>
+                        <con1:varName>body</con1:varName>
+                        <con1:location>
+                            <con2:xpathText>$body/*[1]</con2:xpathText>
+                        </con1:location>
+                    </con1:validate>
+                    <con:placeholder-node name="ActionsValidateSpecific" id="PlaceholderID_7f000001.77f8d473.0.15ce9e006ce.N7f29">
+                        <con:comment>Adicione as acoes de validacao especifica para a operacao</con:comment>
+                    </con:placeholder-node>
+                </con:actions>
+            </con:stage>
+            <con:placeholder-node id="PlaceholderID_N53eaeb0b.34fa83ba.0.15ad2737140.N7e5d" name="StagesResponseSpecific">
+                <con:comment>Passos especificos para o response</con:comment>
+            </con:placeholder-node>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N53eaeb0b.34fa83ba.0.15ad2737140.N7cfc">
+            <con:stage id="_StageId-N53eaeb0b.34fa83ba.0.15ad2737140.N7cfb" name="ErrorHandlerLog">
+                <con:context/>
+                <con:actions>
+                    <con3:log>
+                        <con2:id>_ActionId-N53eaeb0b.34fa83ba.0.15ad2737140.N7af1</con2:id>
+                        <con3:logLevel>debug</con3:logLevel>
+                        <con3:expr>
+                            <con2:xqueryText>$header</con2:xqueryText>
+                        </con3:expr>
+                    </con3:log>
+                    <con3:log>
+                        <con2:id>_ActionId-N53eaeb0b.34fa83ba.0.15ad2737140.N7b27</con2:id>
+                        <con3:logLevel>debug</con3:logLevel>
+                        <con3:expr>
+                            <con2:xqueryText>$body</con2:xqueryText>
+                        </con3:expr>
+                    </con3:log>
+                    <con3:log>
+                        <con2:id>_ActionId-N53eaeb0b.34fa83ba.0.15ad2737140.N7b5b</con2:id>
+                        <con3:logLevel>debug</con3:logLevel>
+                        <con3:expr>
+                            <con2:xqueryText>$fault</con2:xqueryText>
+                        </con3:expr>
+                    </con3:log>
+                </con:actions>
+            </con:stage>
+            <con:stage id="_StageId-N53eaeb0b.34fa83ba.0.15ad2737140.N7c96" name="CreateSoapFault">
+                <con:comment>Cria o SoapFault de acordo com o erro</con:comment>
+                <con:context/>
+                <con:actions>
+                    <con1:ifThenElse>
+                        <con2:comment>Verifica se ja e um SOAP Fault caso nao seja cria um</con2:comment>
+                        <con2:id>_ActionId-N53eaeb0b.34fa83ba.0.15ad2737140.N7c2e</con2:id>
+                        <con1:case id="_BranchId-N53eaeb0b.34fa83ba.0.15ad2737140.N7c2d">
+                            <con1:condition>
+                                <con2:xqueryText>not(fn:empty($body/soap-env:Fault))</con2:xqueryText>
+                            </con1:condition>
+                            <con1:actions>
+                                <con1:replace contents-only="true" varName="body">
+                                    <con2:id>_ActionId-N53eaeb0b.34fa83ba.0.15ad2737140.N7bf9</con2:id>
+                                    <con1:expr>
+                                        <con2:xqueryText>$body/soap-env:Fault</con2:xqueryText>
+                                    </con1:expr>
+                                </con1:replace>
+                            </con1:actions>
+                        </con1:case>
+                        <con1:default>
+                            <con1:replace contents-only="true" varName="body">
+                                <con2:id>_ActionId-N53eaeb0b.34fa83ba.0.15ad2737140.N7b93</con2:id>
+                                <con1:location>
+                                    <con2:xpathText>.</con2:xpathText>
+                                </con1:location>
+                                <con1:expr>
+                                    <con2:xqueryTransform>
+                                        <con2:resource ref="TemplateID/Synchronous/v1/Transforms/transformCriarFault"/>
+                                        <con2:param name="faultDetail">
+                                            <con2:path>$fault</con2:path>
+                                        </con2:param>
+                                    </con2:xqueryTransform>
+                                </con1:expr>
+                            </con1:replace>
+                        </con1:default>
+                    </con1:ifThenElse>
+                </con:actions>
+            </con:stage>
+            <con:stage id="_StageId-N53eaeb0b.34fa83ba.0.15ad2737140.N7b90" name="StageReply">
+                <con:context/>
+                <con:actions>
+                    <con2:reply isError="true">
+                        <con2:id>_ActionId-N53eaeb0b.34fa83ba.0.15ad2737140.N7b8f</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:template-branch-node type="operation" id="_FlowId-N53eaeb0b.34fa83ba.0.15ad2737140.N7f9c" name="SynchronousOperation">
+                <con:context/>
+                <con:branch-table>
+                    <con:main-branch>
+                        <con:flow>
+                            <con:pipeline-node name="PipelinePair">
+                                <con:request>request-N53eaeb0b.34fa83ba.0.15ad2737140.N7f69</con:request>
+                                <con:response>response-N53eaeb0b.34fa83ba.0.15ad2737140.N7f68</con:response>
+                            </con:pipeline-node>
+                            <con:route-node id="_RouteId-N53eaeb0b.34fa83ba.0.15ad2737140.N7d94" name="Route">
+                                <con:context/>
+                                <con:actions>
+                                    <con:placeholder-node id="PlaceholderID_N53eaeb0b.34fa83ba.0.15ad2737140.N7d61" name="ActionsRouteSpecific"/>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:main-branch>
+                    <con:default-branch>
+                        <con:flow/>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:template-branch-node>
+        </con:flow>
+    </con:router>
+</con:templateEntry>
