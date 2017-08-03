@@ -6,12 +6,12 @@
             <con:inboundWss processWssHeader="true"/>
         </ser:security>
         <ser:binding type="REST" xsi:type="con:RestBindingType" xmlns:con="http://www.bea.com/wli/sb/services/bindings/config">
-            <con:wsdl ref="ESTOQUERETAILID/Estoque/PontualInventario/v1/WSDL/PontualInventarioV1"/>
+            <con:wsdl ref="ESTOQUERETAILID/Estoque/ConsultaEstoque/v1/WSDL/ConsultaEstoqueV1"/>
             <con:binding>
-                <con:name>PontualInventarioPortBinding</con:name>
-                <con:namespace>http://service.ultra.com.br/estoque/PontualInventario/v1</con:namespace>
+                <con:name>ConsultaEstoquePortBinding</con:name>
+                <con:namespace>http://service.ultra.com.br/estoque/ConsultaEstoque/v1</con:namespace>
             </con:binding>
-            <con:wadl ref="ESTOQUERETAILID/Estoque/PontualInventario/v1/WADL/PontualInventarioRestHTTPV1"/>
+            <con:wadl ref="ESTOQUERETAILID/Estoque/ConsultaEstoque/v1/WADL/ConsultarEstoqueRestHTTPV1"/>
         </ser:binding>
         <oper:operations enabled="true"/>
         <ser:ws-policy>
@@ -24,7 +24,7 @@
                 </orawsp:wsm-assembly>
             </ser:owsm-policy-metadata>
         </ser:ws-policy>
-        <ser:invoke ref="ESTOQUERETAILID/Estoque/PontualInventario/v1/Pipelines/PontualInventarioRestHTTPV1Pipeline" xsi:type="con1:PipelineRef" xmlns:con1="http://www.bea.com/wli/sb/pipeline/config"/>
+        <ser:invoke ref="ESTOQUERETAILID/Estoque/ConsultaEstoque/v1/Pipelines/ConsultarEstoqueRestHTTPV1Pipeline" xsi:type="con:PipelineRef" xmlns:con="http://www.bea.com/wli/sb/pipeline/config"/>
         <ser:xqConfiguration>
             <ser:snippetVersion>1.0</ser:snippetVersion>
         </ser:xqConfiguration>
@@ -33,7 +33,7 @@
         <tran:provider-id>http</tran:provider-id>
         <tran:inbound>true</tran:inbound>
         <tran:URI>
-            <env:value>/estoque/PontualInventario/v1/ajustePontualInventario</env:value>
+            <env:value>/estoque/consultaEstoque/v1/consultaEstoque</env:value>
         </tran:URI>
         <tran:inbound-properties/>
         <tran:provider-specific xsi:type="http:HttpEndPointConfiguration" xmlns:http="http://www.bea.com/wli/sb/transports/http">

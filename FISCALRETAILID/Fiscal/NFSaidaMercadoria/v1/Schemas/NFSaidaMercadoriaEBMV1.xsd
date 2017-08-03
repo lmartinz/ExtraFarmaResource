@@ -2,8 +2,8 @@
             xmlns:tns="http://service.ultra.com.br/fiscal/criarNFSaidaMercadoria/v1"
             targetNamespace="http://service.ultra.com.br/fiscal/criarNFSaidaMercadoria/v1"
             elementFormDefault="qualified">
-  <xsd:include schemaLocation="CriacaoNotaFiscalSaidaDetalhe.xsd"/>
-  <xsd:complexType name="CriacaoNotaFiscalSaidaMercadoriaRequestType">
+  <xsd:include schemaLocation="../../../NFSaidaMercadoria/v1/Schemas/NFSaidaMercadoriaDetalhe.xsd"/>
+  <xsd:complexType name="NFSaidaMercadoriaRequestType">
     <xsd:sequence>
       <xsd:element name="codigoLocalDestino" type="xsd:string" minOccurs="1" maxOccurs="1"/>
       <xsd:element name="tipoLocalDestino" type="xsd:string"/>
@@ -19,11 +19,11 @@
       <xsd:element name="codigoIdentificacaoImpressora" type="xsd:string"/>
       <xsd:element name="IdentificacaoImpressaoRequerida" type="xsd:string"/>
       <xsd:element name="IdentificacaiEntregaDomicilio" type="xsd:string"/>
-      <xsd:element name="NFSaidaDetalheList" type="tns:NFSaidaDetalheType" maxOccurs="unbounded" minOccurs="0"/>
+      <xsd:element name="NFSaidaDetalheList" type="tns:NFSaidaMercadoriaDetalheType" maxOccurs="unbounded" minOccurs="0"/>
     </xsd:sequence>
   </xsd:complexType>
-  <xsd:element name="CriacaoNotaFiscalSaidaMercadoriaRequest" type="tns:CriacaoNotaFiscalSaidaMercadoriaRequestType"/>
-  <xsd:element name="CriacaoNotaFiscalSaidaMercadoriaResponse">
+  <xsd:element name="NFSaidaMercadoriaRequest" type="tns:NFSaidaMercadoriaRequestType"/>
+  <xsd:element name="NFSaidaMercadoriaResponse">
     <xsd:complexType>
       <xsd:sequence>
         <xsd:element name="out" type="xsd:string"/>

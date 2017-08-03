@@ -14,5 +14,5 @@
       <xsd:element name="codigoEmeiItem" type="xsd:string"/>
     </xsd:sequence>
   </xsd:complexType>
-  <xsd:element name="NotaFiscalSaidaItemType" type="ns:ItemType"/>
+  <xsd:element name="NFSaidaMercadoriaItemType" type="ns:ItemType"/>
 </xsd:schema>

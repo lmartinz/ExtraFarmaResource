@@ -28,9 +28,9 @@
             <tran:retry-interval>30</tran:retry-interval>
             <tran:retry-application-errors>false</tran:retry-application-errors>
         </tran:outbound-properties>
-        <tran:provider-specific>
-            <soa:jndiReadTimeout>0</soa:jndiReadTimeout>
-            <soa:jndiConnectTimeout>0</soa:jndiConnectTimeout>
+        <tran:provider-specific xsi:type="soa:SOAEndPointConfiguration">
+            <soa:jndiReadTimeout>30000</soa:jndiReadTimeout>
+            <soa:jndiConnectTimeout>5000</soa:jndiConnectTimeout>
             <soa:role>SYNCHRONOUS_CLIENT</soa:role>
             <soa:wsaVersion>DEFAULT</soa:wsaVersion>
             <soa:dispatchPolicy>SBDefaultResponseWorkManager</soa:dispatchPolicy>

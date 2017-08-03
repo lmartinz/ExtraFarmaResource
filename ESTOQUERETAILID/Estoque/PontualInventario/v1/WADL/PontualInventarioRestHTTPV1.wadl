@@ -9,7 +9,7 @@
         </xsd:schema>
    </grammars>
    <resources>
-      <resource path="/estoque/v1/pontualInventario/ajustePontualInventario">
+      <resource path="ajustePontualInventario">
          <method name="POST" soa:wsdlOperation="ajustePontualInventario">
             <request>
                <representation mediaType="application/json" element="cns:AjustePontualInventarioRequest" xmlns:cns="http://service.ultra.com.br/estoque/PontualInventario/v1"/>

@@ -12,7 +12,7 @@
         </xsd:schema>
    </grammars>
    <resources>
-      <resource path="/atacado/v1/pedidoReserva/criarPedidoReserva">
+      <resource path="criarPedidoReserva">
          <method name="POST" soa:wsdlOperation="criarPedidoReserva">
             <request>
                <representation mediaType="application/json" element="cns:CriarPedidoReservaRequest" xmlns:cns="http://service.ultra.com.br/atacado/PedidoReserva/v1"/>
@@ -25,7 +25,7 @@
             </response>
          </method>
       </resource>
-      <resource path="/atacado/v1/pedidoReserva/cancelarPedidoReserva">
+      <resource path="cancelarPedidoReserva">
          <method name="PUT" soa:wsdlOperation="cancelarPedidoReserva">
             <request>
                <representation mediaType="application/json" element="cns:CancelarPedidoReservaRequest" xmlns:cns="http://service.ultra.com.br/atacado/PedidoReserva/v1"/>

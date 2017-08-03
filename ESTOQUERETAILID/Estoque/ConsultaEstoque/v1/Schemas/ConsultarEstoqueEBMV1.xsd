@@ -1,0 +1,22 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/estoque/ConsultaEstoque/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://service.ultra.com.br/estoque/ConsultaEstoque/v1">
+  <xsd:complexType name="ConsultaEstoqueRequestType">
+    <xsd:sequence>
+      <xsd:element name="codigoItem" type="xsd:string"/>
+      <xsd:element name="retiradaLoja" type="xsd:string"/>
+      <xsd:sequence>
+        <xsd:element name="codigoLocal" type="xsd:string"/>
+        <xsd:element name="tipoLocal" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ConsultaEstoqueRequest" type="tns:ConsultaEstoqueRequestType"/>
+  <xsd:element name="ConsultaEstoqueResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="out" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

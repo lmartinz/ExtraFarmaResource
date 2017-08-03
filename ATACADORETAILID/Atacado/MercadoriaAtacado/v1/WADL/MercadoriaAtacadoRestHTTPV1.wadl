@@ -9,7 +9,7 @@
         </xsd:schema>
    </grammars>
    <resources>
-      <resource path="/atacado/v1/mercadoriaAtacado/devolucaoMercadoriaAtacado">
+      <resource path="devolucaoMercadoriaAtacado">
          <method name="POST" soa:wsdlOperation="devolucaoMercadoriaAtacado">
             <request>
                <representation mediaType="application/json" element="cns:DevolucaoMercadoriaAtacadoRequest" xmlns:cns="http://service.ultra.com.br/atacado/MercadoriaAtacado/v1"/>
