@@ -9,8 +9,8 @@
                         <xsd:element name="statusParaInventario" type="xsd:string" minOccurs="1"/>
                         <xsd:element name="codigoUsuario" type="xsd:string" minOccurs="1"/>
                         <xsd:element name="dataAjuste" type="xsd:dateTime" minOccurs="1"/>
-                        <xsd:element name="codigoRazaoAuxiliar" type="xsd:string"/>
-                        <xsd:element name="unidadeMedida" type="xsd:string"/>
+                        <xsd:element name="codigoRazaoAuxiliar" type="xsd:string" minOccurs="0"/>
+                        <xsd:element name="unidadeMedida" type="xsd:string" minOccurs="0"/>
 			<xsd:element name="ItemList" type="tns:ItemType" maxOccurs="unbounded" minOccurs="0"/>
 		</xsd:sequence>
 	</xsd:complexType>

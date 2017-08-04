@@ -14,10 +14,10 @@
           <representation mediaType="application/json" element="tns:NotificarExpedicaoMercadoriaRequest" xmlns:tns="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1"/>
         </request>
         <response status="200">
-          <representation mediaType="application/xml" element="tns:NotificarExpedicaoMercadoriaResponse" xmlns:tns="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1"/>
+          <representation mediaType="application/json" element="tns:NotificarExpedicaoMercadoriaResponse" xmlns:tns="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1"/>
         </response>
         <response status="400" soa:wsdlFaultName="NotificarExpedicaoMercadoriaFault">
-          <representation mediaType="application/xml" element="tns:Fault" xmlns:tns="http://canonico.ultra.com.br/infcorp/v1"/>
+          <representation mediaType="application/json" element="tns:Fault" xmlns:tns="http://canonico.ultra.com.br/infcorp/v1"/>
         </response>
       </method>
     </resource>

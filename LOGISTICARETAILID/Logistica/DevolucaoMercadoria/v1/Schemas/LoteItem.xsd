@@ -2,7 +2,7 @@
         <xsd:include schemaLocation="LoteItemDetalhe.xsd"/>
 	<xsd:complexType name="LoteItemType">
 		<xsd:sequence>
-			<xsd:element name="codigoVolumeProduto" type="xsd:integer"/>
+			<xsd:element name="codigoVolumeProduto" type="xsd:integer" minOccurs="0"/>
 			<xsd:element name="LoteItemDetalheList" type="tns:LoteItemDetalheType" maxOccurs="unbounded" minOccurs="0"/>
 		</xsd:sequence>
 	</xsd:complexType>

@@ -3,8 +3,8 @@
             xmlns:tns="http://service.ultra.com.br/logistica/NotificarExpedicaoMercadoria/v1">
   <xsd:complexType name="ItemType">
     <xsd:sequence>
-      <xsd:element name="codigoProduto" type="xsd:string"/>
-      <xsd:element name="quantidadeProduto" type="xsd:int"/>
+      <xsd:element name="codigoProduto" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="quantidadeProduto" type="xsd:int" minOccurs="0"/>
     </xsd:sequence>
   </xsd:complexType>
   <xsd:element name="Item" type="tns:ItemType"></xsd:element>

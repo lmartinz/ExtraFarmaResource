@@ -5,7 +5,7 @@
 			<xsd:element name="codigoProduto" type="xsd:integer" minOccurs="1" maxOccurs="1"/>
 			<xsd:element name="quantidadeDevolucao" type="xsd:integer" minOccurs="1" maxOccurs="1"/>
                         <xsd:element name="statusInventario" type="xsd:string" minOccurs="1" maxOccurs="1"/>
-			<xsd:element name="ItemList" type="tns:ItemType"/>
+			<xsd:element name="ItemList" type="tns:ItemType" minOccurs="0"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	

@@ -87,4 +87,4 @@
 	</xsd:simpleType>
 	
 	<xsd:element name="Fault" type="tns:Fault"/>
-</xsd:schema>	
+</xsd:schema>

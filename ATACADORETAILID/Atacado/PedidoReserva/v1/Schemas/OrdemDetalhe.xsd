@@ -10,7 +10,7 @@
 			<xsd:element name="unidadeMedidaPadrao" type="xsd:string" minOccurs="1"/>
 			<xsd:element name="quantidadeMedidaUtilizada" type="xsd:string" minOccurs="1"/>
 			<xsd:element name="flagItemPodeSerSubstituido" type="xsd:string" minOccurs="1"/>
-                        <xsd:element name="precoVenda" type="xsd:double"/>
+                        <xsd:element name="precoVenda" type="xsd:double" minOccurs="0"/>
         </xsd:sequence>
 	</xsd:complexType>
 	

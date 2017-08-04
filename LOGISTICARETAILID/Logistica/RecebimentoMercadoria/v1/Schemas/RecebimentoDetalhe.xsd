@@ -9,8 +9,8 @@
    <xsd:element name="tipoRecebimentoProduto" type="xsd:string" minOccurs="1"/>
    <xsd:element name="dataRecebimento" type="xsd:dateTime" minOccurs="1"/>
    <xsd:element name="codigoLote" type="xsd:integer" minOccurs="1"/>
-   <xsd:element name="codigoPedidoTransferencia" type="xsd:integer"/>
-			<xsd:element name="ItemList" type="tns:ItemType" maxOccurs="unbounded"/>
+   <xsd:element name="codigoPedidoTransferencia" type="xsd:integer" minOccurs="0"/>
+			<xsd:element name="ItemList" type="tns:ItemType" maxOccurs="unbounded" minOccurs="0"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	

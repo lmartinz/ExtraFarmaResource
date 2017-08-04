@@ -23,11 +23,11 @@
                             <con:template-overrides>
                                 <con:action-override id="_ActionId-N3f57fff4.67ea00d2.0.15cdc0d8d97.N7ec9">
                                     <con1:validate xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
-                                        <con1:wsdl ref="ATACADORETAILID/Atacado/MercadoriaAtacado/v1/WSDL/MercadoriaAtacadoV1"/>
-                                        <con1:schemaType xmlns:v1="http://service.ultra.com.br/infcorp/LogIntegration/v1">v1:MetaInformacaoType</con1:schemaType>
+                                        <con1:schema ref="TemplateID/Asynchronous/v1/Schemas/MetaInformacao"/>
+                                        <con1:schemaElement xmlns:v1="http://service.ultra.com.br/infcorp/LogIntegration/v1">v1:MetaInformacao</con1:schemaElement>
                                         <con1:varName>header</con1:varName>
                                         <con1:location>
-                                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">.</con2:xpathText>
+                                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">$header/*[1]</con2:xpathText>
                                         </con1:location>
                                     </con1:validate>
                                 </con:action-override>
@@ -36,7 +36,7 @@
                                         <con1:wsdl ref="ATACADORETAILID/Atacado/MercadoriaAtacado/v1/WSDL/MercadoriaAtacadoV1"/>
                                         <con1:schemaElement xmlns:v1="http://service.ultra.com.br/atacado/MercadoriaAtacado/v1">v1:DevolucaoMercadoriaAtacadoRequest</con1:schemaElement>
                                         <con1:location>
-                                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">./v1:DevolucaoMercadoriaAtacadoRequest</con2:xpathText>
+                                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">$body/v1:DevolucaoMercadoriaAtacadoRequest</con2:xpathText>
                                         </con1:location>
                                     </con1:validate>
                                 </con:action-override>
@@ -53,6 +53,37 @@
                                         <con1:operation passThrough="true"/>
                                     </con1:route>
                                 </con:action-override>
+                                <con:action-override id="_ActionId-N3f57fff3.5821b348.0.15ce17d9ef1.N7ab5">
+                                    <con1:ifThenElse xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                                        <con1:case id="_BranchId-N3f57fff3.5821b348.0.15ce17d9ef1.N7ab4">
+                                            <con1:condition>
+                                                <con2:xqueryText xmlns:con2="http://www.bea.com/wli/sb/stages/config">$inbound/ctx:transport/ctx:request/tp:headers/http:Content-Type eq 'application/json'</con2:xqueryText>
+                                            </con1:condition>
+                                        </con1:case>
+                                    </con1:ifThenElse>
+                                </con:action-override>
+                                <con:action-override id="_ActionId-N3f57fff3.5821b348.0.15ce17d9ef1.N7888">
+                                    <con1:replace contents-only="false" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                                        <con1:location>
+                                            <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">.</con2:xpathText>
+                                        </con1:location>
+                                    </con1:replace>
+                                </con:action-override>
+                                <con:placeholder-override id="PlaceholderID_7f000101.N634508d0.0.15da527b873.N7ee8"/>
+                                <con:placeholder-override id="PlaceholderID_7f000101.N634508d0.0.15da527b873.N7c6f">
+                                    <con:actions>
+                                        <con1:route xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config">
+                                            <con2:id xmlns:con2="http://www.bea.com/wli/sb/stages/config">_ActionId-7f000101.N634508d0.0.15da527b873.N7c3c</con2:id>
+                                            <con1:service ref="ATACADORETAILID/Atacado/MercadoriaAtacado/v1/BusinessService/MercadoriaAtacadoDBBPELV1" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                            <con1:operation passThrough="true"/>
+                                            <con1:outboundTransform/>
+                                            <con1:responseTransform/>
+                                        </con1:route>
+                                    </con:actions>
+                                </con:placeholder-override>
+                                <con:placeholder-override id="PlaceholderID_7f000101.N634508d0.0.15da527b873.N7c03">
+                                    <con:actions/>
+                                </con:placeholder-override>
                             </con:template-overrides>
                         </con:branch>
                         <con:default-branch>
@@ -61,6 +92,21 @@
                     </con:branch-table>
                 </con:branch-node>
             </con:template-branch-override>
+            <con:action-override id="_ActionId-7f000101.N634508d0.0.15da527b873.N7e10">
+                <con1:replace contents-only="true" varName="body" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+                    <con1:location>
+                        <con2:xpathText xmlns:con2="http://www.bea.com/wli/sb/stages/config">.</con2:xpathText>
+                    </con1:location>
+                    <con1:expr>
+                        <con2:xqueryTransform xmlns:con2="http://www.bea.com/wli/sb/stages/config">
+                            <con2:resource ref="TemplateID/Asynchronous/v1/Transforms/transformToFault"/>
+                            <con2:param name="faultDetail">
+                                <con2:path>$fault</con2:path>
+                            </con2:param>
+                        </con2:xqueryTransform>
+                    </con1:expr>
+                </con1:replace>
+            </con:action-override>
         </con:template-overrides>
     </con:router>
     <con:template ref="TemplateID/Asynchronous/v1/Pipeline/Async/AsyncPipeline"/>

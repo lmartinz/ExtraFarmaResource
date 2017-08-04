@@ -4,7 +4,7 @@
         <xsd:include schemaLocation="LoteItem.xsd"/>
 	<xsd:complexType name="ItemType">
 		<xsd:sequence>
-			<xsd:element name="LoteItemList" type="tns:LoteItemType" maxOccurs="unbounded"/>
+			<xsd:element name="LoteItemList" type="tns:LoteItemType" maxOccurs="unbounded" minOccurs="0"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	

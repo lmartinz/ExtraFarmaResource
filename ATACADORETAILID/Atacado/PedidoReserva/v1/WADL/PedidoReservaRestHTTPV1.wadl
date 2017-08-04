@@ -12,29 +12,29 @@
         </xsd:schema>
    </grammars>
    <resources>
-      <resource path="criarPedidoReserva">
+      <resource path="/criarPedidoReserva">
          <method name="POST" soa:wsdlOperation="criarPedidoReserva">
             <request>
                <representation mediaType="application/json" element="cns:CriarPedidoReservaRequest" xmlns:cns="http://service.ultra.com.br/atacado/PedidoReserva/v1"/>
             </request>
             <response status="200">
-               <representation mediaType="application/xml" element="cns:CriarPedidoReservaResponse" xmlns:cns="http://service.ultra.com.br/atacado/PedidoReserva/v1"/>
+               <representation mediaType="application/json" element="cns:CriarPedidoReservaResponse" xmlns:cns="http://service.ultra.com.br/atacado/PedidoReserva/v1"/>
             </response>
             <response status="400" soa:wsdlFaultName="CriarPedidoReservaFault">
-               <representation mediaType="application/xml" element="cns:Fault" xmlns:cns="http://canonico.ultra.com.br/infcorp/v1"/>
+               <representation mediaType="application/json" element="cns:Fault" xmlns:cns="http://canonico.ultra.com.br/infcorp/v1"/>
             </response>
          </method>
       </resource>
-      <resource path="cancelarPedidoReserva">
+      <resource path="/cancelarPedidoReserva">
          <method name="PUT" soa:wsdlOperation="cancelarPedidoReserva">
             <request>
                <representation mediaType="application/json" element="cns:CancelarPedidoReservaRequest" xmlns:cns="http://service.ultra.com.br/atacado/PedidoReserva/v1"/>
             </request>
             <response status="200">
-               <representation mediaType="application/xml" element="cns:CancelarPedidoReservaResponse" xmlns:cns="http://service.ultra.com.br/atacado/PedidoReserva/v1"/>
+               <representation mediaType="application/json" element="cns:CancelarPedidoReservaResponse" xmlns:cns="http://service.ultra.com.br/atacado/PedidoReserva/v1"/>
             </response>
             <response status="400" soa:wsdlFaultName="CancelarPedidoReservaFault">
-               <representation mediaType="application/xml" element="cns:Fault" xmlns:cns="http://canonico.ultra.com.br/infcorp/v1"/>
+               <representation mediaType="application/json" element="cns:Fault" xmlns:cns="http://canonico.ultra.com.br/infcorp/v1"/>
             </response>
          </method>
       </resource>

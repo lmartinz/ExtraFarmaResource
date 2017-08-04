@@ -8,16 +8,16 @@
         </xsd:schema>
    </grammars>
    <resources>
-      <resource path="notificarDevolucaoMercadoria">
+      <resource path="/notificarDevolucaoMercadoria">
          <method name="POST" soa:wsdlOperation="notificarDevolucaoMercadoria">
             <request>
                <representation mediaType="application/json" element="cns:NotificarDevolucaoMercadoriaRequest" xmlns:cns="http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1"/>
             </request>
             <response status="200">
-               <representation mediaType="application/xml" element="cns:NotificarDevolucaoMercadoriaResponse" xmlns:cns="http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1"/>
+               <representation mediaType="application/json" element="cns:NotificarDevolucaoMercadoriaResponse" xmlns:cns="http://service.ultra.com.br/logistica/DevolucaoMercadoria/v1"/>
             </response>
             <response status="400" soa:wsdlFaultName="NotificarDevolucaoMercadoriaFault">
-               <representation mediaType="application/xml" element="cns:Fault" xmlns:cns="http://canonico.ultra.com.br/infcorp/v1"/>
+               <representation mediaType="application/json" element="cns:Fault" xmlns:cns="http://canonico.ultra.com.br/infcorp/v1"/>
             </response>
          </method>
       </resource>

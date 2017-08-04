@@ -8,29 +8,29 @@
       </xsd:schema>
    </grammars>
    <resources>
-      <resource path="/logistica/v1/criarTransferenciaMercadoriaLoja">
+      <resource path="/criarTransferenciaMercadoriaLoja">
          <method name="POST" soa:wsdlOperation="criarTransferenciaMercadoriaLoja">
             <request>
                <representation mediaType="application/json" element="cns:CriarTransferenciaMercadoriaLojaRequest" xmlns:cns="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1"/>
             </request>
             <response status="200">
-               <representation mediaType="application/xml" element="cns:TransferenciaMercadoriaLojaResponse" xmlns:cns="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1"/>
+               <representation mediaType="application/json" element="cns:TransferenciaMercadoriaLojaResponse" xmlns:cns="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1"/>
             </response>
             <response status="400" soa:wsdlFaultName="CriarTransferenciaMercadoriaLojaFault">
-               <representation mediaType="application/xml" element="cns:Fault" xmlns:cns="http://canonico.ultra.com.br/infcorp/v1"/>
+               <representation mediaType="application/json" element="cns:Fault" xmlns:cns="http://canonico.ultra.com.br/infcorp/v1"/>
             </response>
          </method>
       </resource>
-      <resource path="/logistica/v1/cancelarTransferenciaMercadoriaLoja">
+      <resource path="/cancelarTransferenciaMercadoriaLoja">
          <method name="PUT" soa:wsdlOperation="cancelarTransferenciaMercadoriaLoja">
             <request>
                <representation mediaType="application/json" element="cns:CancelarTransferenciaMercadoriaLojaRequest" xmlns:cns="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1"/>
             </request>
             <response status="200">
-               <representation mediaType="application/xml" element="cns:TransferenciaMercadoriaLojaResponse" xmlns:cns="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1"/>
+               <representation mediaType="application/json" element="cns:TransferenciaMercadoriaLojaResponse" xmlns:cns="http://service.ultra.com.br/logistica/TransferenciaMercadoriaLoja/v1"/>
             </response>
             <response status="400" soa:wsdlFaultName="CancelarTransferenciaMercadoriaLojaFault">
-               <representation mediaType="application/xml" element="cns:Fault" xmlns:cns="http://canonico.ultra.com.br/infcorp/v1"/>
+               <representation mediaType="application/json" element="cns:Fault" xmlns:cns="http://canonico.ultra.com.br/infcorp/v1"/>
             </response>
          </method>
       </resource>

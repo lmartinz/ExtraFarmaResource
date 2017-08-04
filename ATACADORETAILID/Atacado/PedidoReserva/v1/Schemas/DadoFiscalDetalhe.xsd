@@ -5,28 +5,28 @@
   <xsd:include schemaLocation="Pagamento.xsd"/>          
   <xsd:complexType name="DadoFiscalDetalheType">
     <xsd:sequence>
-      <xsd:element name="cpf" type="xsd:string"/>
-      <xsd:element name="bairroCliente" type="xsd:string"/>
-      <xsd:element name="isentoInscricaoEstadual" type="xsd:string"/>
-      <xsd:element name="entregaPresencial" type="xsd:string"/>
-      <xsd:element name="tipoPessoa" type="xsd:string"/>
-      <xsd:element name="enderecoFiscal" type="xsd:string"/>
-      <xsd:element name="cpfCliente" type="xsd:string"/>
-      <xsd:element name="cnpjCliente" type="xsd:string"/>
-      <xsd:element name="codigoSuframaCliente" type="xsd:string"/>
-      <xsd:element name="codigoIbgeCidade" type="xsd:string"/>
-      <xsd:element name="codigoEstadoFederecao" type="xsd:string"/>
-      <xsd:element name="tipoContribuinte" type="xsd:string"/>
-      <xsd:element name="tipoIsencaoTaxa" type="xsd:string"/>
-      <xsd:element name="contribuidorIss" type="xsd:string"/>
-      <xsd:element name="contribuidorIpi" type="xsd:string"/>
-      <xsd:element name="contribuidorIcms" type="xsd:string"/>
-      <xsd:element name="contribuidorPis" type="xsd:string"/>
-      <xsd:element name="contribuidorCofins" type="xsd:string"/>
-      <xsd:element name="elegivelReducaoTaxas" type="xsd:string"/>
-      <xsd:element name="distribuidorFabricante" type="xsd:string"/>
-      <xsd:element name="codigoCnaeCliente" type="xsd:string"/>
-      <xsd:element name="tipoTransacao" type="xsd:string"/>
+      <xsd:element name="cpf" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="bairroCliente" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="isentoInscricaoEstadual" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="entregaPresencial" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="tipoPessoa" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="enderecoFiscal" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="cpfCliente" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="cnpjCliente" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="codigoSuframaCliente" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="codigoIbgeCidade" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="codigoEstadoFederecao" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="tipoContribuinte" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="tipoIsencaoTaxa" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="contribuidorIss" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="contribuidorIpi" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="contribuidorIcms" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="contribuidorPis" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="contribuidorCofins" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="elegivelReducaoTaxas" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="distribuidorFabricante" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="codigoCnaeCliente" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="tipoTransacao" type="xsd:string" minOccurs="0"/>
       <xsd:element name="PagamentoList" type="tns:PagamentoType" maxOccurs="unbounded" minOccurs="0"/>
     </xsd:sequence>
   </xsd:complexType>

@@ -4,8 +4,8 @@
 
 	<xsd:complexType name="LoteItemDetalheType">
 		<xsd:sequence>
-			<xsd:element name="codigoLote" type="xsd:string" minOccurs="1"/>
-			<xsd:element name="dataFabricacaoLote" type="xsd:dateTime"/>
+			<xsd:element name="codigoLote" type="xsd:string" minOccurs="1" />
+			<xsd:element name="dataFabricacaoLote" type="xsd:dateTime" minOccurs="0"/>
 			<xsd:element name="dataValidade" type="xsd:dateTime" minOccurs="1"/>
 			<xsd:element name="quantidadeLote" type="xsd:integer" minOccurs="1"/>
 		</xsd:sequence>

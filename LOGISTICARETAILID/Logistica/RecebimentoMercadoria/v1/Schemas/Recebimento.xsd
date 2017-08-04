@@ -7,10 +7,10 @@
 			<xsd:element name="codigoFilial" type="xsd:integer" minOccurs="1" maxOccurs="1"/>
 			<xsd:element name="codigoPedidoTransferencia" type="xsd:integer" minOccurs="1" maxOccurs="1"/>
    <xsd:element name="tipoRecebimento" type="xsd:string" minOccurs="1" maxOccurs="1"/>
-   <xsd:element name="numeroNota" type="xsd:integer"/>
-   <xsd:element name="localOrigemRemessa" type="xsd:string"/>
-   <xsd:element name="nivelRecebimento" type="xsd:string"/>
-   <xsd:element name="tipoLocalOrigem" type="xsd:string"/>
+   <xsd:element name="numeroNota" type="xsd:integer" minOccurs="0"/>
+   <xsd:element name="localOrigemRemessa" type="xsd:string" minOccurs="0"/>
+   <xsd:element name="nivelRecebimento" type="xsd:string" minOccurs="0"/>
+   <xsd:element name="tipoLocalOrigem" type="xsd:string" minOccurs="0"/>
 			<xsd:element name="RecebimentoDetalheList" type="tns:RecebimentoDetalheType" minOccurs="1" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>

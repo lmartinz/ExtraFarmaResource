@@ -6,13 +6,47 @@
     </con:coreEntry>
     <con:router errorHandler="error-N3f57fff4.67ea00d2.0.15cdc0d8d97.N7e28">
         <con:pipeline type="request" name="request-N3f57fff4.67ea00d2.0.15cdc0d8d97.N7ecf">
+            <con:stage id="_StageId-7f000101.178c62a6.0.15da507bc29.N7ff3" name="AtribuiHeaderRestToSoap">
+                <con:context/>
+                <con:actions>
+                    <con1:ifThenElse>
+                        <con2:id>_ActionId-N3f57fff3.5821b348.0.15ce17d9ef1.N7ab5</con2:id>
+                        <con1:case id="_BranchId-N3f57fff3.5821b348.0.15ce17d9ef1.N7ab4">
+                            <con1:condition>
+                                <con2:xqueryText>$inbound/ctx:transport/ctx:request/tp:headers/http:Content-Type eq 'application/json'</con2:xqueryText>
+                            </con1:condition>
+                            <con1:actions>
+                                <con3:replace varName="header" contents-only="false" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                    <con2:id>_ActionId-N3f57fff3.5821b348.0.15ce17d9ef1.N7888</con2:id>
+                                    <con3:location>
+                                        <con2:xpathText>.</con2:xpathText>
+                                    </con3:location>
+                                    <con3:expr>
+                                        <con2:xqueryTransform>
+                                            <con2:resource ref="TemplateID/Asynchronous/v1/Transforms/transformInboutToHeader"/>
+                                            <con2:param name="inbound">
+                                                <con2:path>$inbound</con2:path>
+                                            </con2:param>
+                                        </con2:xqueryTransform>
+                                    </con3:expr>
+                                </con3:replace>
+                            </con1:actions>
+                        </con1:case>
+                        <con1:default/>
+                    </con1:ifThenElse>
+                </con:actions>
+            </con:stage>
             <con:stage id="_StageId-N3f57fff4.67ea00d2.0.15cdc0d8d97.N7ecd" name="Validation">
                 <con:context/>
                 <con:actions>
                     <con1:validate>
                         <con2:id>_ActionId-N3f57fff4.67ea00d2.0.15cdc0d8d97.N7ec9</con2:id>
-                        <con1:schema/>
-                        <con1:varName>body</con1:varName>
+                        <con1:schema ref="TemplateID/Asynchronous/v1/Schemas/MetaInformacao"/>
+                        <con1:schemaElement xmlns:v1="http://service.ultra.com.br/infcorp/LogIntegration/v1">v1:MetaInformacao</con1:schemaElement>
+                        <con1:varName>header</con1:varName>
+                        <con1:location>
+                            <con2:xpathText>$header/*[1]</con2:xpathText>
+                        </con1:location>
                     </con1:validate>
                     <con1:validate>
                         <con2:id>_ActionId-N3f57fff4.67ea00d2.0.15cdc0d8d97.N7ec6</con2:id>
@@ -73,17 +107,20 @@
                             </con1:actions>
                         </con1:case>
                         <con1:default>
-                            <con1:assign varName="body">
-                                <con2:id>_ActionId-N3f57fff1.N379083f8.0.15cdc77edd0.N7fcb</con2:id>
+                            <con1:replace varName="body" contents-only="true">
+                                <con2:id>_ActionId-7f000101.N634508d0.0.15da527b873.N7e10</con2:id>
+                                <con1:location>
+                                    <con2:xpathText>.</con2:xpathText>
+                                </con1:location>
                                 <con1:expr>
                                     <con2:xqueryTransform>
-                                        <con2:resource ref="TemplateID/Asynchronous/v1/Transforms/transformToFault"/>
+                                        <con2:resource ref="TemplateID/Synchronous/v1/Transforms/transformCriarFault"/>
                                         <con2:param name="faultDetail">
                                             <con2:path>$fault</con2:path>
                                         </con2:param>
                                     </con2:xqueryTransform>
                                 </con1:expr>
-                            </con1:assign>
+                            </con1:replace>
                         </con1:default>
                     </con1:ifThenElse>
                 </con:actions>
@@ -97,19 +134,6 @@
                 </con:actions>
             </con:stage>
         </con:pipeline>
-        <con:pipeline type="request" name="request-N3f57fff1.N379083f8.0.15cdc77edd0.N7f66">
-            <con:stage id="_StageId-N3f57fff1.N379083f8.0.15cdc77edd0.N7efc" name="StageInvalidOperation" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
-                <con:context/>
-                <con:actions>
-                    <con3:Error>
-                        <con2:id>_ActionId-N3f57fff1.N379083f8.0.15cdc77edd0.N7efb</con2:id>
-                        <con3:errCode>-1</con3:errCode>
-                        <con3:message>Operação Inválida</con3:message>
-                    </con3:Error>
-                </con:actions>
-            </con:stage>
-        </con:pipeline>
-        <con:pipeline type="response" name="response-N3f57fff1.N379083f8.0.15cdc77edd0.N7f65"/>
         <con:flow>
             <con:template-branch-node type="operation" id="_FlowId-N3f57fff4.67ea00d2.0.15cdc0d8d97.N7f34" name="AsynchronousOperation">
                 <con:context/>
@@ -123,48 +147,13 @@
                             <con:route-node id="_RouteId-N3f57fff3.5821b348.0.15ce17d9ef1.N7aee" name="RouteNodeToBusiness">
                                 <con:context/>
                                 <con:actions>
-                                    <con3:route>
-                                        <con2:id>_ActionId-N3f57fff3.5821b348.0.15ce17d9ef1.N7aeb</con2:id>
-                                        <con3:outboundTransform>
-                                            <con1:ifThenElse>
-                                                <con2:id>_ActionId-N3f57fff3.5821b348.0.15ce17d9ef1.N7ab5</con2:id>
-                                                <con1:case id="_BranchId-N3f57fff3.5821b348.0.15ce17d9ef1.N7ab4">
-                                                    <con1:condition>
-                                                        <con2:xqueryText>$inbound/ctx:transport/ctx:request/http:http-method = 'POST'</con2:xqueryText>
-                                                    </con1:condition>
-                                                    <con1:actions>
-                                                        <con3:replace varName="header" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
-                                                            <con2:id>_ActionId-N3f57fff3.5821b348.0.15ce17d9ef1.N7888</con2:id>
-                                                            <con3:location>
-                                                                <con2:xpathText>.</con2:xpathText>
-                                                            </con3:location>
-                                                            <con3:expr>
-                                                                <con2:xqueryTransform>
-                                                                    <con2:resource ref="TemplateID/Asynchronous/v1/Transforms/transformInboutToHeader"/>
-                                                                    <con2:param name="inbound">
-                                                                        <con2:path>$inbound</con2:path>
-                                                                    </con2:param>
-                                                                </con2:xqueryTransform>
-                                                            </con3:expr>
-                                                        </con3:replace>
-                                                    </con1:actions>
-                                                </con1:case>
-                                                <con1:default/>
-                                            </con1:ifThenElse>
-                                        </con3:outboundTransform>
-                                        <con3:responseTransform/>
-                                    </con3:route>
+                                    <con:placeholder-node id="PlaceholderID_7f000101.N634508d0.0.15da527b873.N7c6f"/>
                                 </con:actions>
                             </con:route-node>
                         </con:flow>
                     </con:main-branch>
                     <con:default-branch>
-                        <con:flow>
-                            <con:pipeline-node name="PipelinePairNodeDefault">
-                                <con:request>request-N3f57fff1.N379083f8.0.15cdc77edd0.N7f66</con:request>
-                                <con:response>response-N3f57fff1.N379083f8.0.15cdc77edd0.N7f65</con:response>
-                            </con:pipeline-node>
-                        </con:flow>
+                        <con:flow/>
                     </con:default-branch>
                 </con:branch-table>
             </con:template-branch-node>

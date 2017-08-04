@@ -8,7 +8,7 @@
     <xsd:sequence>
       <xsd:element name="codigoLocalOrigem" type="xsd:integer" minOccurs="1"/>
       <xsd:element name="tipoLocal" type="xsd:string" minOccurs="1"/>
-      <xsd:element name="tipoLoja" type="xsd:string"/>
+      <xsd:element name="tipoLoja" type="xsd:string" minOccurs="0"/>
       <xsd:element name="numeroPedido" type="xsd:integer" minOccurs="1"/>
       <xsd:element name="statusOrdemEstoque" type="xsd:string" minOccurs="1"/>
       <xsd:element name="PedidoTransferenciaMercadoriaDetalhe" minOccurs="1" maxOccurs="unbounded"

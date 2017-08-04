@@ -4,41 +4,41 @@
   <xsd:include schemaLocation="DadoFiscalCliente.xsd"/>
   <xsd:complexType name="OrdemClienteType">
     <xsd:sequence>
-      <xsd:element name="numeroOrdemOms" type="xsd:string"/>
-      <xsd:element name="primeiroNomeCliente" type="xsd:string"/>
-      <xsd:element name="nomeFoneticoCliente" type="xsd:string"/>
-      <xsd:element name="sobrenomeCliente" type="xsd:string"/>
-      <xsd:element name="sobrenomeFoneticoCliente" type="xsd:string"/>
-      <xsd:element name="nomePreferivelEntrega" type="xsd:string"/>
-      <xsd:element name="nomeCompanhiaCliente" type="xsd:string"/>
-      <xsd:element name="endereco1" type="xsd:string"/>
-      <xsd:element name="endereco2" type="xsd:string"/>
-      <xsd:element name="endereco3" type="xsd:string"/>
-      <xsd:element name="municipio" type="xsd:string"/>
-      <xsd:element name="cidade" type="xsd:string"/>
-      <xsd:element name="estado" type="xsd:string"/>
-      <xsd:element name="pais" type="xsd:string"/>
-      <xsd:element name="cepLocalEntrega" type="xsd:string"/>
-      <xsd:element name="codigoJurisdicaoLocalEntrega" type="xsd:string"/>
-      <xsd:element name="telefoneCliente" type="xsd:string"/>
-      <xsd:element name="emailCliente" type="xsd:string"/>
-      <xsd:element name="nomeClienteCobranca" type="xsd:string"/>
-      <xsd:element name="primeiroNomeFoneticoCliente" type="xsd:string"/>
-      <xsd:element name="sobrenomeClienteCobranca" type="xsd:string"/>
-      <xsd:element name="ultimoNomeClienteCobranca" type="xsd:string"/>
-      <xsd:element name="nomePreferivelClienteCobranca" type="xsd:string"/>
-      <xsd:element name="nomeEmpresaCobranca" type="xsd:string"/>
-      <xsd:element name="enderecoCobranca1" type="xsd:string"/>
-      <xsd:element name="enderecoCobranca2" type="xsd:string"/>
-      <xsd:element name="enderecoCobranca3" type="xsd:string"/>
-      <xsd:element name="municipioCobranca" type="xsd:string"/>
-      <xsd:element name="cidadeCobranca" type="xsd:string"/>
-      <xsd:element name="estadoCobranca" type="xsd:string"/>
-      <xsd:element name="paisCobranca" type="xsd:string"/>
-      <xsd:element name="cepCobranca" type="xsd:string"/>
-      <xsd:element name="codigoJurisdicaoCobranca" type="xsd:string"/>
-      <xsd:element name="telefoneCobranca" type="xsd:string"/>
-      <xsd:element name="emailCobranca" type="xsd:string"/>
+      <xsd:element name="numeroOrdemOms" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="primeiroNomeCliente" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="nomeFoneticoCliente" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="sobrenomeCliente" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="sobrenomeFoneticoCliente" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="nomePreferivelEntrega" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="nomeCompanhiaCliente" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="endereco1" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="endereco2" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="endereco3" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="municipio" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="cidade" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="estado" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="pais" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="cepLocalEntrega" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="codigoJurisdicaoLocalEntrega" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="telefoneCliente" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="emailCliente" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="nomeClienteCobranca" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="primeiroNomeFoneticoCliente" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="sobrenomeClienteCobranca" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="ultimoNomeClienteCobranca" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="nomePreferivelClienteCobranca" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="nomeEmpresaCobranca" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="enderecoCobranca1" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="enderecoCobranca2" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="enderecoCobranca3" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="municipioCobranca" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="cidadeCobranca" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="estadoCobranca" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="paisCobranca" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="cepCobranca" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="codigoJurisdicaoCobranca" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="telefoneCobranca" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="emailCobranca" type="xsd:string" minOccurs="0"/>
       <xsd:element name="DadoFiscalCliente" type="tns:DadoFiscalClienteType"/>
     </xsd:sequence>
   </xsd:complexType>

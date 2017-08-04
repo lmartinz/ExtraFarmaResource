@@ -8,16 +8,16 @@
       </xsd:schema>
    </grammars>
    <resources>
-      <resource path="/fiscal/v1/nfAvulsaCoberturaCupom/emitirNFAvulsaCoberturaCupom">
+      <resource path="/emitirNFAvulsaCoberturaCupom">
          <method name="POST" soa:wsdlOperation="emitirNFAvulsaCoberturaCupom">
             <request>
                <representation mediaType="application/json" element="cns:EmitirNFAvulsaCoberturaCupomRequest" xmlns:cns="http://service.ultra.com.br/fiscal/NFAvulsaCoberturaCupom/v1"/>
             </request>
             <response status="200">
-               <representation mediaType="application/xml" element="cns:EmitirNFAvulsaCoberturaCupomResponse" xmlns:cns="http://service.ultra.com.br/fiscal/NFAvulsaCoberturaCupom/v1"/>
+               <representation mediaType="application/json" element="cns:EmitirNFAvulsaCoberturaCupomResponse" xmlns:cns="http://service.ultra.com.br/fiscal/NFAvulsaCoberturaCupom/v1"/>
             </response>
             <response status="400" soa:wsdlFaultName="EmitirNFAvulsaCoberturaCupomFault">
-               <representation mediaType="application/xml" element="cns:Fault" xmlns:cns="http://canonico.ultra.com.br/infcorp/v1"/>
+               <representation mediaType="application/json" element="cns:Fault" xmlns:cns="http://canonico.ultra.com.br/infcorp/v1"/>
             </response>
          </method>
       </resource>

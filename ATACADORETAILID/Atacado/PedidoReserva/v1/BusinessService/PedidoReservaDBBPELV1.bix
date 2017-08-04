@@ -20,7 +20,7 @@
         <tran:provider-id>soa-direct</tran:provider-id>
         <tran:inbound>false</tran:inbound>
         <tran:URI>
-            <env:value>t3://localhost:7101/default/PedidoReservaIntegracaoBPEL!1.0/PedidoReservaDBBPEL</env:value>
+            <env:value>t3://efbrmtzvlx153:13410,efbrmtzvlx154:13420,efbrmtzvlx153:13420,efbrmtzvlx154:13410/default/PedidoReservaIntegracaoBPEL!1.0/PedidoReservaDBBPEL</env:value>
         </tran:URI>
         <tran:outbound-properties>
             <tran:load-balancing-algorithm>round-robin</tran:load-balancing-algorithm>
@@ -28,9 +28,9 @@
             <tran:retry-interval>30</tran:retry-interval>
             <tran:retry-application-errors>false</tran:retry-application-errors>
         </tran:outbound-properties>
-        <tran:provider-specific>
-            <soa:jndiReadTimeout>0</soa:jndiReadTimeout>
-            <soa:jndiConnectTimeout>0</soa:jndiConnectTimeout>
+        <tran:provider-specific xsi:type="soa:SOAEndPointConfiguration">
+            <soa:jndiReadTimeout>30000</soa:jndiReadTimeout>
+            <soa:jndiConnectTimeout>5000</soa:jndiConnectTimeout>
             <soa:role>SYNCHRONOUS_CLIENT</soa:role>
             <soa:wsaVersion>DEFAULT</soa:wsaVersion>
             <soa:dispatchPolicy>SBDefaultResponseWorkManager</soa:dispatchPolicy>

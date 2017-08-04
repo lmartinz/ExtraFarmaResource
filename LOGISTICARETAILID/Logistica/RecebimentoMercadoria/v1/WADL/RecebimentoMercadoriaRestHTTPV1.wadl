@@ -18,7 +18,7 @@
                <representation mediaType="application/json" element="cns:NotificarRecebimentoMercadoriaResponse" xmlns:cns="http://service.ultra.com.br/logistica/RecebimentoMercadoria/v1"/>
             </response>
             <response status="400" soa:wsdlFaultName="NotificarRecebimentoMercadoriaFault">
-               <representation mediaType="application/xml" element="cns:Fault" xmlns:cns="http://canonico.ultra.com.br/infcorp/v1"/>
+               <representation mediaType="application/json" element="cns:Fault" xmlns:cns="http://canonico.ultra.com.br/infcorp/v1"/>
             </response>
          </method>
       </resource>
