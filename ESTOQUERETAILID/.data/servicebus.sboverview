@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns:composite xmlns:ns="http://xmlns.oracle.com/sca/1.0">
+    <ns:reference>
+        <ns:interface src="BusinessService:ESTOQUERETAILID/Estoque/ConsultaEstoque/v1/BusinessService/ConsultaEstoqueServicoDBBPEL"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:ESTOQUERETAILID/Estoque/PontualInventario/v1/BusinessService/PontualInventarioDBBPELV1"/>
+    </ns:reference>
+</ns:composite>

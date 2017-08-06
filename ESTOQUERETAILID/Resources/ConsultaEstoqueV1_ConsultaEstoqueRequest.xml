@@ -1,0 +1,9 @@
+<ConsultaEstoqueRequest xmlns="http://service.ultra.com.br/estoque/ConsultaEstoque/v1">
+   <codigoItem xmlns="">codigoItem67</codigoItem>
+   <localizacaoEstoque xmlns="">
+      <codigoLocalizacao>68</codigoLocalizacao>
+      <tipoLocalizacao>tipoLocalizacao69</tipoLocalizacao>
+      <codigoCanal>70</codigoCanal>
+   </localizacaoEstoque>
+   <indicaRetiradaLoja xmlns="">indicaRetiradaLoja71</indicaRetiradaLoja>
+</ConsultaEstoqueRequest>

@@ -8,7 +8,23 @@
   <types>
     <xsd:schema>
       <xsd:import namespace="http://www.oracle.com/retail/rms/integration/services/InventoryDetailService/v1"
-                  schemaLocation="../Schemas/InvAvailCriVo.xsd"/>
+                  schemaLocation="../Schemas/InventoryDetailService1.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/services/exception/v1"
+                  schemaLocation="../Schemas/InventoryDetailService2.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/InvAvailDesc/v1"
+                  schemaLocation="../Schemas/InventoryDetailService3.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/InvAvailCriVo/v1"
+                  schemaLocation="../Schemas/InventoryDetailService4.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/InvAvailColDesc/v1"
+                  schemaLocation="../Schemas/InventoryDetailService5.xsd"/>
     </xsd:schema>
   </types>
   <message name="lookupInvAvailCriVo">

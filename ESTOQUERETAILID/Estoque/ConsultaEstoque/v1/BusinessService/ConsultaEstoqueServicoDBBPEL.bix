@@ -31,11 +31,11 @@
             <tran:retry-interval>30</tran:retry-interval>
             <tran:retry-application-errors>false</tran:retry-application-errors>
         </tran:outbound-properties>
-        <tran:provider-specific xsi:type="http:HttpEndPointConfiguration">
+        <tran:provider-specific>
             <http:outbound-properties>
                 <http:request-method>POST</http:request-method>
-                <http:timeout>30000</http:timeout>
-                <http:connection-timeout>5000</http:connection-timeout>
+                <http:timeout>0</http:timeout>
+                <http:connection-timeout>0</http:connection-timeout>
                 <http:follow-redirects>false</http:follow-redirects>
                 <http:chunked-streaming-mode>true</http:chunked-streaming-mode>
                 <http:session-sctikiness enabled="false" session-id-name="JSESSIONID"/>

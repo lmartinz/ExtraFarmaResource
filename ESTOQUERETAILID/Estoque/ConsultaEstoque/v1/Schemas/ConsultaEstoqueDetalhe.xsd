@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-            xmlns:tns="http://service.ultra.com.br/estoque/ConsultaInventario/v1"
-            targetNamespace="http://service.ultra.com.br/estoque/ConsultaInventario/v1" elementFormDefault="qualified">
-  <xsd:complexType name="ConsultaInventarioDetalheRequestType">
+            xmlns:tns="http://service.ultra.com.br/estoque/ConsultaEstoque/v1"
+            targetNamespace="http://service.ultra.com.br/estoque/ConsultaEstoque/v1" elementFormDefault="qualified">
+  <xsd:complexType name="ConsultaEstoqueDetalheRequestType">
     <xsd:sequence>
       <xsd:element name="codigoLocal" type="tns:varchar25"/>
       <xsd:element name="tipoLocal" type="tns:varchar1"/>
     </xsd:sequence>
   </xsd:complexType>
-  <xsd:element name="ConsultaInventarioDetalhe" type="tns:ConsultaInventarioDetalheRequestType">
+  <xsd:element name="ConsultaEstoqueDetalhe" type="tns:ConsultaEstoqueDetalheRequestType">
     <xsd:annotation>
       <xsd:documentation>A sample element</xsd:documentation>
     </xsd:annotation>

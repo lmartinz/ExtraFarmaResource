@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con4="http://www.bea.com/wli/sb/stages/routing/config">
+    <con:coreEntry>
+        <con:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType">
+            <con:wsdl ref="ESTOQUERETAILID/Estoque/ConsultaEstoque/v1/WSDL/ConsultaEstoqueV1"/>
+            <con:binding>
+                <con:name>ConsultaEstoquePortBinding</con:name>
+                <con:namespace>http://service.ultra.com.br/estoque/ConsultaEstoque/v1</con:namespace>
+            </con:binding>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router errorHandler="error-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7de0">
+        <con:pipeline type="error" name="error-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7de0">
+            <con:stage id="_StageId-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7ddf" name="ErrorHandlerLog">
+                <con:context/>
+                <con:actions>
+                    <con1:log>
+                        <con2:id>_ActionId-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7d99</con2:id>
+                        <con1:logLevel>debug</con1:logLevel>
+                        <con1:expr>
+                            <con2:xqueryText>$header</con2:xqueryText>
+                        </con1:expr>
+                    </con1:log>
+                    <con1:log>
+                        <con2:id>_ActionId-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7d96</con2:id>
+                        <con1:logLevel>debug</con1:logLevel>
+                    </con1:log>
+                    <con1:log>
+                        <con2:id>_ActionId-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7d93</con2:id>
+                        <con1:logLevel>debug</con1:logLevel>
+                        <con1:expr>
+                            <con2:xqueryText>$fault</con2:xqueryText>
+                        </con1:expr>
+                    </con1:log>
+                </con:actions>
+            </con:stage>
+            <con:stage id="_StageId-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7d92" name="StageFault">
+                <con:context/>
+                <con:actions>
+                    <con3:ifThenElse>
+                        <con2:id>_ActionId-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7d87</con2:id>
+                        <con3:case id="_BranchId-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7d86">
+                            <con3:condition>
+                                <con2:xqueryText>not(fn:empty($body/soap-env:Fault))</con2:xqueryText>
+                            </con3:condition>
+                            <con3:actions>
+                                <con3:replace varName="body">
+                                    <con2:id>_ActionId-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7d80</con2:id>
+                                    <con3:expr>
+                                        <con2:xqueryText>$body/soap-env:Fault</con2:xqueryText>
+                                    </con3:expr>
+                                </con3:replace>
+                            </con3:actions>
+                        </con3:case>
+                        <con3:default>
+                            <con3:assign varName="body">
+                                <con2:id>_ActionId-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7d83</con2:id>
+                                <con3:expr>
+                                    <con2:xqueryTransform>
+                                        <con2:resource ref="TemplateID/Asynchronous/v1/Transforms/transformToFault"/>
+                                        <con2:param name="faultDetail">
+                                            <con2:path>$body</con2:path>
+                                        </con2:param>
+                                    </con2:xqueryTransform>
+                                </con3:expr>
+                            </con3:assign>
+                        </con3:default>
+                    </con3:ifThenElse>
+                </con:actions>
+            </con:stage>
+            <con:stage id="_StageId-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7d91" name="StageReplay">
+                <con:context/>
+                <con:actions>
+                    <con2:reply>
+                        <con2:id>_ActionId-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7d8e</con2:id>
+                    </con2:reply>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7dde">
+            <con:stage id="_StageId-N3f57fff1.64063a81.0.15db8a929b0.N7f8b" name="AtribuiHeaderRestToSoap" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config">
+                <con:context/>
+                <con:actions>
+                    <con1:ifThenElse xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                        <con2:id>_ActionId-N3f57fff1.64063a81.0.15db8a929b0.N7f8a</con2:id>
+                        <con1:case id="_BranchId-N3f57fff1.64063a81.0.15db8a929b0.N7f89">
+                            <con1:condition>
+                                <con2:xqueryText>$inbound/ctx:transport/ctx:request/tp:headers/http:Content-Type eq 'application/json'</con2:xqueryText>
+                            </con1:condition>
+                            <con1:actions>
+                                <con3:replace varName="header" contents-only="false" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+                                    <con2:id>_ActionId-N3f57fff1.64063a81.0.15db8a929b0.N7f88</con2:id>
+                                    <con3:location>
+                                        <con2:xpathText>.</con2:xpathText>
+                                    </con3:location>
+                                    <con3:expr>
+                                        <con2:xqueryTransform>
+                                            <con2:resource ref="TemplateID/Asynchronous/v1/Transforms/transformInboutToHeader"/>
+                                            <con2:param name="inbound">
+                                                <con2:path>$inbound</con2:path>
+                                            </con2:param>
+                                        </con2:xqueryTransform>
+                                    </con3:expr>
+                                </con3:replace>
+                            </con1:actions>
+                        </con1:case>
+                        <con1:default/>
+                    </con1:ifThenElse>
+                </con:actions>
+            </con:stage>
+            <con:stage id="_StageId-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7ddc" name="Validation">
+                <con:context/>
+                <con:actions>
+                    <con3:validate>
+                        <con2:id>_ActionId-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7dd4</con2:id>
+                        <con3:schema ref="ESTOQUERETAILID/Comum/v1/Schemas/MetaInformacao"/>
+                        <con3:schemaElement xmlns:v1="http://service.ultra.com.br/infcorp/LogIntegration/v1">v1:MetaInformacao</con3:schemaElement>
+                        <con3:varName>header</con3:varName>
+                    </con3:validate>
+                    <con3:validate>
+                        <con2:id>_ActionId-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7dd1</con2:id>
+                        <con3:schema ref="ESTOQUERETAILID/Estoque/ConsultaEstoque/v1/Schemas/ConsultaEstoqueEBMV1"/>
+                        <con3:schemaElement xmlns:v1="http://service.ultra.com.br/estoque/ConsultaEstoque/v1">v1:ConsultaEstoqueRequest</con3:schemaElement>
+                        <con3:varName>body</con3:varName>
+                    </con3:validate>
+                    <con3:assign varName="body">
+                        <con2:id>_ActionId-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7d3a</con2:id>
+                        <con3:expr>
+                            <con2:xqueryText>$body</con2:xqueryText>
+                        </con3:expr>
+                    </con3:assign>
+                </con:actions>
+            </con:stage>
+            <con:stage id="_StageId-N3f578fff.59b41a93.0.15d5226348c.N7ff4" name="ChamaServicoRetail">
+                <con:context/>
+                <con:actions>
+                    <con3:wsCallout>
+                        <con2:id>_ActionId-N3f578fff.59b41a93.0.15d5226348c.N7ff3</con2:id>
+                        <con3:service ref="ESTOQUERETAILID/Estoque/ConsultaEstoque/v1/BusinessService/ConsultaEstoqueServicoDBBPEL" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con3:operation>lookupInvAvailCriVo</con3:operation>
+                        <con3:request>
+                            <con3:body wrapped="false">body</con3:body>
+                        </con3:request>
+                        <con3:response>
+                            <con3:body wrapped="false">body</con3:body>
+                        </con3:response>
+                        <con3:requestTransform/>
+                        <con3:responseTransform/>
+                    </con3:wsCallout>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7ddd">
+            <con:stage id="_StageId-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7ddb" name="StageResponse">
+                <con:context/>
+                <con:actions/>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7dda">
+            <con:stage id="_StageId-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7dd8" name="StageInvalidOperation">
+                <con:context/>
+                <con:actions>
+                    <con3:Error>
+                        <con2:id>_ActionId-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7dce</con2:id>
+                        <con3:errCode>-1</con3:errCode>
+                        <con3:message>Operação Inválida</con3:message>
+                    </con3:Error>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7dd9"/>
+        <con:flow>
+            <con:branch-node type="operation" id="_FlowId-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7e43" name="SynchronousOperation">
+                <con:context/>
+                <con:branch-table>
+                    <con:branch name="consultaEstoque">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:pipeline-node name="ConsultaEstoque_PipelinePairNodeBranch">
+                                <con:request>request-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7dde</con:request>
+                                <con:response>response-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7ddd</con:response>
+                            </con:pipeline-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:default-branch>
+                        <con:flow>
+                            <con:pipeline-node name="PipelinePairNodeDefault">
+                                <con:request>request-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7dda</con:request>
+                                <con:response>response-N53eeefff.Nb0d4f3d.0.15d0800e28a.N7dd9</con:response>
+                            </con:pipeline-node>
+                        </con:flow>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:branch-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>

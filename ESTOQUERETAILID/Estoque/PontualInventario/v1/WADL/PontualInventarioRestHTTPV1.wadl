@@ -9,16 +9,16 @@
         </xsd:schema>
    </grammars>
    <resources>
-      <resource path="/ajustePontualInventario">
+      <resource path="ajustePontualInventario">
          <method name="POST" soa:wsdlOperation="ajustePontualInventario">
             <request>
                <representation mediaType="application/json" element="cns:AjustePontualInventarioRequest" xmlns:cns="http://service.ultra.com.br/estoque/PontualInventario/v1"/>
             </request>
             <response status="200">
-               <representation mediaType="application/json" element="cns:AjustePontualInventarioResponse" xmlns:cns="http://service.ultra.com.br/estoque/PontualInventario/v1"/>
+               <representation mediaType="application/xml" element="cns:AjustePontualInventarioResponse" xmlns:cns="http://service.ultra.com.br/estoque/PontualInventario/v1"/>
             </response>
             <response status="400" soa:wsdlFaultName="AjustePontualInventarioFault">
-               <representation mediaType="application/json" element="cns:Fault" xmlns:cns="http://canonico.ultra.com.br/infcorp/v1"/>
+               <representation mediaType="application/xml" element="cns:Fault" xmlns:cns="http://canonico.ultra.com.br/infcorp/v1"/>
             </response>
          </method>
       </resource>
