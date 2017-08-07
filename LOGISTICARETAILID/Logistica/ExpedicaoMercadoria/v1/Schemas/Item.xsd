@@ -4,7 +4,7 @@
   <xsd:complexType name="ItemType">
     <xsd:sequence>
       <xsd:element name="codigoProduto" type="xsd:string" minOccurs="0"/>
-      <xsd:element name="quantidadeProduto" type="xsd:int" minOccurs="0"/>
+      <xsd:element name="quantidadeProduto" type="xsd:integer" minOccurs="0"/>
     </xsd:sequence>
   </xsd:complexType>
   <xsd:element name="Item" type="tns:ItemType"></xsd:element>

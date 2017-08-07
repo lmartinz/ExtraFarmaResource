@@ -1,20 +1,25 @@
 {
-  "codigoLocalDestino" : "codigoLocalDestino1",
-  "tipoLocalDestino" : "tipoLocalDestino2",
-  "codigoLocalOrigem" : "codigoLocalOrigem3",
-  "tipoLocalOrigem" : "tipoLocalOrigem4",
-  "numeroPedido" : "numeroPedido5",
-  "qtdCaixa" : 6,
-  "dataLiberacao" : "2017-06-28",
+  "codigoLocalDestino" : "codigoLocalDestino89",
+  "tipoLocalDestino" : "tipoLocalDestino90",
+  "tipoLoja" : "tipoLoja91",
+  "codigoLocalOrigem" : "codigoLocalOrigem92",
+  "tipoLocalOrigem" : "tipoLocalOrigem93",
+  "numeroPedidoTransferencia" : "numeroPedidoTransferencia94",
+  "tipoPedido" : "tipoPedido95",
+  "quantidadeCaixa" : 96,
+  "numeroPedido" : "numeroPedido97",
+  "dataLiberacao" : "2017-08-04",
   "ExpedicaoDetalheList" : [ {
-    "numeroDistribuicao" : "numeroDistribuicao7",
-    "tipoDistribuicao" : "tipoDistribuicao8",
-    "ContainerList" : {
-      "codigoContainer" : "codigoContainer9",
-      "ItemList" : {
-        "codigoProduto" : "codigoProduto10",
-        "quantidadeProduto" : 11
-      }
-    }
+    "numeroDistribuicao" : "numeroDistribuicao98",
+    "tipoDistribuicao" : "tipoDistribuicao99",
+    "numeroOrdemAtendimento" : "numeroOrdemAtendimento100",
+    "ContainerList" : [ {
+      "codigoContainer" : "codigoContainer101",
+      "envioExpedido" : "envioExpedido102",
+      "ItemList" : [ {
+        "codigoProduto" : "codigoProduto103",
+        "quantidadeProduto" : 104
+      } ]
+    } ]
   } ]
 }

@@ -6,18 +6,18 @@
             <con:inboundWss processWssHeader="true"/>
         </ser:security>
         <ser:binding type="REST" xsi:type="con:RestBindingType" xmlns:con="http://www.bea.com/wli/sb/services/bindings/config">
-            <con:wsdl ref="PRECIFICACAORETAILID/Precificacao/AtualizacaoPreco/v1/WSDL/AtualizacaoPrecoV1"/>
+            <con:wsdl ref="PRECIFICACAORETAILID/Precificacao/Preco/v1/WSDL/PrecoV1"/>
             <con:binding>
-                <con:name>AtualizacaoPrecoPortBinding</con:name>
-                <con:namespace>http://service.ultra.com.br/precificacao/AtualizacaoPreco/v1</con:namespace>
+                <con:name>PrecoPortBinding</con:name>
+                <con:namespace>http://service.ultra.com.br/precificacao/Preco/v1</con:namespace>
             </con:binding>
-            <con:wadl ref="PRECIFICACAORETAILID/Precificacao/AtualizacaoPreco/v1/WADL/AtualizacaoPrecoRestHTTPV1"/>
+            <con:wadl ref="PRECIFICACAORETAILID/Precificacao/Preco/v1/WADL/PrecoRestHTTPV1"/>
         </ser:binding>
         <oper:operations enabled="true"/>
         <ser:ws-policy>
             <ser:binding-mode>no-policies</ser:binding-mode>
         </ser:ws-policy>
-        <ser:invoke ref="PRECIFICACAORETAILID/Precificacao/AtualizacaoPreco/v1/Pipelines/AtualizacaoPrecoHTTPV1Pipeline" xsi:type="con:PipelineRef" xmlns:con="http://www.bea.com/wli/sb/pipeline/config"/>
+        <ser:invoke ref="PRECIFICACAORETAILID/Precificacao/Preco/v1/Pipelines/PrecoRestHTTPV1Pipeline" xsi:type="con:PipelineRef" xmlns:con="http://www.bea.com/wli/sb/pipeline/config"/>
         <ser:xqConfiguration>
             <ser:snippetVersion>1.0</ser:snippetVersion>
         </ser:xqConfiguration>
@@ -26,7 +26,7 @@
         <tran:provider-id>http</tran:provider-id>
         <tran:inbound>true</tran:inbound>
         <tran:URI>
-            <env:value>/PRECIFICACAORETAILID/AtualizacaoPrecoRestHTTPV1</env:value>
+            <env:value>/precificacao/Preco/v1</env:value>
         </tran:URI>
         <tran:inbound-properties/>
         <tran:provider-specific xsi:type="http:HttpEndPointConfiguration" xmlns:http="http://www.bea.com/wli/sb/transports/http">

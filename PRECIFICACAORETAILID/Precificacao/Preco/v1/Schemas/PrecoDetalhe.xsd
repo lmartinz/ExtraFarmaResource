@@ -1,0 +1,13 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/precificacao/Preco/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://service.ultra.com.br/precificacao/Preco/v1">
+  <xsd:include schemaLocation="PrecoDetalhe.xsd"/>
+  <xsd:complexType name="PrecoDetalheType">
+    <xsd:sequence>
+      <xsd:element name="precoVarejo" type="xsd:double" minOccurs="1"/>
+      <xsd:element name="dataInicioVigenciaPreco" type="xsd:dateTime" minOccurs="0"/>
+      <xsd:element name="dataFimVigenciaPreco" type="xsd:dateTime" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="PrecoLista" type="tns:PrecoDetalheType"/>
+</xsd:schema>

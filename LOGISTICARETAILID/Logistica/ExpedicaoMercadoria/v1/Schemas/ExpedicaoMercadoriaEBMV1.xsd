@@ -4,11 +4,14 @@
     <xsd:sequence>
       <xsd:element name="codigoLocalDestino" type="xsd:string" minOccurs="1" maxOccurs="1"/>
       <xsd:element name="tipoLocalDestino" type="xsd:string" minOccurs="0"/>
-      <xsd:element name="codigoLocalOrigem" type="xsd:string" minOccurs="0"/>
-      <xsd:element name="tipoLocalOrigem" type="xsd:string" minOccurs="0"/>
-      <xsd:element name="numeroPedido" type="xsd:string" minOccurs="0"/>
-      <xsd:element name="qtdCaixa" type="xsd:int" minOccurs="0"/>
-      <xsd:element name="dataLiberacao" type="xsd:date" minOccurs="0"/>
+      <xsd:element name="tipoLoja" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="codigoLocalOrigem" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="tipoLocalOrigem" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="numeroPedidoTransferencia" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="tipoPedido" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="quantidadeCaixa" type="xsd:int" minOccurs="1"/>
+      <xsd:element name="numeroPedido" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="dataLiberacao" type="xsd:date" minOccurs="1"/>
       <xsd:element name="ExpedicaoDetalheList" type="tns:NotificarExpedicaoMercadoriaDetalheType" maxOccurs="unbounded" minOccurs="0"/>
     </xsd:sequence>
   </xsd:complexType>

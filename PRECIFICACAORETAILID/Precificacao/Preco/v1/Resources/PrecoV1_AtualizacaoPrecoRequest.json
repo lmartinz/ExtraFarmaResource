@@ -1,0 +1,13 @@
+{
+  "MudancaPrecoList" : [ {
+    "codigoLocal" : 1,
+    "tipoLocal" : "tipoLocal2",
+    "codigoProduto" : 3,
+    "tipoMudancaPreco" : "tipoMudancaPreco4",
+    "PrecoDetalheList" : [ {
+      "precoVarejo" : 50.73,
+      "dataInicioVigenciaPreco" : "2017-08-06T20:29:03.150",
+      "dataFimVigenciaPreco" : "2017-08-06T20:29:03.150"
+    } ]
+  } ]
+}

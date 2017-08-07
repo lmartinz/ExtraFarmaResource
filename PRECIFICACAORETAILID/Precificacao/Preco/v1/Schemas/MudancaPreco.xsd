@@ -1,0 +1,15 @@
+<xsd:schema targetNamespace="http://service.ultra.com.br/precificacao/Preco/v1"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://service.ultra.com.br/precificacao/Preco/v1">
+  <xsd:include schemaLocation="PrecoDetalhe.xsd"/>
+  <xsd:complexType name="MudancaPrecoType">
+    <xsd:sequence>
+      <xsd:element name="codigoLocal" type="xsd:integer" minOccurs="1"/>
+      <xsd:element name="tipoLocal" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="codigoProduto" type="xsd:integer" minOccurs="1"/>
+      <xsd:element name="tipoMudancaPreco" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="PrecoDetalheList" type="tns:PrecoDetalheType" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="MudancaPreco" type="tns:MudancaPrecoType"/>
+</xsd:schema>

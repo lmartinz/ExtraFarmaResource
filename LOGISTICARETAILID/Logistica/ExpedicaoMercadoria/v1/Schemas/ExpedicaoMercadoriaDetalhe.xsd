@@ -4,7 +4,8 @@
     <xsd:sequence>
       <xsd:element name="numeroDistribuicao" type="xsd:string" minOccurs="1" maxOccurs="1"/>
       <xsd:element name="tipoDistribuicao" type="xsd:string" minOccurs="1" maxOccurs="1"/>
-      <xsd:element name="ContainerList" type="tns:containerType" minOccurs="0"/>
+      <xsd:element name="numeroOrdemAtendimento" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="ContainerList" type="tns:containerType" maxOccurs="unbounded"  minOccurs="1"/>
     </xsd:sequence>
   </xsd:complexType>
   <xsd:element name="ExpedicaoDetalhe" type="tns:NotificarExpedicaoMercadoriaDetalheType"/>

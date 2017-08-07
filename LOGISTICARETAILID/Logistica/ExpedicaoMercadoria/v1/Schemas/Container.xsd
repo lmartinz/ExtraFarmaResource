@@ -2,8 +2,9 @@
   <xsd:include schemaLocation="Item.xsd"/>
   <xsd:complexType name="containerType">
     <xsd:sequence>
-      <xsd:element name="codigoContainer" type="xsd:string" minOccurs="0"/>
-      <xsd:element name="ItemList" type="tns:ItemType" minOccurs="0"/>
+      <xsd:element name="codigoContainer" type="xsd:string" minOccurs="1"/>
+      <xsd:element name="envioExpedido" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="ItemList" type="tns:ItemType" maxOccurs="unbounded"  minOccurs="1"/>
     </xsd:sequence>
   </xsd:complexType>
   <xsd:element name="Container" type="tns:containerType"/>
